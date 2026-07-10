@@ -62,11 +62,19 @@
             text-decoration: none;
         }
 
-        .logo-img {
-            height: 55px;
-            width: auto;
-            object-fit: contain;
-            border-radius: 4px;
+        /* Smart Logo Fix */
+        .logo-icon-box {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #0b4c8c, #198754);
+            color: #fff;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .logo-text {
@@ -102,9 +110,9 @@
             color: var(--primary-color);
         }
 
-        /* Hero Section with Live Background Overlay */
+        /* Premium Blue-Green Gradient Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(11, 76, 140, 0.9) 0%, rgba(25, 135, 84, 0.9) 100%), url('https://raw.githubusercontent.com/ashokdigitalservices/Ashok-Digital-Services.in/main/166036.png') no-repeat center center/cover;
+            background: linear-gradient(135deg, #0b4c8c 0%, #198754 100%);
             padding: 100px 20px;
             text-align: center;
             border-bottom: 1px solid #e9ecef;
@@ -121,14 +129,14 @@
             color: #ffffff;
             margin-bottom: 20px;
             font-weight: 800;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
 
         .hero p {
             font-size: 1.3rem;
             color: #f8f9fa;
             margin-bottom: 35px;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
         }
 
         .cta-buttons {
@@ -139,23 +147,23 @@
         }
 
         .btn-call {
-            background-color: #198754;
-            color: white;
+            background-color: #ffffff;
+            color: #0b4c8c;
             padding: 14px 30px;
             font-size: 1.1rem;
             font-weight: bold;
             text-decoration: none;
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, background-color 0.2s;
+            transition: transform 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
         }
 
         .btn-call:hover {
-            background-color: #157347;
             transform: translateY(-2px);
+            background-color: #f8f9fa;
         }
 
         .btn-wp {
@@ -167,7 +175,7 @@
             text-decoration: none;
             border-radius: 30px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.2s, background-color 0.2s;
+            transition: transform 0.2s;
             display: inline-flex;
             align-items: center;
             gap: 10px;
@@ -176,6 +184,35 @@
         .btn-wp:hover {
             background-color: #20ba5a;
             transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.2rem;
+            color: #0b4c8c;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
         }
 
         /* Services Section */
@@ -247,7 +284,7 @@
             gap: 5px;
         }
 
-        /* Payment QR Section */
+        /* Smart Payment QR Section Fix */
         .payment-section {
             background: #fff;
             padding: 80px 20px;
@@ -258,26 +295,35 @@
             max-width: 360px;
             margin: 0 auto;
             background: #f8f9fa;
-            padding: 20px;
+            padding: 30px;
             border-radius: 16px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px dashed #ced4da;
+            border: 2px dashed #198754;
         }
 
-        .qr-img {
-            width: 100%;
-            height: auto;
-            object-fit: contain;
-            border-radius: 10px;
-            display: block;
-            margin: 0 auto;
+        .qr-icon-display {
+            font-size: 8rem;
+            color: #0b4c8c;
+            margin-bottom: 15px;
         }
 
         .pay-text {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #333;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #198754;
             margin-top: 15px;
+        }
+
+        .upi-id-box {
+            background: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 1.05rem;
+            color: #333;
+            font-weight: bold;
         }
 
         /* Contact Section */
@@ -376,17 +422,17 @@
             nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
-            .hero .cta-buttons { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header & Logo Section -->
+    <!-- Header & Smart Logo Section -->
     <header>
         <div class="navbar">
             <a href="#home" class="logo-container">
-                <img src="https://raw.githubusercontent.com/ashokdigitalservices/Ashok-Digital-Services.in/main/166032.png" alt="Ashok Digital Services Logo" class="logo-img">
+                <!-- Smart Text Icon replaced image block completely -->
+                <div class="logo-icon-box">A</div>
                 <div class="logo-text">
                     ASHOK DIGITAL SERVICES
                     <span>તમારી ઓનલાઈન ડિજિટલ સહાયક</span>
@@ -402,7 +448,7 @@
         </div>
     </header>
 
-    <!-- Hero Section with Custom Background -->
+    <!-- Hero Section with Premium Gradient Background -->
     <section id="home" class="hero">
         <div class="hero-container">
             <h1>સરકારી અને ડિજિટલ કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
@@ -447,7 +493,7 @@
             <!-- Light Bill Name Change -->
             <a href="https://wa.me/919484418910?text=Hello%20Ashok%20Digital%20Services,%20mane%20Light%20bill%20ma%20name%20change%20karva%20vise%20mahitni%20joie%20che." target="_blank" class="service-card" style="border-top-color: #ffc107;">
                 <div class="icon-box" style="color: #ffc107; background: rgba(255, 193, 7, 0.1);"><i class="fa-solid fa-lightbulb"></i></div>
-                <h3> can_light_bill_name_change  લાઇટ બિલમાં નામ ચેન્જ</h3>
+                <h3>લાઇટ બિલમાં નામ ચેન્જ</h3>
                 <p>તમારી માલિકીના લાઇટ બિલ (Electricity Bill) માં જૂનું નામ બદલીને નવું નામ ઓનલાઈન સચોટ રીતે કરી આપવામાં આવશે.</p>
                 <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
             </a>
@@ -480,7 +526,7 @@
             <a href="https://wa.me/919484418910?text=Hello%20Ashok%20Digital%20Services,%20mane%20ITR%20RETURN%20FILE%20karva%20vise%20mahitni%20joie%20che." target="_blank" class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
                 <h3>ITR રીટર્ન ફાઈલિંગ</h3>
-                <p>નોકરિયાત અને વેપારીઓ માટે નિયમ અનુસાર ઇનકમ ટેક્સ રિટર્ન (ITR) સચોટ ગણતરી સાથે ઓનલાઈન ફાઈલ કરવું.</p>
+                <p>નોકરિયાત અને વેપારીઓ માટે નિયમ અનુસાર ઇનકમ ટેックス રિટર્ન (ITR) સચોટ ગણતરી સાથે ઓનલાઈન ફાઈલ કરવું.</p>
                 <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
             </a>
 
@@ -495,19 +541,20 @@
         </div>
     </section>
 
-    <!-- Payment QR Code Section with Live Embed Image -->
+    <!-- Smart Payment UPI Section Fix -->
     <section id="payment" class="payment-section">
         <h2 class="section-title">ઓનલાઈન પેમેન્ટ (Pay Online)</h2>
-        <p class="section-subtitle">કોઈપણ ડિજિટલ સેવાના ચાર્જ માટે તમે આ ઓરિજિનલ QR કોડ સ્કેન કરીને ડાયરેક્ટ પેમેન્ટ કરી શકો છો.</p>
+        <p class="section-subtitle">કોઈપણ ડિજિટલ સેવાના ચાર્જ માટે તમે આ UPI ID નો ઉપયોગ કરીને ગુગલ પે (Google Pay), ફોનપે અથવા પેટીએમથી પેમેન્ટ કરી શકો છો.</p>
         <div class="qr-container">
-            <img src="https://raw.githubusercontent.com/ashokdigitalservices/Ashok-Digital-Services.in/main/167151.png" alt="Ashoka India Google Pay QR Code" class="qr-img">
-            <div class="pay-text"><i class="fa-solid fa-qrcode"></i> UPI ID: ashokbhai56585-1@okaxis</div>
+            <div class="qr-icon-display"><i class="fa-solid fa-credit-card"></i></div>
+            <div class="pay-text">Ashoka (India)</div>
+            <div class="upi-id-box">ashokbhai56585-1@okaxis</div>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 10px;">Scan or Copy UPI ID to Pay</p>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title">સંપર્ક કરો (Contact Us)</h2>
         <div class="contact-grid">
             
             <div class="contact-info">
@@ -557,7 +604,7 @@
 
     <!-- Fixed Bottom Sticky Bar for Mobile Users -->
     <div class="fixed-call-bar">
-        <a href="tel:+919484418910" class="bar-call"><i class="fa-solid fa-phone"></i> コール કરો</a>
+        <a href="tel:+919484418910" class="bar-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
         <a href="https://wa.me/919484418910?text=Hello%20Ashok%20Digital%20Services,%20mane%20mahitni%20joie%20che." target="_blank" class="bar-wp"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
     </div>
 
