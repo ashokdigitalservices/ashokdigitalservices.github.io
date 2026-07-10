@@ -3,58 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashok Digital Services | સ્ટેટસ ચેક કરો</title>
+    <title>Ashok Digital Services | સ્ટેટસ અને સેવાઓ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* (પહેલાનું બધું સ્ટાઇલિંગ અહીં રાખવું, મેં સ્ટેટસ માટે નવું ઉમેર્યું છે) */
         :root { --primary-color: #0b4c8c; --secondary-color: #198754; }
+        body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f4f6f9; }
         
-        .status-section { padding: 80px 20px; background: #fff; text-align: center; }
-        .status-box { max-width: 500px; margin: 0 auto; padding: 30px; background: #eef2f7; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        /* સ્ટાઇલિંગ - બાકીનું બધું જૂનું જ છે */
+        .section-padding { padding: 60px 20px; }
+        .section-title { text-align: center; color: var(--primary-color); margin-bottom: 40px; font-size: 2rem; }
+        
+        /* સ્ટેટસ સેક્શન નવી સ્ટાઇલ */
+        .status-section { padding: 60px 20px; background: #eef2f7; text-align: center; }
+        .status-box { max-width: 500px; margin: 0 auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .status-box input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
         .status-box button { background: var(--primary-color); color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        #statusResult { margin-top: 20px; font-weight: bold; color: #d9534f; }
-        
-        /* બાકીનું સ્ટાઇલિંગ જૂનું જ છે, તે જ રાખવું */
+        #statusResult { margin-top: 20px; font-weight: bold; }
+
+        /* વર્કિંગ ફોટો સેક્શન */
+        .workspace-section { padding: 60px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; background: #fff; }
+        .workspace-img { width: 400px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .workspace-text { width: 400px; }
+
+        /* સર્વિસ કાર્ડ્સ */
+        .services-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card-action-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .action-link { padding: 10px; border-radius: 5px; text-align: center; text-decoration: none; font-weight: bold; font-size: 0.85rem; }
+        .btn-action-info { background: #e8f5e9; color: #198754; border: 1px solid #198754; }
+        .btn-action-doc { background: #e3f2fd; color: #0b4c8c; border: 1px solid #0b4c8c; }
     </style>
 </head>
 <body>
 
-    <!-- [ઉપરનું બધું જૂનું સ્ટ્રક્ચર સેમ રાખવું] -->
+    <!-- 1. હીરો સેક્શન -->
+    <section id="home" style="background:#0b4c8c; color:white; padding:80px 20px; text-align:center;">
+        <h1>ASHOK DIGITAL SERVICES</h1>
+        <p>તમારું દરેક ઓનલાઈન કામ હવે એકદમ સરળ.</p>
+    </section>
 
-    <!-- 🆕 સ્ટેટસ ચેકર સેક્શન -->
+    <!-- 2. નવો વર્કિંગ ફોટો સેક્શન -->
+    <section class="workspace-section">
+        <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Workspace" class="workspace-img">
+        <div class="workspace-text">
+            <h2>અમે તમારી સેવામાં તૈયાર</h2>
+            <p>તમારા ડોક્યુમેન્ટ્સ સુરક્ષિત છે અને અમે ઝડપી કામ કરવામાં માનીએ છીએ.</p>
+        </div>
+    </section>
+
+    <!-- 3. સ્ટેટસ ચેકર સેક્શન (નવું) -->
     <section id="status" class="status-section">
-        <h2 class="section-title">તમારી એપ્લિકેશનનું સ્ટેટસ ચેક કરો</h2>
+        <h2 class="section-title">તમારું સ્ટેટસ ચેક કરો</h2>
         <div class="status-box">
-            <p>તમારો મોબાઈલ નંબર અથવા એપ્લિકેશન આઈડી દાખલ કરો:</p>
-            <input type="text" id="userInput" placeholder="દા.ત. 9484418910">
+            <input type="text" id="userInput" placeholder="તમારો મોબાઈલ નંબર નાખો">
             <button onclick="checkStatus()">સ્ટેટસ જુઓ</button>
             <div id="statusResult"></div>
         </div>
     </section>
 
+    <!-- 4. સર્વિસ સેક્શન (બટનો સાથે) -->
+    <section id="services" class="section-padding">
+        <h2 class="section-title">અમારી સેવાઓ</h2>
+        <div class="services-container">
+            <!-- પાસપોર્ટ સર્વિસનું ઉદાહરણ -->
+            <div class="service-card">
+                <h3>પાસપોર્ટ એપ્લિકેશન</h3>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=માહિતી જોઈએ છે" class="action-link btn-action-info">માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=ડોક્યુમેન્ટ લિસ્ટ આપો" class="action-link btn-action-doc">ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+            <!-- બાકીની સર્વિસ પણ અહીં ઉમેરવી -->
+        </div>
+    </section>
+
+    <!-- સ્ટેટસ ચેક કરવાનું જાવાસ્ક્રિપ્ટ -->
     <script>
-        // અહીં તમારા ગ્રાહકોની યાદી છે. તમારે ફક્ત અહીં નંબર અને સ્ટેટસ બદલવાનું રહેશે.
         const database = {
-            "9484418910": "તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે.",
-            "9876543210": "તમારું ITR ફાઈલિંગ પૂર્ણ થઈ ગયું છે.",
-            "1234567890": "તમારું પાન કાર્ડ બની ગયું છે, કલેક્ટ કરી લો."
+            "9484418910": "તમારું કામ ચાલુ છે.",
+            "9999999999": "તમારું કામ પૂર્ણ થઈ ગયું છે."
         };
 
         function checkStatus() {
             const input = document.getElementById('userInput').value;
-            const resultDiv = document.getElementById('statusResult');
-            
-            if (database[input]) {
-                resultDiv.innerHTML = "સ્ટેટસ: " + database[input];
-                resultDiv.style.color = "#198754"; // લીલો રંગ
+            const res = document.getElementById('statusResult');
+            if(database[input]) {
+                res.innerHTML = "સ્ટેટસ: " + database[input];
+                res.style.color = "green";
             } else {
-                resultDiv.innerHTML = "માફ કરશો, આ નંબર માટે કોઈ માહિતી મળતી નથી.";
-                resultDiv.style.color = "#d9534f"; // લાલ રંગ
+                res.innerHTML = "નંબર મળ્યો નથી.";
+                res.style.color = "red";
             }
         }
     </script>
 
-    <!-- [બાકીનું નીચેનું જૂનું સેક્શન] -->
 </body>
 </html>
