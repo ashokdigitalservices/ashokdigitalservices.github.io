@@ -92,7 +92,7 @@
             font-size: 1rem;
         }
 
-        /* Live Announcement Ticker */
+        /* Ticker */
         .ticker-wrap {
             background: #fff3cd;
             color: #856404;
@@ -151,11 +151,7 @@
         .btn-wp { background-color: #25d366; }
         .btn-call:hover, .btn-wp:hover { transform: translateY(-2px); }
 
-        /* Sections General styling */
-        .section-padding {
-            padding: 80px 20px;
-        }
-
+        .section-padding { padding: 80px 20px; }
         .bg-light { background-color: #eef2f7; }
         .bg-white { background-color: #ffffff; }
 
@@ -167,22 +163,15 @@
             font-weight: 800;
         }
 
-        /* About Section Style */
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            font-size: 1.15rem;
-            color: #444;
-        }
+        .about-content { max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.15rem; color: #444; }
 
         /* Services Grid */
         .services-container {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
@@ -192,13 +181,10 @@
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             text-align: center;
             border-top: 4px solid #0b4c8c;
-            text-decoration: none;
-            color: inherit;
             transition: transform 0.3s;
-            display: block;
         }
 
-        .service-card:hover { transform: translateY(-5px); border-top-color: #198754; }
+        .service-card:hover { transform: translateY(-3px); border-top-color: #198754; }
 
         .icon-box {
             width: 70px;
@@ -213,107 +199,68 @@
             font-size: 1.8rem;
         }
 
-        .click-to-send {
-            font-size: 0.85rem;
-            color: #198754;
-            font-weight: bold;
+        /* 🆕 Dual Action Highlighted Buttons Setup */
+        .card-action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .action-link {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 5px;
-            margin-top: 15px;
+            gap: 8px;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background 0.2s;
         }
 
-        /* 🆕 Smart Features Section Grid */
-        .smart-features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
-        }
-
-        .smart-card {
-            background: #fff;
-            padding: 35px 25px;
-            border-radius: 16px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.04);
-            border-bottom: 4px solid #198754;
-        }
-
-        .smart-card h3 {
-            color: #0b4c8c;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .smart-card ul {
-            list-style: none;
-            margin-top: 15px;
-        }
-
-        .smart-card ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 25px;
-            color: #555;
-        }
-
-        .smart-card ul li::before {
-            content: "\f00c";
-            font-family: "Font Awesome 6 Free";
-            font-weight: 900;
-            position: absolute;
-            left: 0;
+        /* 1-Click Mahiti Button */
+        .btn-action-info {
+            background-color: #e8f5e9;
             color: #198754;
+            border: 1px solid #198754;
         }
+        .btn-action-info:hover { background-color: #c8e6c9; }
 
-        /* Testimonials (Reviews) Grid */
-        .reviews-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        /* 1-Click Document List Button (Highlighted) */
+        .btn-action-doc {
+            background-color: #e3f2fd;
+            color: #0b4c8c;
+            border: 1px solid #0b4c8c;
         }
+        .btn-action-doc:hover { background-color: #bbdefb; }
 
-        .review-card {
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 5px solid #198754;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-        }
+        /* Smart Features */
+        .smart-features-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        .smart-card { background: #fff; padding: 35px 25px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); border-bottom: 4px solid #198754; }
+        .smart-card h3 { color: #0b4c8c; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .smart-card ul { list-style: none; margin-top: 15px; }
+        .smart-card ul li { margin-bottom: 10px; position: relative; padding-left: 25px; color: #555; }
+        .smart-card ul li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #198754; }
 
+        /* Reviews & FAQ */
+        .reviews-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .review-card { background: #f8f9fa; padding: 30px; border-radius: 12px; border-left: 5px solid #198754; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
         .stars { color: #ffc107; margin-bottom: 10px; }
         .reviewer-name { font-weight: bold; margin-top: 15px; color: #0b4c8c; font-size: 0.95rem;}
-
-        /* FAQ Section Styling */
         .faq-container { max-width: 800px; margin: 0 auto; }
         .faq-item { background: #fff; margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
         .faq-question { font-weight: bold; color: #0b4c8c; margin-bottom: 8px; font-size: 1.1rem; }
         .faq-answer { color: #555; }
 
-        /* Payment Section Styling */
-        .qr-container {
-            max-width: 400px;
-            margin: 0 auto;
-            background: #f8f9fa;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            border: 2px dashed #198754;
-            text-align: center;
-        }
-
+        /* Payment */
+        .qr-container { max-width: 400px; margin: 0 auto; background: #f8f9fa; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px dashed #198754; text-align: center; }
         .pay-icon-large { font-size: 4.5rem; color: #0b4c8c; margin-bottom: 15px; }
         .upi-details { background: white; padding: 12px; border-radius: 8px; border: 1px solid #ced4da; font-size: 1.1rem; font-weight: bold; margin: 15px 0; display: block; color: #333; }
         .btn-pay-action { background-color: #0b4c8c; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; }
 
-        /* Contact Section Grid */
+        /* Contact */
         .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
         .contact-info { background: #fff; padding: 40px; border-radius: 16px; }
         .info-item { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
@@ -333,7 +280,7 @@
 </head>
 <body>
 
-    <!-- Ticker for Latest Updates -->
+    <!-- Ticker -->
     <div class="ticker-wrap">
         <i class="fa-solid fa-bell fa-bounce" style="color: #d9534f;"></i>
         <marquee behavior="scroll" direction="left">જરૂરી સૂચના: ભારતીય રેલવે (Railway Recruitment 2026), પાસપોર્ટ એપ્લિકેશન, પાન કાર્ડ તથા ઇનકમ ટેક્સ રિટર્ન (ITR) ના ઓનલાઈન ફોર્મ ભરવાનું ચાલુ છે. ઘરે બેઠા કામ કરાવવા અત્યારે જ સંપર્ક કરો.</marquee>
@@ -382,12 +329,10 @@
         </div>
     </section>
 
-    <!-- 🆕 Smart Systems Features Section -->
+    <!-- Smart Systems Features Section -->
     <section id="smart-features" class="section-padding bg-light">
         <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2>
         <div class="smart-features-container">
-            
-            <!-- 1. WhatsApp Business Tools -->
             <div class="smart-card">
                 <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
                 <p>અમે ગ્રાહકોના ઝડપી સંપર્ક અને શ્રેષ્ઠ અનુભવ માટે સ્માર્ટ ડિજિટલ ટૂલ્સનો ઉપયોગ કરીએ છીએ:</p>
@@ -397,8 +342,6 @@
                     <li><strong>૨૪/૭ એટેન્ડન્સ:</strong> ઓફિસ સમય સિવાય પણ ઓટોમેટેડ ગ્રીટિંગ મેસેજ સિસ્ટમ.</li>
                 </ul>
             </div>
-
-            <!-- 2. Customer Database & Follow-up -->
             <div class="smart-card">
                 <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ફોલો-અપ</h3>
                 <p>તમારા જરૂરી દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી ઓર્ગેનાઈઝ કરીએ છીએ:</p>
@@ -408,94 +351,123 @@
                     <li><strong>વન-ક્લિક હિસ્ટ્રી:</strong> જૂના ગ્રાહકોના દસ્તાવેજો ફરીથી અપલોડ કરવાની ઝંઝટમાંથી મુક્તિ.</li>
                 </ul>
             </div>
-
         </div>
     </section>
 
-    <!-- Services Section (તમામ ૧૦ સેવાઓ) -->
+    <!-- Services Section (ડબલ ઍક્શન બટન સાથેની ૧૦ સેવાઓ) -->
     <section id="services" class="section-padding bg-white">
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container">
             
             <!-- 1. Passport Service -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાસપોર્ટ%20એપ્લિકેશન%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-passport"></i></div>
                 <h3>પાસપોર્ટ એપ્લિકેશન</h3>
                 <p>નવો પાસપોર્ટ બનાવવા માટે ઓનલાઈન ફોર્મ, ડોક્યુમેન્ટ વેરિફિકેશન અને પાસપોર્ટ કેન્દ્રની એપોઇન્ટમેન્ટ સેટઅપ.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાસપોર્ટ%20એપ્લિકેશન%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20પાસપોર્ટ%20એપ્લિકેશન%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 2. PF -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20PF%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
                 <h3>PF નું તમામ કામકાજ</h3>
-                <p>PF ઉપાડવું, એડવાન્સ Mony, KYC અપડેટ અને નામ/જન્મતારીખ સુધારણા જેવી તમામ કામગીરી.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <p>PF ઉપાડવું, એડવાન્સ મની, KYC અપડેટ અને નામ/જન્મતારીખ સુધારણા જેવી તમામ કામગીરી.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20PF%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20PF%20ના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 3. Driving License -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-id-card"></i></div>
                 <h3>ડ્રાઈવિંગ લાયસન્સ</h3>
                 <p>લર્નિંગ લાયસન્સ, પાકું લાયસન્સ, રીન્યુઅલ અને RTO એપોઇન્ટમેન્ટ સેટઅપ.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20ડ્રાઈવિંગ%20લાયસન્સ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 4. PAN Card -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-address-card"></i></div>
                 <h3>પાન કાર્ડ (PAN Card)</h3>
-                <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાર્ડ મેળવવું.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાગળ મેળવવું.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20પાન%20કાર્ડ%20બનાવવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 5. Light Bill -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
                 <h3>લાઇટ બિલમાં નામ ચેન્જ</h3>
                 <p>તમારી માલિકીના લાઇટ બિલમાં જૂનું નામ બદલીને નવું નામ ઓનલાઈન સચોટ રીતે કરી આપવામાં આવશે.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 6. Voter Card -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ચૂંટણી%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-check-to-slot"></i></div>
                 <h3>વોટર આઈડી (Voter Card)</h3>
                 <p>નવું ચૂંટણી કાર્ડ, એડ્રેસ ટ્રાન્સફર, ફોટો અને નામની ભૂલો ઓનલાઈન સુધારી આપવી.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ચૂંટણી%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ચૂંટણી%20કાર્ડના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 7. E-Shram -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઈ-શ્રમ%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
                 <h3>ઈ-શ્રમ કાર્ડ (E-Shram)</h3>
                 <p>શ્રમિકો માટે સરકારી યોજનાઓનો લાભ લેવા માટેનું નવું ઈ-શ્રમ કાર્ડ રજીસ્ટ્રેશન.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઈ-શ્રમ%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ઈ-શ્રમ%20કાર્ડ%20બનાવવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 8. Govt Forms -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઓનલાઈન%20સરકારી%20照મ%20ભરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
                 <h3>ઓનલાઈન સરકારી ફોર્મ</h3>
                 <p>વિવિધ સરકારી યોજનાઓ, સબસિડી, સ્કોલરશીપ અને ભરતી માટેના તમામ પ્રકારના ઓનલાઈન ફોર્મ.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઓનલાઈન%20સરકારી%20ફોર્મ%20ભરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ઓનલાઈન%20સરકારી%20ફોર્મ%20ભરવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 9. ITR -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20રીટર્ન%20ફાઈલિંગ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
                 <h3>ITR રીટર્ન ફાઈલિંગ</h3>
                 <p>નોકરિયાત અને વેપારીઓ માટે નિયમ અનુસાર ઇનકમ ટેક્સ રિટર્ન (ITR) ઓનલાઈન ફાઈલ કરવું.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20રીટર્ન%20ફાઈલિંગ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ITR%20રીટર્ન%20ફાઈલિંગ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
             <!-- 10. Ration Card -->
-            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="service-card">
+            <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
                 <h3>રેશન કાર્ડનું કામકાજ</h3>
                 <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું રેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
-                <div class="click-to-send"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં મેસેજ મોકલો</div>
-            </a>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20રેશન%20કાર્ડના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
 
         </div>
     </section>
