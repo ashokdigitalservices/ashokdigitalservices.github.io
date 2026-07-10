@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
-    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, PF, પાન કાર્ડ, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
+    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, PF, પાન કાર્ડ, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન kaart અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
     
     <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -133,7 +133,7 @@
             flex-wrap: wrap;
         }
 
-        .btn-call, .btn-wp {
+        .btn-call, .btn-wp, .btn-share-main {
             color: white;
             padding: 14px 30px;
             font-size: 1.1rem;
@@ -149,7 +149,10 @@
 
         .btn-call { background-color: #198754; }
         .btn-wp { background-color: #25d366; }
-        .btn-call:hover, .btn-wp:hover { transform: translateY(-2px); }
+        
+        /* 🆕 બહાર હાઈલાઈટ કરેલું મેઈન શેર બટન સ્ટાઈલ */
+        .btn-share-main { background-color: #ff9800; } /* ઓરેન્જ રંગ જેથી તરત દેખાય */
+        .btn-call:hover, .btn-wp:hover, .btn-share-main:hover { transform: translateY(-2px); }
 
         .section-padding { padding: 80px 20px; }
         .bg-light { background-color: #eef2f7; }
@@ -177,34 +180,7 @@
         .status-box input { width: 100%; padding: 14px; margin: 15px 0; border: 1px solid #ced4da; border-radius: 8px; font-size: 1.05rem; text-align: center; }
         .status-box button { background: #0b4c8c; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.05rem; transition: background 0.2s; }
         .status-box button:hover { background: #083868; }
-        #statusResult { margin-top: 25px; font-size: 1.2rem; font-weight: bold; min-height: 30px; }
-
-        /* 🆕 Action Buttons for Status (WhatsApp & Share) */
-        .status-buttons-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 15px;
-        }
-
-        .btn-status-action {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.95rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .btn-status-action:hover { transform: translateY(-2px); }
-
-        .btn-wp-get { background-color: #25d366; } /* લીલું બટન */
-        .btn-wp-share { background-color: #0b4c8c; } /* બ્લુ શેર બટન */
+        #statusResult { margin-top: 25px; font-size: 1.2rem; font-weight: bold; color: #198754; }
 
         /* Services Grid */
         .services-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
@@ -259,7 +235,8 @@
             .navbar { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
-            .hero .cta-buttons { display: none; }
+            /* હીરો સેક્શનમાં મોબાઈલમાં બટનો છુપાવવા નહિ કારણ કે નવું શેર બટન છે */
+            .hero .cta-buttons { display: flex; } 
         }
     </style>
 </head>
@@ -299,8 +276,13 @@
             <h1>સરકારી અને ડિજિટલ કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
             <p>તમામ પ્રકારના ઓનલાઈન ફોર્મ, PF, ડ્રાઈવિંગ લાયસન્સ, પાન કાર્ડ, પાસપોર્ટ અને ઇનકમ ટેક્સ રિટર્ન (ITR) નું કામ ઘરે બેઠા એકદમ સચોટ અને ભરોસાપાત્ર રીતે કરી આપવામાં આવશે.</p>
             <div class="cta-buttons">
-                <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> અત્યારે જ કોલ કરો</a>
-                <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ મેસેજ કરો</a>
+                <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
+                <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> મેસેજ કરો</a>
+                
+                <!-- 🆕 કાયમી મેઈન બહાર જ સેટ કરેલું વેબસાઈટ શેર બટન -->
+                <a href="https://wa.me/?text=*Ashok%20Digital%20Services*%20-%20તમામ%20પ્રકારના%20સરકારી%20ઓનલાઈન%20ફોર્મ,%20PF,%20પાન%20કાર્ડ,%20ડ્રાઈવિંગ%20લાયસન્સ,%20પાસપોર્ટ%20અને%20ITR%20નું%20કામ%20ઘરે%20બેઠા%20કરાવવા%20માટેની%20બેસ્ટ%20વેબસાઈટ.%20આજે%20જ%20મુલાકાત%20લો:%20https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
+                    <i class="fa-solid fa-share-nodes"></i> સાઇટ શેર કરો
+                </a>
             </div>
         </div>
     </section>
@@ -466,7 +448,7 @@
             <!-- 10. Ration Card -->
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
-                <h3>રેશન કાર્ડનું કામકાજ</h3>
+                <h3>રેશન CARDનું કામકાજ</h3>
                 <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું રેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
@@ -488,7 +470,7 @@
             </div>
             <div class="review-card">
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ સરસ સરસ સર્વિસ!"</p>
+                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ સરસ સર્વિસ!"</p>
                 <div class="reviewer-name">- સંજય શાહ, આણંદ</div>
             </div>
             <div class="review-card">
@@ -573,11 +555,10 @@
         <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" style="background-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
     </div>
 
-    <!-- Smart Status Checking JavaScript System with WhatsApp Get & Forward Share Options -->
+    <!-- Smart Status Checking JavaScript System -->
     <script>
-        // આ તમારો મેઈન ડેટાબેઝ છે ભાઈ, અહીં તમે કસ્ટમરના નંબર અને સ્ટેટસ લાઈનો ઉમેરી શકો છો
         const database = {
-            "9484418910": "તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે અને RTO/પાસપોર્ટ એપોઇન્ટમેન્ટ બુક થઈ ગઈ છે.",
+            "9484418910": "નમસ્તે અશોકભાઈ, તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે અને RTO એપોઇન્ટમેન્ટ બુક થઈ ગઈ છે.",
             "9876543210": "તમારું ITR રીટર્ન ફાઈલિંગ સંપૂર્ણ રીતે પૂર્ણ થઈ ગયું છે.",
             "1234567890": "તમારું નવું પાન કાર્ડ બની ગયું છે, કૃપા કરીને ઓફિસેથી કલેક્ટ કરી લો."
         };
@@ -593,30 +574,8 @@
             }
 
             if (database[input]) {
-                const currentStatus = database[input];
-                
-                // ૧. ગ્રાહક પોતાના માટે અથવા તમને મોકલવા માટેનો ટેક્સ્ટ (વૉટ્સએપ પર મેળવો)
-                const textMessageGet = `નમસ્તે અશોક ડિજિટલ સર્વિસીસ, મારો ટ્રેકિંગ આઈડી / નંબર ${input} છે. મારી એપ્લિકેશનનું લાઈવ સ્ટેટસ આ મુજબ છે: "${currentStatus}".`;
-                const encodedTextGet = encodeURIComponent(textMessageGet);
-                const whatsappLinkGet = `https://wa.me/919484418910?text=${encodedTextGet}`;
-
-                // 2. 🆕 ગ્રાહક પોતાના મિત્રો/પરિવાર સાથે સ્ટેટસ આગળ શેર કરવા માટેનો ટેક્સ્ટ (કોઈપણ નંબર વગરની લિંક)
-                const textMessageShare = `*Ashok Digital Services - એપ્લિકેશન લાઈવ સ્ટેટસ*\n\n📌 *ટ્રેકિંગ આઈડી / નંબર:* ${input}\n✅ *લાઈવ સ્ટેટસ:* ${currentStatus}\n\n👉 તમે પણ તમારું ઓનલાઈન કામ ઘરે બેઠા કરાવવા અને સ્ટેટસ જોવા માટે મુલાકાત લો: ashokdigitalservices.github.io`;
-                const encodedTextShare = encodeURIComponent(textMessageShare);
-                const whatsappLinkShare = `https://wa.me/?text=${encodedTextShare}`; // અહીં કોઈ નંબર નથી એટલે ગ્રાહક ગમે તેને ફોરવર્ડ કરી શકશે.
-
-                // સ્ક્રીન પર લાઈવ રિઝલ્ટ અને બંને એક્શન બટનો બતાવવા
-                resultDiv.innerHTML = `
-                    <p style="color: #198754; margin-bottom: 15px; background: #e8f5e9; padding: 10px; border-radius: 8px;">📊 Status: ${currentStatus}</p>
-                    <div class="status-buttons-container">
-                        <a href="${whatsappLinkGet}" target="_blank" class="btn-status-action btn-wp-get">
-                            <i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ પર મેળવો
-                        </a>
-                        <a href="${whatsappLinkShare}" target="_blank" class="btn-status-action btn-wp-share">
-                            <i class="fa-solid fa-share-nodes"></i> મિત્રો સાથે શેર કરો
-                        </a>
-                    </div>
-                `;
+                resultDiv.innerHTML = "📊 Status: " + database[input];
+                resultDiv.style.color = "#198754";
             } else {
                 resultDiv.innerHTML = "Status: માફ કરશો, આ નંબર માટે કોઈ ડેટા મળ્યો નથી. કૃપા કરીને સાચો નંબર નાખો.";
                 resultDiv.style.color = "#d9534f";
