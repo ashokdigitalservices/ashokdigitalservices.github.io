@@ -3,105 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
-    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, PF, ESIC, પાન કાર્ડ અને ITR રીટર્ન માટેનું સ્થળ.">
     
+    <!-- SEO Meta Tags -->
+    <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
+    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, PF & ESIC, પાન કાર્ડ, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
+    
+    <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        :root { --primary-color: #0b4c8c; --secondary-color: #198754; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; scroll-behavior: smooth; }
-        body { background-color: #f4f6f9; top: 0 !important; }
+        :root {
+            --primary-color: #0b4c8c;
+            --secondary-color: #198754;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+        }
 
-        /* Google Translate Styling */
-        #google_translate_element { display: inline-block; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+            padding-bottom: 60px;
+            top: 0 !important; /* Google Translate બાર ઓવરરાઈડ */
+        }
+
+        /* Google Translate બોક્સ માટે ક્લાસિક સ્ટાઇલીંગ */
+        #google_translate_element {
+            display: inline-block;
+        }
         .goog-te-banner-frame.skiptranslate { display: none !important; }
         .goog-logo-link { display: none !important; }
-        .goog-te-gadget .goog-te-combo { padding: 6px 12px; font-weight: bold; color: #0b4c8c; border: 2px solid #0b4c8c; border-radius: 5px; cursor: pointer; }
+        .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
+        .goog-te-gadget .goog-te-combo {
+            padding: 6px 10px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #0b4c8c;
+            border: 2px solid #0b4c8c;
+            border-radius: 5px;
+            background: #fff;
+            cursor: pointer;
+            outline: none;
+        }
 
-        header { background: #fff; padding: 15px 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
-        .logo-text { font-weight: 800; color: var(--primary-color); font-size: 1.3rem; }
-        .nav-links { display: flex; align-items: center; list-style: none; gap: 20px; }
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: 50px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        .logo-text {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0b4c8c;
+            line-height: 1.2;
+        }
         
+        .logo-text span {
+            display: block;
+            font-size: 0.85rem;
+            color: #198754;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        /* Ticker for Updates */
+        .ticker-wrap {
+            background: #fff3cd;
+            color: #856404;
+            padding: 8px 20px;
+            font-weight: bold;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #ffeeba;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Hero Section with Full Photo Background */
+        .hero {
+            background: url('166036.png') no-repeat center center/cover;
+            padding: 120px 20px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 0 3px 6px rgba(0,0,0,0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.7);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-call, .btn-wp, .btn-share-main {
+            color: white;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.2s;
+        }
+
+        .btn-call { background-color: #198754; }
+        .btn-wp { background-color: #25d366; }
+        .btn-share-main { background-color: #ff9800; } 
+        .btn-call:hover, .btn-wp:hover, .btn-share-main:hover { transform: translateY(-2px); }
+
         .section-padding { padding: 80px 20px; }
-        .hero { background: url('166036.png') no-repeat center center/cover; padding: 120px 20px; text-align: center; color: white; position: relative; }
-        .hero::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1; }
-        .hero-container { position: relative; z-index: 2; }
-        
-        .cta-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
-        .btn-call, .btn-wp, .btn-share { padding: 14px 25px; border-radius: 30px; text-decoration: none; color: white; font-weight: bold; }
-        .btn-call { background: #198754; } .btn-wp { background: #25d366; } .btn-share { background: #ff9800; }
+        .bg-light { background-color: #eef2f7; }
+        .bg-white { background-color: #ffffff; }
 
-        /* Status Tracker */
+        .section-title {
+            text-align: center;
+            color: #0b4c8c;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .about-content { max-width: 900px; margin: 0 auto; text-align: center; font-size: 1.15rem; color: #444; }
+
+        /* Workspace Photo Section */
+        .workspace-section { padding: 60px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 40px; background: #ffffff; }
+        .workspace-img { max-width: 100%; width: 450px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .workspace-text { width: 500px; }
+        .workspace-text h2 { color: #0b4c8c; font-size: 2rem; margin-bottom: 15px; font-weight: 800; }
+
+        /* Status Tracker Styling */
         .status-section { padding: 60px 20px; background: #eef2f7; text-align: center; }
-        .status-box { max-width: 500px; margin: 0 auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .status-box input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; }
-        .status-box button { background: var(--primary-color); color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; }
-        #statusResult { margin-top: 20px; font-weight: bold; color: green; }
+        .status-box { max-width: 550px; margin: 0 auto; padding: 35px; background: #ffffff; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-top: 5px solid #0b4c8c; }
+        .status-box input { width: 100%; padding: 14px; margin: 15px 0; border: 1px solid #ced4da; border-radius: 8px; font-size: 1.05rem; text-align: center; }
+        .status-box button { background: #0b4c8c; color: white; border: none; padding: 12px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.05rem; transition: background 0.2s; }
+        .status-box button:hover { background: #083868; }
+        #statusResult { margin-top: 25px; font-size: 1.2rem; font-weight: bold; color: #198754; }
 
-        /* Service Cards */
-        .services-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .service-card { background: #fff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
-        .card-action-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 15px; }
-        .action-link { padding: 10px; border-radius: 5px; text-decoration: none; font-size: 0.9rem; font-weight: bold; color: white; background: var(--primary-color); }
+        /* Services Grid */
+        .services-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { background: #fff; padding: 30px 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #0b4c8c; transition: transform 0.3s; }
+        .service-card:hover { transform: translateY(-3px); border-top-color: #198754; }
+        .icon-box { width: 70px; height: 70px; background: rgba(11, 76, 140, 0.1); color: #0b4c8c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem; }
+
+        /* Card Action Buttons */
+        .card-action-buttons { display: flex; flex-direction: column; gap: 10px; margin-top: 20px; }
+        .action-link { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 15px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem; transition: background 0.2s; }
+        .btn-action-info { background-color: #e8f5e9; color: #198754; border: 1px solid #198754; }
+        .btn-action-info:hover { background-color: #c8e6c9; }
+        .btn-action-doc { background-color: #e3f2fd; color: #0b4c8c; border: 1px solid #0b4c8c; }
+        .btn-action-doc:hover { background-color: #bbdefb; }
+
+        /* Smart Systems Section */
+        .smart-features-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
+        .smart-card { background: #fff; padding: 35px 25px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); border-bottom: 4px solid #198754; }
+        .smart-card h3 { color: #0b4c8c; font-size: 1.4rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .smart-card ul { list-style: none; margin-top: 15px; }
+        .smart-card ul li { margin-bottom: 10px; position: relative; padding-left: 25px; color: #555; }
+        .smart-card ul li::before { content: "\f00c"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; left: 0; color: #198754; }
+
+        /* Reviews & FAQ */
+        .reviews-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .review-card { background: #f8f9fa; padding: 30px; border-radius: 12px; border-left: 5px solid #198754; box-shadow: 0 4px 10px rgba(0,0,0,0.02); }
+        .stars { color: #ffc107; margin-bottom: 10px; }
+        .reviewer-name { font-weight: bold; margin-top: 15px; color: #0b4c8c; font-size: 0.95rem;}
         
-        @media (max-width: 768px) { .navbar { flex-direction: column; gap: 15px; } }
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: #fff; margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .faq-question { font-weight: bold; color: #0b4c8c; margin-bottom: 8px; font-size: 1.1rem; }
+        .faq-answer { color: #555; }
+
+        /* Payment QR Container */
+        .qr-container { max-width: 400px; margin: 0 auto; background: #f8f9fa; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px dashed #198754; text-align: center; }
+        .pay-icon-large { font-size: 4.5rem; color: #0b4c8c; margin-bottom: 15px; }
+        .upi-details { background: white; padding: 12px; border-radius: 8px; border: 1px solid #ced4da; font-size: 1.1rem; font-weight: bold; margin: 15px 0; display: block; color: #333; }
+        .btn-pay-action { background-color: #0b4c8c; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; }
+
+        /* Contact Details */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .contact-info { background: #fff; padding: 40px; border-radius: 16px; }
+        .info-item { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
+        .info-icon { width: 50px; height: 50px; background: rgba(25, 135, 84, 0.1); color: #198754; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+
+        footer { background: #212529; color: #fff; text-align: center; padding: 30px 20px; }
+        .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; z-index: 9999; display: none; grid-template-columns: 1fr 1fr; }
+        .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
+
+        @media (max-width: 768px) {
+            .navbar { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+            .fixed-call-bar { display: grid; }
+            .hero .cta-buttons { display: flex; } 
+            nav ul { flex-direction: column; gap: 12px; }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Top Announcement Ticker -->
+    <div class="ticker-wrap">
+        <i class="fa-solid fa-bell fa-bounce" style="color: #d9534f;"></i>
+        <marquee behavior="scroll" direction="left">જરૂરી સૂચના: ભારતીય રેલવે (Railway Recruitment 2026), પાસપોર્ટ એપ્લિકેશન, પાન કાર્ડ તથા ઇનકમ ટેક્સ રિટર્ન (ITR) ના ઓનલાઈન ફોર્મ ભરવાનું ચાલુ છે. ઘરે બેઠા કામ કરાવવા અત્યારે જ સંપર્ક કરો.</marquee>
+    </div>
+
+    <!-- Header Section -->
     <header>
         <div class="navbar">
-            <div class="logo-text">ASHOK DIGITAL SERVICES</div>
-            <ul class="nav-links">
-                <li><a href="#home">હોમ</a></li>
-                <li><a href="#services">સેવાઓ</a></li>
-                <li><div id="google_translate_element"></div></li>
-            </ul>
+            <a href="#home" class="logo-container">
+                <img src="166032.png" alt="Ashok Digital Services Logo" class="logo-img">
+                <div class="logo-text">
+                    ASHOK DIGITAL SERVICES
+                    <span>તમારી ઓનલાઈન ડિજિટલ સહાયક</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">હોમ</a></li>
+                    <li><a href="#about">અમારી વિશે</a></li>
+                    <li><a href="#status">સ્ટેટસ જુઓ</a></li>
+                    <li><a href="#services">સેવાઓ</a></li>
+                    <li><a href="#payment">પેમેન્ટ</a></li>
+                    <!-- ફોટાવાળું અસલી ગૂગલ ટ્રાન્સલેટર ડ્રોપડાઉન બોક્સ -->
+                    <li><div id="google_translate_element"></div></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
-            <h1>સરકારી અને ડિજિટલ કામકાજ</h1>
+            <h1>સરકારી અને ડિજિટલ કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
+            <p>તમામ પ્રકારના ઓનલાઈન ફોર્મ, PF & ESIC, ડ્રાઈવિંગ લાયસન્સ, પાન કાર્ડ, પાસપોર્ટ અને ઇનકમ ટેક્સ રિટર્ન (ITR) નું કામ ઘરે બેઠા એકદમ સચોટ અને ભરોસાપાત્ર રીતે કરી આપવામાં આવશે.</p>
             <div class="cta-buttons">
-                <a href="tel:+919484418910" class="btn-call">કોલ કરો</a>
-                <a href="https://wa.me/?text=Ashok%20Digital%20Services%20ની%20મુલાકાત%20લો:%20https://ashokdigitalservices.github.io" class="btn-share">સાઇટ શેર કરો</a>
+                <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
+                <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> મેસેજ કરો</a>
+                <a href="https://wa.me/?text=*Ashok%20Digital%20Services*%20-%20તમામ%20પ્રકારના%20સરકારી%20ઓનલાઈન%20ફોર્મ,%20PF%20%26%20ESIC,%20પાન%20કાર્ડ,%20ડ્રાઈવિંગ%20લાયસન્સ,%20પાસપોર્ટ%20અને%20ITR%20નું%20કામ%20ઘરે%20બેઠા%20કરાવવા%20માટેની%20બેસ્ટ%20વેબસાઈટ.%20આજે%20જ%20મુલાકાત%20લો:%20https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
+                    <i class="fa-solid fa-share-nodes"></i> સાઇટ શેર કરો
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- About Us Section -->
+    <section id="about" class="section-padding bg-white">
+        <h2 class="section-title">અમારા વિશે (About Us)</h2>
+        <div class="about-content">
+            <p style="margin-bottom: 20px; font-weight: bold; color: #0b4c8c;">વિશ્વાસ, સચોટતા અને ઝડપી ડિજિટલ સેવાઓનું એકમાત્ર સરનામું.</p>
+            <p>અમે લાંબા સમયના અનુભવ સાથે ગ્રાહકોને તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, પાસપોર્ટ, RTO લાયસન્સ, પીએફ (PF) અને ટેક્સ કન્સલ્ટિંગની સેવાઓ પૂરી પાડીએ છીએ. ગ્રાહકોના કિંમતી દસ્તાવેજોની ગુપ્તતા અને સુરક્ષા જાળવવી એ જ અમારો મુખ્ય ધ્યેય છે. અમારું લક્ષ્ય તમને સરકારી કચેરીઓના ધક્કા ખાધા વગર ઘરે બેઠા સો ટકા સાચું કામ કરી આપવાનું છે.</p>
+        </div>
+    </section>
+
+    <!-- Working Office Photo Section -->
+    <section class="workspace-section">
+        <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Workspace" class="workspace-img">
+        <div class="workspace-text">
+            <h2>અમે તમારી સેવામાં હરહંમેશ તૈયાર</h2>
+            <p>અમે અત્યાધુનિક ટેકનોલોજી અને પ્રોફેશનલ લેપટોપ સેટઅપનો ઉપયોગ કરીને તમારું દરેક સરકારી કામ એકદમ ઝડપથી અને સચોટ રીતે કરીએ છીએ. તમારા મહત્વના દસ્તાવેજોની સુરક્ષા અને સમયસર સો ટકા સાચું કામ પૂરું કરવું એ અમારી પહેલી જવાબદારી છે.</p>
+        </div>
+    </section>
+
+    <!-- Smart Client Application Status Tracker -->
     <section id="status" class="status-section">
-        <h2>તમારું સ્ટેટસ ચેક કરો</h2>
+        <h2 class="section-title">તમારી એપ્લિકેશનનું સ્ટેટસ ચેક કરો</h2>
         <div class="status-box">
-            <input type="text" id="userInput" placeholder="નંબર નાખો">
-            <button onclick="checkStatus()">સ્ટેટસ જુઓ</button>
+            <p style="color: #555; font-weight: 600;">તમારો રજીસ્ટર્ડ મોબાઈલ નંબર અથવા એપ્લિકેશન આઈડી દાખલ કરો:</p>
+            <input type="text" id="userInput" placeholder="દા.ત. 9484418910">
+            <button onclick="checkStatus()">સ્ટેટસ જુઓ (View Status)</button>
             <div id="statusResult"></div>
         </div>
     </section>
 
-    <section id="services" class="section-padding">
-        <h2 class="section-title">અમારી મુખ્ય સેવાઓ</h2>
-        <div class="services-container">
-            <!-- PF & ESIC Service Card Updated -->
-            <div class="service-card">
-                <h3>PF & ESIC Consultancy</h3>
-                <p>PF ઉપાડવું, એડવાન્સ મની, ESIC ક્લેમ, KYC અપડેટ, રજીસ્ટ્રેશન અને PF/ESIC ને લગતી તમામ કામગીરી.</p>
-                <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=મને%20PF%20અને%20ESIC%20કામ%20માટે%20માહિતી%20જોઈએ%20છે" class="action-link">માહિતી મેળવો</a>
-                </div>
+    <!-- Smart Systems Features Section -->
+    <section id="smart-features" class="section-padding bg-white">
+        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2>
+        <div class="smart-features-container">
+            <div class="smart-card">
+                <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
+                <p>અમે ગ્રાહકોના ઝડપી સંપર્ક અને શ્રેષ્ઠ અનુભવ માટે સ્માર્ટ ડિજિટલ ટૂલ્સનો ઉપયોગ કરીએ છીએ:</p>
+                <ul>
+                    <li><strong>ઝડપી પ્રત્યુત્તર (Quick Replies):</strong> તમારા દરેક સામાન્ય પ્રશ્નોના ત્વરિત જવાબો.</li>
+                    <li><strong>ઓફિશિયલ કેટલોગ સપોર્ટ:</strong> તમામ સેવાઓની ફી અને જરૂરી દસ્તાવેજોની યાદી સીધી વૉટ્સએપ પર.</li>
+                    <li><strong>૨૪/૭ એટેન્ડન્સ:</strong> ઓફિસ સમય સિવાય પણ ઓટોમેટેડ ગ્રીટિંગ મેસેજ સિસ્ટમ.</li>
+                </ul>
             </div>
-            <!-- તમે બાકીની સેવાઓ અહીં ઉમેરી શકો છો -->
+            <div class="smart-card">
+                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
+                <p>તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:</p>
+                <ul>
+                    <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ અને રેકોર્ડ્સ સો ટકા ગુપ્ત અને સેફ રહે છે.</li>
+                    <li><strong>ડિજિટલ નોમિની ઓર્ગેનાઇઝર:</strong> તમારા પરિવાર માટે ડિજિટલ એસેટ્સ અને દસ્તાવેજોનું ભવિષ્ય માટે સ્માર્ટ આયોજન.</li>
+                    <li><strong>વન-ક્લિક હિસ્ટ્રી:</strong> જૂના ગ્રાહકોના દસ્તાવેજો ફરીથી મેળવવાની આધુનિક કસ્ટમર સિસ્ટમ.</li>
+                </ul>
+            </div>
         </div>
     </section>
 
-    <!-- Language Script -->
+    <!-- Services Section (તમામ ૧૦ સેવાઓ અપડેટેડ) -->
+    <section id="services" class="section-padding bg-light">
+        <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
+        <div class="services-container">
+            
+            <!-- 1. PF & ESIC Service Card Updated -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
+                <h3>PF & ESIC Consultancy</h3>
+                <p>PF ઉપાડવું, એડવાન્સ મની, ESIC ક્લેમ, KYC અપડેટ, અને PF/ESIC ને લગતા બધા જ કામ ઘરે બેઠા સચોટ રીતે કરી આપવામાં આવશે.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20PF%20and%20ESIC%20Consultancy%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20PF%20અને%20ESIC%20ના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 2. Passport Service -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-passport"></i></div>
+                <h3>પાસપોર્ટ એપ્લિકેશન</h3>
+                <p>નવો પાસપોર્ટ બનાવવા માટે ઓનલાઈન ફોર્મ, ડોક્યુમેન્ટ વેરિફિકેશન અને પાસપોર્ટ કેન્દ્રની એપોઇન્ટમેન્ટ સેટઅપ.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાસપોર્ટ%20એપ્લિકેશન%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20પાસપોર્ટ%20એપ્લિકેશન%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 3. Driving License -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-id-card"></i></div>
+                <h3>ડ્રાઈવિંગ લાયસન્સ</h3>
+                <p>લર્નિંગ લાયસન્સ, પાકું લાયસન્સ, રીન્યુઅલ અને RTO એપોઇન્ટમેન્ટ સેટઅપ.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ડ્રાઈવિંગ%20લાયસન્સ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 4. PAN Card -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-address-card"></i></div>
+                <h3>પાન કાર્ડ (PAN Card)</h3>
+                <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાર્ડ મેળવવું.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20પાન%20કાર્ડ%20બનાવવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 5. Light Bill -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-lightbulb"></i></div>
+                <h3>લાઇટ બિલમાં નામ ચેન્જ</h3>
+                <p>તમારી માલિકીના લાઇટ બિલમાં જૂનું નામ બદલીને નવું નામ ઓનલાઈન સચોટ રીતે કરી આપવામાં આવશે.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20લાઇટ%20બિલમાં%20નામ%20ચેન્જ%20કરવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 6. Voter Card -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-check-to-slot"></i></div>
+                <h3>વોટર આઈડી (Voter Card)</h3>
+                <p>નવું ચૂંટણી કાર્ડ, એડ્રેસ ટ્રાન્સફર, ફોટો અને નામની ભૂલો ઓનલાઈન સુધારી આપવી.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ચૂંટણી%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ચૂંટણી%20કાર્ડના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 7. E-Shram -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-users-gear"></i></div>
+                <h3>ઈ-શ્રમ કાર્ડ (E-Shram)</h3>
+                <p>શ્રમિકો માટે સરકારી યોજનાઓનો લાભ લેવા માટેનું નવું ઈ-શ્રમ કાર્ડ રજીસ્ટ્રેશન.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઈ-શ્રમ%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ઈ-શ્રમ%20કાર્ડ%20બનાવવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 8. Govt Forms -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>ઓનલાઈન સરકારી ફોર્મ</h3>
+                <p>વિવિધ સરકારી યોજનાઓ, સબસિડી, સ્કોલરશીપ અને ભરતી માટેના તમામ પ્રકારના ઓનલાઈન ફોર્મ.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ઓનલાઈન%20સરકારી%20ફોર્મ%20ભરવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ઓનલાઈન%20સરકારી%20ફોર્મ%20ભરવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 9. ITR -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
+                <h3>ITR રીટર્ન ફાઈલિંગ</h3>
+                <p>નોકરિયાત અને વેપારીઓ માટે નિયમ અનુસાર ઇનકમ ટેક્સ રિટર્ન (ITR) ઓનલાઈન ફાઈલ કરવું.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20રીટર્ન%20ફાઈલિંગ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20ITR%20રીટર્ન%20ફાઈલિંગ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+            <!-- 10. Ration Card -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
+                <h3>રેશન કાર્ડનું કામકાજ</h3>
+                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું રેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
+                <div class="card-action-buttons">
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20રેશન%20કાર્ડના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Customers Reviews Section -->
+    <section id="reviews" class="section-padding bg-white">
+        <h2 class="section-title">ગ્રાહકોના અભિપ્રાય (Customer Reviews)</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"મારું PF નું અટકેલું કામ અશોકભાઈએ માત્ર થોડા જ દિવસોમાં પૂરું કરી આપ્યું. એકદમ વિશ્વાસપાત્ર કામ છે."</p>
+                <div class="reviewer-name">- રમેશભાઈ પટેલ, અમદાવાદ</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ સરસ સર્વિસ!"</p>
+                <div class="reviewer-name">- સંજય શાહ, આણંદ</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"નવું પાસપોર્ટ અને પાન કાર્ડ કઢાવવા માટે બેસ્ટ જગ્યા. બધી માહિતી બહુ જ સ્પષ્ટ રીતે સમજાવે છે."</p>
+                <div class="reviewer-name">- પ્રિયા શર્મા, વડોદડરા</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-padding bg-light">
+        <h2 class="section-title">વારંવાર પૂછાતા પ્રશ્નો (FAQ)</h2>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">૧. ઓનલાઈન કામ કરવા માટે દસ્તાવેજો (Documents) કઈ રીતે મોકલવાના રહેશે?</div>
+                <div class="faq-answer">તમે તમારા બધા જ જરૂરી દસ્તાવેજોના સાફ ફોટા પાડીને અથવા PDF બનાવીને સીધા અમારા ઓફિશિયલ વૉટ્સએપ નંબર પર મોકલી શકો છો.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">૨. શું મારું કામ ૧૦０% સુરક્ષિત અને ગુપ્ત રહેશે?</div>
+                <div class="faq-answer">હા, બિલકુલ. ગ્રાહકના ડેટા અને આઈડી પ્રૂફની સુરક્ષા અમારી સૌથી પહેલી પ્રાથમિકતા છે. તમારા દસ્તાવેજોનો ક્યારેય કોઈ ખોટો ઉપયોગ થશે નહીં.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">૩. કોઈપણ કામકાજનો ચાર્જ અને પેમેન્ટ કઈ રીતે કરવાનું રહેશે?</div>
+                <div class="faq-answer">દરેક સર્વિસનો ચાર્જ કામના પ્રકાર પર આધાર રાખે છે જે તમને અગાઉથી જણાવવામાં આવશે. તમે નીચે આપેલા ક્યુઆર કોડ અથવા UPI આઈડી દ્વારા ઓનલાઈન પેમેન્ટ કરી શકો છો.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Section -->
+    <section id="payment" class="section-padding bg-white">
+        <h2 class="section-title">ઓનલાઈન પેમેન્ટ (Pay Online)</h2>
+        <p style="text-align:center; color:#666; margin-bottom:30px;">કોઈપણ સેવાના ચાર્જ માટે તમે નીચે આપેલા UPI ID નો ઉપયોગ કરીને સીધું ગુગલ પે, ફોનપે કે પેટીએમથી સુરક્ષિત પેમેન્ટ કરી શકો છો.</p>
+        <div class="qr-container">
+            <div class="pay-icon-large"><i class="fa-solid fa-credit-card"></i></div>
+            <h3 style="color:#0b4c8c;">Ashoka India</h3>
+            <div class="upi-details">ashokbhai56585-1@okaxis</div>
+            <p style="font-size:0.9rem; color:#666; margin-bottom: 15px;">Copy or Scan this UPI ID to Pay</p>
+            <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પેમેન્ટ%20માટે%20QR%20કોડ%20મોકલો." target="_blank" class="btn-pay-action"><i class="fa-brands fa-whatsapp"></i> QR કોડ વૉટ્સએપ પર મેળવો</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section-padding bg-light">
+        <h2 class="section-title">સંપર્ક કરો (Contact Us)</h2>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>અમારી વિગતો</h3>
+                <p style="margin-bottom: 30px; color:#666;">કોઈપણ પૂછપરછ કે કામ માટે નીચે આપેલા નંબરો અથવા ઈમેઈલ પર સંપર્ક કરી શકો છો.</p>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4>મોબાઈલ નંબર</h4>
+                        <a href="tel:+919484418910" style="text-decoration:none; color:#333; font-weight:bold;">+91 9484418910</a>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4>ઈમેઈલ આઈડી</h4>
+                        <a href="mailto:ashokdigitalservices.in@gmail.com" style="text-decoration:none; color:#333; font-weight:bold;">ashokdigitalservices.in@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: #fff;">
+                <div style="text-align: center;">
+                    <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
+                    <h3>૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
+                    <p style="color: #666;">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
+    </footer>
+
+    <!-- Mobile Fixed Bar -->
+    <div class="fixed-call-bar">
+        <a href="tel:+919484418910" style="background-color: #198754;"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
+        <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" style="background-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
+    </div>
+
+    <!-- Smart Status Checking JavaScript System -->
+    <script>
+        const database = {
+            "9484418910": "નમસ્તે અશોકભાઈ, તમારું પાસપોર્ટનું કામ પ્રોસેસમાં છે અને RTO એપોઇન્ટમેન્ટ બુક થઈ ગઈ છે.",
+            "9876543210": "તમારું ITR રીટર્ન ફાઈલિંગ સંપૂર્ણ રીતે પૂર્ણ થઈ ગયું છે.",
+            "1234567890": "તમારું નવું પાન કાર્ડ બની ગયું છે, કૃપા કરીને ઓફિસેથી કલેક્ટ કરી લો."
+        };
+
+        function checkStatus() {
+            const input = document.getElementById('userInput').value.trim();
+            const resultDiv = document.getElementById('statusResult');
+            
+            if (input === "") {
+                resultDiv.innerHTML = "કૃપા કરીને નંબર અથવા એપ્લિકેશન આઈડી દાખલ કરો.";
+                resultDiv.style.color = "#d9534f";
+                return;
+            }
+
+            if (database[input]) {
+                resultDiv.innerHTML = "📊 Status: " + database[input];
+                resultDiv.style.color = "#198754";
+            } else {
+                resultDiv.innerHTML = "Status: માફ કરશો, આ નંબર માટે કોઈ ડેટા મળ્યો નથી. કૃપા કરીને સાચો નંબર નાખો.";
+                resultDiv.style.color = "#d9534f";
+            }
+        }
+    </script>
+
+    <!-- ગૂગલ ટ્રાન્સલેટર કમ્પ્લીટ અસલી સિસ્ટમ - ફક્ત ૩ ભાષા (English, Gujarati, Hindi) સાથે -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'gu',
-                includedLanguages: 'gu,hi,en',
+                pageLanguage: 'gu', 
+                includedLanguages: 'en,gu,hi', 
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
@@ -109,13 +629,5 @@
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
-    <script>
-        const database = { "9484418910": "તમારું કામ ચાલુ છે." };
-        function checkStatus() {
-            const input = document.getElementById('userInput').value;
-            const res = document.getElementById('statusResult');
-            res.innerHTML = database[input] ? "સ્ટેટસ: " + database[input] : "માહિતી મળી નથી.";
-        }
-    </script>
 </body>
 </html>
