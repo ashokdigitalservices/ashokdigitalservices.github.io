@@ -463,7 +463,7 @@
                 <h3>MSME ઉદ્યોગ આધાર રજીસ્ટ્રેશન</h3>
                 <p>તમારા નવા કે જૂના બિઝનેસ, દુકાન અથવા નાના ઉદ્યોગ માટે સરકારનું માન્ય Udyam (MSME) સર્ટિફિકેટ ઘરે બેઠા મેળવો.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આધાર%20રજીસ્ટ્રેશન%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આধার%20રજીસ્ટ્રેશન%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20MSME%20રજીસ્ટ્રેશન%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
                 </div>
             </div>
@@ -795,7 +795,7 @@
             toggleBotBox();
         }
 
-        // નવું અને અપડેટેડ ડોક્યુમેન્ટ અપલોડ હેન્ડલર (વોટ્સએપ ફોર્મેટ સાથે)
+        // સુધારેલું ઓટો-લિંક પ્રોટેક્ટેડ ડોક્યુમેન્ટ હેન્ડલર
         function handleUpload(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
@@ -813,13 +813,13 @@
             statusDiv.innerHTML = "⏳ વિગતો સુરક્ષિત રીતે સેટ થઈ રહી છે... કૃપા કરીને રાહ જુઓ.";
             statusDiv.style.color = "#ff9800";
 
-            // ફાઈલોની યાદી અને નામો તૈયાર કરવા માટે
+            // ફાઈલના નામમાં રહેલા નંબર વોટ્સએપ ડાયલર તરીકે ના ઓળખે તે માટે ઈમોજી ફોર્મેટિંગ
             let fileListText = "";
             for (let i = 0; i < files.length; i++) {
-                fileListText += `\n${i + 1}. ${files[i].name}`;
+                fileListText += `\n🔹 [ફાઈલ ${i + 1}]: ${files[i].name}`;
             }
 
-            // તમે આપેલું પરફેક્ટ વોટ્સએપ મેસેજ ફોર્મેટ
+            // પરફેક્ટ નોન-ક્લિકેબલ નંબર ફોર્મેટ
             const wpMessage = `નમસ્તે અશોક ડિજિટલ સર્વિસીસ,
 મેં વેબસાઈટ પર મારા ડોક્યુમેન્ટ અપલોડ કર્યા છે:
 👤 નામ: ${name}
