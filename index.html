@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Meta Tags -->
-    <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
+    <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજिटल સેવાઓ</title>
     <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, PF, પાન કાર્ડ, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
     
     <!-- Font Awesome for beautiful icons -->
@@ -35,20 +35,35 @@
             top: 0 !important;
         }
 
-        /* Google Translate Widget Styling */
-        .goog-te-banner-frame.skiptranslate { display: none !important; }
-        .goog-logo-link { display: none !important; }
-        .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
-        .goog-te-gadget .goog-te-combo {
-            padding: 6px 12px;
+        /* 🆕 ગૂગલ ટ્રાન્સલેટ બારને સંપૂર્ણ છુપાવવા માટે */
+        .goog-te-banner-frame.skiptranslate, .goog-te-banner-frame { display: none !important; }
+        body { top: 0px !important; }
+        #google_translate_element { display: none !important; }
+
+        /* 🆕 કસ્ટમ સુંદર લેંગ્વેજ બટન્સ સ્ટાઈલ */
+        .custom-language-selector {
+            display: flex;
+            gap: 8px;
+            background: #eef2f7;
+            padding: 4px;
+            border-radius: 30px;
+            border: 1px solid #ced4da;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 6px 14px;
             font-size: 0.9rem;
             font-weight: bold;
             color: #0b4c8c;
-            border: 2px solid #0b4c8c;
-            border-radius: 20px;
-            background: #fff;
             cursor: pointer;
-            outline: none;
+            border-radius: 20px;
+            transition: all 0.2s;
+        }
+
+        .lang-btn:hover {
+            background: rgba(11, 76, 140, 0.1);
         }
 
         header {
@@ -293,14 +308,24 @@
                     <li><a href="#home">હોમ</a></li>
                     <li><a href="#about">અમારી વિશે</a></li>
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
-                    <li><a href="#services">સેવાઓ</a></li>
+                    <li><a href="#services">சேવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
-                    <!-- ૩ મુખ્ય ભાષાનું કસ્ટમ ડ્રોપડાઉન કન્ટેનર -->
-                    <li><div id="google_translate_element"></div></li>
+                    
+                    <!-- 🆕 કાયમી કસ્ટમ સુંદર ભાષા બટનો જે હંમેશાં દેખાશે -->
+                    <li>
+                        <div class="custom-language-selector">
+                            <button class="lang-btn" onclick="changeLanguage('en')">English</button>
+                            <button class="lang-btn" onclick="changeLanguage('gu')">ગુજરાતી</button>
+                            <button class="lang-btn" onclick="changeLanguage('hi')">હિન્દી</button>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
+
+    <!-- બેકગ્રાઉન્ડમાં ગૂગલ ટ્રાન્સલેટનું હિડન એલિમેન્ટ (આ જરૂરી છે) -->
+    <div id="google_translate_element"></div>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -479,7 +504,7 @@
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
                 <h3>રેશન કાર્ડનું કામકાજ</h3>
-                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું رેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
+                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું રેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20રેશન%20કાર્ડના%20કામ%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
@@ -520,7 +545,7 @@
                 <div class="faq-answer">તમે તમારા બધા જ જરૂરી દસ્તાવેજોના સાફ ફોટા પાડીને અથવા PDF બનાવીને સીધા અમારા ઓફિશિયલ વૉટ્સએપ નંબર પર મોકલી શકો છો.</div>
             </div>
             <div class="faq-item">
-                <div class="faq-question">૨. શું મારું કામ ૧૦０% સુરક્ષિત અને ગુપ્ત રહેશે?</div>
+                <div class="faq-question">૨. શું મારું કામ ૧૦૦% સુરક્ષિત અને ગુપ્ત રહેશે?</div>
                 <div class="faq-answer">હા, બિલકુલ. ગ્રાહકના ડેટા અને આઈડી પ્રૂફની સુરક્ષા અમારી સૌથી પહેલી પ્રાથમિકતા છે. તમારા દસ્તાવેજોનો ક્યારેય કોઈ ખોટો ઉપયોગ થશે નહીં.</div>
             </div>
             <div class="faq-item">
@@ -613,15 +638,25 @@
         }
     </script>
 
-    <!-- 🆕 ગૂગલ ટ્રાન્સલેટર જાવાસ્ક્રિપ્ટ સિસ્ટમ - ફક્ત ૩ ભાષા સ્માર્ટ સેટઅપ -->
+    <!-- ગૂગલ ટ્રાન્સલેટર સિસ્ટમ લોડર -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'gu', 
-                includedLanguages: 'gu,hi,en', 
+                includedLanguages: 'en,gu,hi', 
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: true
+                autoDisplay: false
             }, 'google_translate_element');
+        }
+
+        // 🆕 કસ્ટમ બટન દ્વારા ગૂગલ ટ્રાન્સલેટર કંટ્રોલ કરવાનું ફંક્શન
+        function changeLanguage(langCode) {
+            var selectElem = document.querySelector('.goog-te-combo');
+            if (selectElem) {
+                selectElem.value = langCode;
+                // ગૂગલ ટ્રાન્સલેટરને ભાષા બદલવાની ખબર આપવા માટે ઇવેન્ટ ફાયર કરવી
+                selectElem.dispatchEvent(new Event('change'));
+            }
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
