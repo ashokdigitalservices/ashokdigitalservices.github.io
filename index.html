@@ -32,7 +32,7 @@
             color: #333;
             line-height: 1.6;
             padding-bottom: 60px;
-            top: 0 !important; /* Google Translate bar override */
+            top: 0 !important;
         }
 
         /* Google Translate Widget Styling */
@@ -40,7 +40,7 @@
         .goog-logo-link { display: none !important; }
         .goog-te-gadget { color: transparent !important; font-size: 0 !important; }
         .goog-te-gadget .goog-te-combo {
-            padding: 6px 10px;
+            padding: 6px 12px;
             font-size: 0.9rem;
             font-weight: bold;
             color: #0b4c8c;
@@ -258,7 +258,7 @@
         .info-icon { width: 50px; height: 50px; background: rgba(25, 135, 84, 0.1); color: #198754; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
 
         footer { background: #212529; color: #fff; text-align: center; padding: 30px 20px; }
-        .fixed-call-bar { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; z-index: 9999; grid-template-columns: 1fr 1fr; }
+        .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; z-index: 9999; display: none; grid-template-columns: 1fr 1fr; }
         .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
         @media (max-width: 768px) {
@@ -266,7 +266,7 @@
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
             .hero .cta-buttons { display: flex; } 
-            nav ul { flex-direction: column; gap: 10px; }
+            nav ul { flex-direction: column; gap: 12px; }
         }
     </style>
 </head>
@@ -295,7 +295,7 @@
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
-                    <!-- 🆕 ભાષા બદલવા માટેનું ગૂગલ ટ્રાન્સલેટ ડ્રોપડાઉન -->
+                    <!-- 3 મુખ્ય ભાષાનું કસ્ટમ ડ્રોપડાઉન કન્ટેનર -->
                     <li><div id="google_translate_element"></div></li>
                 </ul>
             </nav>
@@ -328,7 +328,7 @@
 
     <!-- Working Office Photo Section -->
     <section class="workspace-section">
-        <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Working on digital services" class="workspace-img">
+        <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Workspace" class="workspace-img">
         <div class="workspace-text">
             <h2>અમે તમારી સેવામાં હરહંમેશ તૈયાર</h2>
             <p>અમે અત્યાધુનિક ટેકનોલોજી અને પ્રોફેશનલ લેપટોપ સેટઅપનો ઉપયોગ કરીને તમારું દરેક સરકારી કામ એકદમ ઝડપથી અને સચોટ રીતે કરીએ છીએ. તમારા મહત્વના દસ્તાવેજોની સુરક્ષા અને સમયસર સો ટકા સાચું કામ પૂરું કરવું એ અમારી પહેલી જવાબદારી છે.</p>
@@ -352,7 +352,7 @@
         <div class="smart-features-container">
             <div class="smart-card">
                 <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
-                <p>અમે ગ્રાહકોના ઝડપી સંપર્ક અને શ્રેષ્ઠ અનુભવ માટે સ્માર્ટ ડિજિટલ ટૂલ્સનો ઉપયોગ કરીએ છીએ:</p>
+                <p>અમે ગ્રાહકોના ઝડપી સંપર્ક અને શ્રેષ્ઠ અનુભવ માટે સ્માર્ટ ડિજિટલ ટૂલ્સનો ઉપયોગ છીએ:</p>
                 <ul>
                     <li><strong>ઝડપી પ્રત્યુત્તર (Quick Replies):</strong> તમારા દરેક સામાન્ય પ્રશ્નોના ત્વરિત જવાબો.</li>
                     <li><strong>ઓફિશિયલ કેટલોગ સપોર્ટ:</strong> તમામ સેવાઓની ફી અને જરૂરી દસ્તાવેજોની યાદી સીધી વૉટ્સએપ પર.</li>
@@ -415,8 +415,8 @@
                 <h3>પાન કાર્ડ (PAN Card)</h3>
                 <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાર્ડ મેળવવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજிட்டલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20પાન%20કાર્ડ%20બનાવવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ૧-ક્લિક માં માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમેસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20પાન%20કાર્ડ%20બનાવવા%20માટે%20કયા%20કયા%20ડોક્યુમેન્ટ%20જોઈશે%20તેની%20યાદી%20મોકલો." target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</a>
                 </div>
             </div>
 
@@ -613,11 +613,12 @@
         }
     </script>
 
-    <!-- 🆕 ગૂગલ ટ્રાન્સલેટર જાવાસ્ક્રિપ્ટ સિસ્ટમ (બધી ભાષાઓ માટે) -->
+    <!-- 🆕 ફક્ત ૩ ભાષા (ગુજરાતી, હિન્દી, ઇંગ્લિશ) સેટ કરવા માટેની સિસ્ટમ -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'gu', // આપણી મુખ્ય સાઇટ ગુજરાતીમાં છે
+                pageLanguage: 'gu', 
+                includedLanguages: 'gu,hi,en', // અહીં ફક્ત ૩ ભાષાઓના કોડ રાખ્યા છે
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
