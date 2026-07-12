@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
-    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, આયુષ્માન કાર્ડ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, પાન કાર્ડ, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
+    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, આયુષ્માન કાર્ડ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, પાન કાર્ડ, ડ્રાઈવિંગ LTO લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
     
     <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,7 +34,6 @@
             padding-bottom: 60px;
         }
 
-        /* Custom Language Switcher Dropdown Style */
         .lang-switcher {
             padding: 6px 10px;
             font-size: 0.9rem;
@@ -78,18 +77,20 @@
             border-radius: 6px;
         }
 
-        .logo-text {
+        /* 🌟 લોગો ટાઇટલનો નવો એકદમ ઘાટો અને જોરદાર દેખાય એવો કલર */
+        .logo-text h4 {
             font-size: 1.3rem;
             font-weight: 800;
-            color: #0b4c8c;
+            color: #023e8a; /* એકદમ પ્રીમિયમ ડાર્ક બ્લુ કલર */
             line-height: 1.2;
+            letter-spacing: 0.5px;
         }
         
         .logo-text span {
             display: block;
             font-size: 0.85rem;
             color: #198754;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         nav ul {
@@ -150,6 +151,7 @@
             font-weight: 600;
             color: #333;
         }
+        @marquee { width: 100%; }
         @keyframes pulse {
             0% { opacity: 1; }
             50% { opacity: 0.6; }
@@ -179,14 +181,14 @@
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 800;
             text-shadow: 0 3px 6px rgba(0,0,0,0.7);
         }
 
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 35px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.7);
         }
@@ -285,27 +287,6 @@
         .upi-details { background: white; padding: 12px; border-radius: 8px; border: 1px solid #ced4da; font-size: 1.1rem; font-weight: bold; margin: 15px 0; display: block; color: #333; }
         .btn-pay-action { background-color: #0b4c8c; color: white; padding: 10px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; display: inline-block; }
 
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .contact-info { background: #fff; padding: 40px; border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.02); }
-        .info-item { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
-        .info-icon { width: 50px; height: 50px; background: rgba(25, 135, 84, 0.1); color: #198754; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-
-        footer { background: #212529; color: #fff; text-align: center; padding: 30px 20px; }
-        .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: #fff; z-index: 9999; display: none; grid-template-columns: 1fr 1fr; }
-        .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
-
-        .whatsapp-bot-widget { position: fixed; bottom: 80px; right: 25px; z-index: 9999; }
-        .whatsapp-bot-button { background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s; }
-        .whatsapp-bot-button:hover { transform: scale(1.1); }
-        .whatsapp-bot-box { width: 320px; background: white; border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); position: absolute; bottom: 75px; right: 0; display: none; overflow: hidden; border: 1px solid #e1e4e6; }
-        .whatsapp-bot-header { background: #075e54; color: white; padding: 15px; display: flex; align-items: center; gap: 10px; }
-        .whatsapp-bot-avatar { width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-        .whatsapp-bot-body { padding: 20px; background: #e5ddd5; max-height: 200px; overflow-y: auto; }
-        .whatsapp-bot-msg { background: white; padding: 10px 15px; border-radius: 8px; font-size: 0.95rem; color: #333; display: inline-block; max-width: 90%; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-        .whatsapp-bot-footer { padding: 10px; display: flex; gap: 8px; background: #f0f0f0; }
-        .whatsapp-bot-input { flex: 1; padding: 8px 12px; border: 1px solid #ccc; border-radius: 20px; outline: none; font-size: 0.9rem; }
-        .whatsapp-bot-send { background: #075e54; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
-
         @media (max-width: 768px) {
             .navbar { flex-direction: column; gap: 15px; }
             .hero h1 { font-size: 1.8rem; }
@@ -329,7 +310,7 @@
             <a href="#home" class="logo-container">
                 <img src="166032.png" alt="Ashok Digital Services Logo" class="logo-img">
                 <div class="logo-text">
-                    <span id="logoTitle">ASHOK DIGITAL SERVICES</span>
+                    <h4 id="logoTitle">ASHOK DIGITAL SERVICES</h4>
                     <span id="logoSub">તમારી ઓનલાઈન ડિજિટલ સહાયક</span>
                 </div>
             </a>
@@ -340,7 +321,6 @@
                     <li><a href="#status" id="navStatus">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services" id="navServices">સેવાઓ</a></li>
                     <li><a href="#payment" id="navPayment">પેમેન્ટ</a></li>
-                    <!-- 🌟 સુધારેલું કસ્ટમ લેન્ગ્વેજ ડ્રોપડાઉન બોક્સ -->
                     <li>
                         <select class="lang-switcher" onchange="changeLanguage(this.value)">
                             <option value="gu">Gujarati (ગુજરાતી)</option>
@@ -353,7 +333,7 @@
         </div>
     </header>
 
-    <!-- લાઇવ નોટિસ બોર્ડ સેક્શન -->
+    <!-- લાઇવ નોટિસ બોર્ડ సెక్షన్ -->
     <div class="notice-board">
         <div class="notice-container">
             <div class="notice-badge" id="noticeBadge"><i class="fa-solid fa-bullhorn"></i> લાઇવ નોટિસ</div>
@@ -421,7 +401,7 @@
                 </ul>
             </div>
             <div class="smart-card">
-                <h3 id="smartDbHead"><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ডેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
+                <h3 id="smartDbHead"><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
                 <p id="smartDbDesc">તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:</p>
                 <ul id="smartDbList">
                     <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ સંપૂર્ણ સેફ રહે છે.</li>
@@ -436,7 +416,7 @@
     <section id="services" class="section-padding bg-light">
         <h2 class="section-title" id="servicesTitleHead">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container" id="servicesGrid">
-            <!-- JavaScript automatic load inside specific language -->
+            <!-- Auto rendering by JavaScript engine -->
         </div>
     </section>
 
@@ -456,7 +436,7 @@
                     <option value="Passport">પાસપોર્ટ એપ્લિકેશન</option>
                     <option value="PF_ESIC">PF & ESIC Consultancy</option>
                     <option value="Driving_License">ડ્રાઈવિંગ લાયસન્સ</option>
-                    <option value="PAN">પาน કાર્ડ</option>
+                    <option value="PAN">પાન કાર્ડ</option>
                     <option value="ITR">ITR રિટર્ન / TDS ફાઈલ</option>
                     <option value="Other">અન્ય સરકારી ફોર્મ</option>
                 </select>
@@ -490,7 +470,7 @@
         </div>
     </section>
 
-    <!-- Contact Us Section -->
+    <!-- Contact Us Section (પાછું લાવી દીધેલું અસલી કનેક્શન કેન્દ્ર) -->
     <section id="contact" class="section-padding bg-white">
         <h2 class="section-title" id="contactTitleHead">સંપર્ક કરો (Contact Us)</h2>
         <div class="contact-grid">
@@ -515,7 +495,7 @@
             <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: #fff;">
                 <div style="text-align: center;">
                     <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
-                    <h3 id="guaranteeHead">૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
+                    <h3 id="guaranteeHead">100% વિશ્વાસપાત્ર સેવા</h3>
                     <p style="color: #666;" id="guaranteeDesc">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
                 </div>
             </div>
@@ -523,7 +503,7 @@
     </section>
 
     <footer id="footerText">
-        <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
+        <!-- Handle via script engine -->
     </footer>
 
     <!-- Fixed Bottom Mobile Navigation Bar -->
@@ -532,7 +512,7 @@
         <a href="https://wa.me/919484418910" target="_blank" style="background-color: #25d366;" id="fixWp"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
     </div>
 
-    <!-- વૉટ્સએપ ચેટ બોટ ವಿજેಟ್ -->
+    <!-- વૉટ્સએપ ચેટ બોટ વિજેટ -->
     <div class="whatsapp-bot-widget">
         <div class="whatsapp-bot-button" onclick="toggleBotBox()"><i class="fa-brands fa-whatsapp"></i></div>
         <div class="whatsapp-bot-box" id="botBox">
@@ -553,7 +533,6 @@
         </div>
     </div>
 
-    <!-- 🚀 અશોકભાઈનું પાવરફુલ ટ્રિપલ લેંગ્વેજ એન્જિન સ્ક્રિપ્ટ -->
     <script>
         const translations = {
             gu: {
@@ -573,16 +552,16 @@
                 smartWpHead: "વૉટ્સએપ બિઝનેસ સપોર્ટ", smartWpDesc: "અમે ગ્રાહકોના ઝડપી સંપર્ક અને શ્રેષ્ઠ અનુભવ માટે સ્માર્ટ ડિજિટલ ટૂલ્સનો ઉપયોગ કરીએ છીએ:",
                 smartWpList: "<li><strong>ઝડપી પ્રત્યુત્તર:</strong> તમારા દરેક સામાન્ય પ્રશ્નોના ત્વરિત જવાબો.</li><li><strong>ઓફિશિયલ કેટલોગ સપોર્ટ:</strong> તમામ સેવાઓની ફી સીધી વૉટ્સએપ પર.</li><li><strong>૨૪/૭ એટેન્ડન્સ:</strong> ઓફિસ સમય સિવાય પણ ઓટોમેટેડ સિસ્ટમ.</li>",
                 smartDbHead: "ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન", smartDbDesc: "તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:",
-                smartDbList: "<li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ સંપૂર્ણ સેફ રહે છે.</li><li><strong>ડિજિટલ નોમિની ઓર્ગેનાઇઝર:</strong> તમારા પરિવાર માટે ભવિષ્યનું સ્માર્ટ આયોજન.</li><li><strong>વન-ક્લિક હિસ્ટ્રી:</strong> જૂના ગ્રાહકોના ડેટા માટે સ્માર્ટ સિસ્ટમ.</li>",
+                smartDbList: "<li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ સંપૂર્ણ સેફ રહે છે.</li><li><strong>ડિજિટલ નોમિની ઓર્ગેનાઇઝર:</strong> તમારા પરિવાર માટે ભવિષ્યનું સ્માર્ટ આયોજન.</li><li><strong>વન-ક્લિક હિસ્ટ્રી:</strong> જૂના ગ્રાહકોના દસ્તાવેજો ફરીથી મેળવવાની આધુનિક સિસ્ટમ.</li>",
                 servicesTitleHead: "અમારી મુખ્ય સેવાઓ (Our Services)",
                 uploadTitleHead: "ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર", uploadSubHead: "અહીં વિગતો ભરીને સબમિટ કરો, ફાઈલોનું લિસ્ટ સીધું વૉટ્સએપ ચેટમાં સેટ થઈ જશે:",
                 optDefault: "-- કઈ સેવા માટે કાગળો મોકલવા છે? --", uploadBoxText: "અહીં ક્લિક કરીને ફાઈલો સિલેક્ટ કરો", btnUploadSubmit: "WhatsApp પર કાગળો મોકલો",
-                reviewsTitleHead: "ગ્રાહકોના અભિપ્રાય (Customer Reviews)", paymentTitleHead: "ઓનલાઈન પેમેન્ટ (Pay Online)", paymentBtn: "QR કોડ વૉટ્સએપ પર મેળવો",
+                reviewsTitleHead: "...ગ્રાહકોના અભિપ્રાય (Customer Reviews)", paymentTitleHead: "ઓનલાઈન પેમેન્ટ (Pay Online)", paymentBtn: "QR કોડ વૉટ્સએપ પર મેળવો",
                 contactTitleHead: "સંપર્ક કરો (Contact Us)", contactInfoHead: "અમારી વિગતો", contactInfoSub: "કોઈપણ પૂછપરછ કે કામ માટે નીચે આપેલા નંબરો અથવા ઈમેઈલ પર સંપર્ક કરી શકો છો.",
                 phoneLabel: "મોબાઈલ નંબર", emailLabel: "ઈમેઈલ આઈડી", guaranteeHead: "૧૦૦% વિશ્વાસપાત્ર સેવા", guaranteeDesc: "તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.",
                 footer: "<p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>",
                 botOnline: "● ઓનલાઇન સહાયક", botWelcome: "નમસ્તે ભાઈ! 🙏 હું અશોક ડિજિટલ બોટ છું. કઈ સેવા માટે પૂછપરછ કરવી છે? નીચે લખીને મોકલો!",
-                statusBlank: "કૃપા કરીને નંબર દાખલ કરો.", statusSuccess: "નમસ્તે અશોકભાઈ, તમારું કામ પ્રોસેસમાં છે.", statusFail: "કોઈ ડેટા મળ્યો નથી.", uploadWpOpen: "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં જ પેસ્ટ કરીને કાગળો સેન્ડ કરી દો."
+                statusBlank: "કૃપા કરીને નંબર દાખલ કરો.", statusSuccess: "નમસ્તે અશોકભાઈ, તમારું કામ પ્રોસેસમાં છે.", statusFail: "કોઈ ડેટા મળ્યો નથી.", uploadWpOpen: "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે..."
             },
             en: {
                 ticker: "Important Notice: Indian Railway Recruitment 2026, Ayushman Card, Passport, PAN Card, and Income Tax Return (ITR) online forms are open. Contact now!",
@@ -610,7 +589,7 @@
                 phoneLabel: "Mobile Number", emailLabel: "Email Address", guaranteeHead: "100% Reliable Execution", guaranteeDesc: "Uncompromised security, maximum accuracy, and hassle-free processing.",
                 footer: "<p>&copy; 2026 ASHOK DIGITAL SERVICES. All Rights Reserved.</p>",
                 botOnline: "● Online Assistant", botWelcome: "Hello! 🙏 I am Ashok Digital Assistant. How can I help you today? Send your query below!",
-                statusBlank: "Please enter a valid number.", statusSuccess: "Hello, your digital application is under process safely.", statusFail: "No record found.", uploadWpOpen: "⏳ Opening WhatsApp... please paste the generated text block and attach files manually."
+                statusBlank: "Please enter a valid number.", statusSuccess: "Hello, your application is under process safely.", statusFail: "No record found.", uploadWpOpen: "⏳ Opening WhatsApp..."
             },
             hi: {
                 ticker: "महत्वपूर्ण सूचना: भारतीय रेलवे भर्ती 2026, आयुष्मान भारत कार्ड, पासपोर्ट, पैन कार्ड और आयकर रिटर्न (ITR) ऑनलाइन फॉर्म भरना शुरू है।",
@@ -618,7 +597,7 @@
                 logoTitle: "ASHOK DIGITAL SERVICES", logoSub: "आपकी ऑनलाइन डिजिटल सहायक",
                 noticeBadge: "लाइव सूचना", noticeMarquee: "📢 रेलवे भर्ती 2026 फॉर्म शुरू हैं! | 🏥 आयुष्मान कार्ड: घर बैठे ₹5 लाख तक का मुफ्त इलाज कार्ड बनवाएं! | 📄 पीएफ और ईएसआई मासिक रिटर्न फाइलिंग चालू है! | 💼 एमएसएमई और दुकान लाइसेंस पंजीकरण तुरंत शुरू करें!",
                 heroTitle: "सरकारी और डिजिटल काम अब हुआ बेहद आसान और सुरक्षित!",
-                heroDesc: "सभी प्रकार के ऑनलाइन फॉर्म, आयुष्मान कार्ड, एमएसएमई उद्योग आधार, गुमास्ता लाइसेंस, पीएफ और ईएसआईसी, ड्राइविंग लाइसेंस, पैन कार्ड, पासपोर्ट और आयकर रिटर्न (ITR) का काम घर बैठे एकदम सटीक और भरोसेमंद तरीके से किया जाएगा।",
+                heroDesc: "सभी प्रकार के ऑनलाइन फॉर्म, आयुष्मान कार्ड, एमएसएमई उद्योग आधार, गुमास्ता लाइसेंस, पीएफ और ईसएआईसी, ड्राइविंग लाइसेंस, पैन कार्ड, पासपोर्ट और आयकर रिटर्न (ITR) का काम घर बैठे एकदम सटीक और भरोसेमंद तरीके से किया जाएगा।",
                 btnCall: "कॉल करें", btnWp: "व्हाट्सएप संदेश", btnShare: "साइट साझा करें",
                 aboutTitle: "हमारे बारे में", aboutSub: "विश्वास, सटीकता और तेज़ डिजिटल सेवाओं के लिए एकमात्र स्थान।",
                 aboutDesc: "हम लंबे अनुभव के साथ ग्राहकों को सभी प्रकार के ऑनलाइन सरकारी फॉर्म, आयुष्मान कार्ड, पासपोर्ट, आरटीओ लाइसेंस, पीएफ और टैक्स कंसल्टिंग सेवाएं प्रदान करते हैं। सरकारी कार्यालयों के चक्कर काटे बिना घर बैठे शत-प्रतिशत सही काम करके देना ही हमारा मुख्य उद्देश्य है।",
@@ -631,14 +610,14 @@
                 smartDbHead: "डेटा सुरक्षा और डिजिटल संगठन", smartDbDesc: "हम एक बहुत ही आधुनिक प्रणाली के माध्यम से आपकी महत्वपूर्ण संपत्तियों और फाइलों के डेटा को सुरक्षित करते हैं:",
                 smartDbList: "<li><strong>सुरक्षित डेटाबेस:</strong> ग्राहकों के महत्वपूर्ण पहचान पत्र पूरी तरह सुरक्षित रहते हैं।</li><li><strong>डिजिटल नॉमिनी ऑर्गनाइज़र:</strong> आपके परिवार के लिए डिजिटल संपत्तियों का स्मार्ट प्रबंधन।</li><li><strong>वन-क्लिक इतिहास:</strong> पुराने ग्राहकों के डेटा को खोजने की स्मार्ट व्यवस्था।</li>",
                 servicesTitleHead: "हमारी मुख्य सेवाएं",
-                uploadTitleHead: "ऑनलाइन दस्तावेज़ अपलोड केंद्र", uploadSubHead: "यहां विवरण भरें, दस्तावेज़ों की सूची सीधे व्हाट्सएप चैट में सेट हो जाएगी:",
-                optDefault: "-- आपको किस सेवा के लिए दस्तावेज भेजने हैं? --", uploadBoxText: "दस्तावेज़ों या पीडीएफ का चयन करने के लिए यहां क्लिक करें", btnUploadSubmit: "व्हाट्सएप पर दस्तावेज भेजें",
-                reviewsTitleHead: "ग्राहकों की प्रतिक्रिया", paymentTitleHead: "सुरक्षित ऑनलाइन भुगतान", paymentBtn: "व्हाट्सएप पर भुगतान क्यूआर कोड प्राप्त करें",
+                uploadTitleHead: "ऑनलाइन दस्तावेज अपलोड केंद्र", uploadSubHead: "यहां विवरण भरें, दस्तावेजों की सूची सीधे व्हाट्सएप चैट में सेट हो जाएगी:",
+                optDefault: "-- आपको किस सेवा के लिए दस्तावेज भेजने हैं? --", uploadBoxText: "दस्तावेजों या पीडीएफ का चयन करने के लिए यहां क्लिक करें", btnUploadSubmit: "व्हाट्सएप पर दस्तावेज भेजें",
+                reviewsTitleHead: "ग्रहकों की प्रतिक्रिया", paymentTitleHead: "सुरक्षित ऑनलाइन भुगतान", paymentBtn: "व्हाट्सएप पर भुगतान क्यूआर कोड प्राप्त करें",
                 contactTitleHead: "संपर्क करें", contactInfoHead: "हमारा विवरण", contactInfoSub: "किसी भी पूछताछ या कार्य के लिए आप नीचे दिए गए नंबरों या ईमेल पर संपर्क कर सकते हैं।",
                 phoneLabel: "मोबाइल नंबर", emailLabel: "ईमेल आईडी", guaranteeHead: "100% विश्वसनीय सेवा", guaranteeDesc: "सभी दस्तावेजों की पूर्ण सुरक्षा और सटीक ऑनलाइन काम ही हमारा एकमात्र लक्ष्य है।",
                 footer: "<p>&copy; 2026 ASHOK DIGITAL SERVICES. सर्वाधिकार सुरक्षित।</p>",
                 botOnline: "● ऑनलाइन सहायक", botWelcome: "नमस्ते भाई! 🙏 मैं अशोक डिजिटल बॉट हूँ। आपको किस सेवा की जानकारी चाहिए? नीचे लिखकर भेजें!",
-                statusBlank: "कृपया नंबर दर्ज करें।", statusSuccess: "नमस्ते, आपका काम सुरक्षित रूप से प्रक्रिया में है।", statusFail: "कोई रिकॉर्ड नहीं मिला।", uploadWpOpen: "⏳ व्हाट्सएप खुल रहा है... कृपया चैट ओपन होते ही दस्तावेज़ अटैच कर दें।"
+                statusBlank: "कृपया नंबर दर्ज करें।", statusSuccess: "नमस्ते, आपका काम सुरक्षित रूप से प्रक्रिया में है।", statusFail: "कोई रिकॉर्ड नहीं मिला।", uploadWpOpen: "⏳ व्हाट्सएप खुल रहा है..."
             }
         };
 
@@ -654,7 +633,7 @@
                 { icon: "fa-lightbulb", title: "લાઇટ બિલમાં નામ ચેન્જ", desc: "લાઇટ બિલમાં જૂનું નામ બદલીને નવું નામ ઓનલાઈન કરી આપવામાં આવશે." },
                 { icon: "fa-check-to-slot", title: "વોટર આઈડી (Voter Card)", desc: "નવું ચૂંટણી કાર્ડ, એડ્રેસ ટ્રાન્સફર અને નામની ભૂલો ઓનલાઈન સુધારવી." },
                 { icon: "fa-users-gear", title: "ઈ-શ્રમ કાર્ડ (E-Shram)", desc: "શ્રમિકો માટે સરકારી યોજનાઓનો લાભ લેવા નવું ઈ-શ્રમ કાર્ડ રજીસ્ટ્રેશન." },
-                { icon: "fa-file-signature", title: "ઓનલાઈન સરકારી ફોર્મ", desc: "વિવિધ યોજનાઓ, સબસિડી અને ભરતી (રેલવે ૨૦૨૬) માટેના ઓનલાઈન ફોર્મ." },
+                { icon: "fa-file-signature", title: "ઓનલાઈન સરકારી ફોર્મ", desc: "વિવિધ યોજનાઓ, સબસિડી અને રેલવે ભરતી ૨૦૨૬ ના ઓનલાઈન ફોર્મ." },
                 { icon: "fa-calculator", title: "ITR રીટર્ન ફાઈલિંગ", desc: "નિયમ અનુસાર ઇનકમ ટેક્સ રિટર્ન (ITR) ફાઈલ કરવું અને TDS ચેક કરવું." },
                 { icon: "fa-wheat-awn", title: "રેશન કાર્ડનું કામકાજ", desc: "રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું અથવા અલગ કરવું." }
             ],
@@ -663,7 +642,7 @@
                 { icon: "fa-building-shield", title: "MSME Udyog Aadhaar", desc: "Obtain government approved Udyam registration for your shop or enterprise." },
                 { icon: "fa-store", title: "Shop Act / Gumasta License", desc: "Apply and get legal establishment licensing securely processed online." },
                 { icon: "fa-passport", title: "Passport Applications", desc: "New passport form submissions, re-issue, and appointment slot booking." },
-                { icon: "fa-piggy-bank", title: "PF & ESIC Consultancy", desc: "Provident fund withdrawal, advance request, KYC link, and regular consultation." },
+                { icon: "fa-piggy-bank", title: "PF & ESIC Consultancy", desc: "Provident fund withdrawal, advance request, KYC link, and monthly return files." },
                 { icon: "fa-id-card", title: "Driving License Services", desc: "Learner license issuance, permanent license test slots, and renewals." },
                 { icon: "fa-address-card", title: "PAN Card Services", desc: "New Permanent Account Number requests, corrections, and Aadhaar links." },
                 { icon: "fa-lightbulb", title: "Electricity Bill Name Change", desc: "Legally transfer utility ledger ownership online to the new property owner." },
@@ -694,32 +673,39 @@
             gu: [
                 { text: '"મારું PF નું અટકેલું કામ અશોકભાઈએ માત્ર થોડા જ દિવસોમાં પૂરું કરી આપ્યું. એકદમ વિશ્વાસપાત્ર ડિજિટલ કામ છે."', auth: "- રમેશભાઈ પટેલ, અમદાવાદ" },
                 { text: '"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજિટલ સર્વિસ છે!"', auth: "- સંજય શાહ, આણંદ" },
-                { text: '"મેં અશોકભાઈ પાસે નવું પાસપોર્ટ અને પાન કઢાવ્યું. બધી પ્રોસેસ બહુ ચોખ્ખી અને કાયદેસર રીતે ઘરે બેઠા કરી આપી."', auth: "- વિજયભાઈ જોશી, મહેસાણા" }
+                { text: '"મેં અશોકભાઈ પાસે નવું પાસપોર્ટ અને પાન કાર્ડ કઢાવ્યું. બધી પ્રોસેસ બહુ ચોખ્ખી અને કાયદેસર રીતે ઘરે બેઠા કરી આપી."', auth: "- વિજયભાઈ જોશી, મહેસાણા" },
+                { text: '"દુકાન માટે શોપ એક્ટ અને MSME ઉદ્યોગ આધાર સર્ટિફિકેટ માત્ર ૨૪ કલાકમાં રેડી કરી આપ્યું. ખૂબ ખૂબ આભાર અશોકભાઈ."', auth: "- કલ્પેશ પ્રજાપતિ, વડોદરા" },
+                { text: '"નિયમ અનુસાર ઓનલાઈન ITR રિટર્ન ફાઈલિંગ અને ફાસ્ટ TDS રિફંડ મેળવવા માટેની બેસ્ટ જગ્યા. ફૂલ ભરોસાપાત્ર સર્વિસ છે."', auth: "- મનીષભાઈ સોની, રાજકોટ" },
+                { text: '"રેશન કાર્ડમાં નવું નામ ઉમેરવાનું અને ચૂંટણી કાર્ડનું કામ ઘણું જ સચોટ કરી આપ્યું. સરકારી કામ હવે એકદમ સરળ થઈ ગયું."', auth: "- ભાવનાબેન રાઠોડ, નવસારી" }
             ],
             en: [
                 { text: '"Ashokbhai resolved my stuck PF money claims within just a few days. Absolute trustworthy digital operation."', auth: "- Ramesh Patel, Ahmedabad" },
                 { text: '"My electricity bill ledger transfer was handled cleanly from home. Saved me multiple office visits. Superb speed!"', auth: "- Sanjay Shah, Anand" },
-                { text: '"Got my fresh passport and urgent PAN card processed through Ashokbhai. Extremely transparent workflow."', auth: "- Vijay Joshi, Mehsana" }
+                { text: '"Got my fresh passport and urgent PAN card processed through Ashokbhai. Extremely transparent workflow."', auth: "- Vijay Joshi, Mehsana" },
+                { text: '"Shop Act and MSME registration delivered within 24 hours. Incredible turnaround time, thank you!"', auth: "- Kalpesh Prajapati, Vadodara" },
+                { text: '"Best tech place for filing professional ITR and keeping continuous logs of tax deductions smoothly."', auth: "- Manish Soni, Rajkot" },
+                { text: '"Voter ID address updates and inclusion of new member names inside the household roster executed cleanly."', auth: "- Bhavna Rathod, Navsari" }
             ],
             hi: [
                 { text: '"मेरा पीएफ का रुका हुआ काम अशोकभाई ने केवल कुछ ही दिनों में पूरा कर दिया। बेहद विश्वसनीय डिजिटल सेवा है।"', auth: "- रमेशभाई पटेल, अहमदाबाद" },
                 { text: '"बिजली बिल में नाम बदलने का काम घर बैठे ही हो गया। कहीं भी चक्कर नहीं काटने पड़े। बहुत तेज़ सर्विस!"', auth: "- संजय शाह, आनंद" },
-                { text: '"मैंने नया पासपोर्ट और पैन कार्ड बनवाया। पूरी प्रक्रिया बहुत साफ-सुथरी और कानूनी तरीके से संपन्न हुई।"', auth: "- विजयभाई जोशी, मेहसाना" }
+                { text: '"मैंने नया पासपोर्ट और पैन कार्ड बनवाया। पूरी प्रक्रिया बहुत साफ-सुथरी और कानूनी तरीके से संपन्न हुई।"', auth: "- विजयभाई जोशी, मेहसाना" },
+                { text: '"दुकान के लिए शॉप एक्ट और एमएसएमई पंजीकरण मात्र 24 घंटे में प्राप्त हुआ। अशोकभाई का धन्यवाद।"', auth: "- कल्पेश प्रजापति, वडोदरा" },
+                { text: '"नियमों के अनुसार आईटीआर दाखिल करने और तेज़ टीडीएस रिफंड प्राप्त करने के लिए सबसे सुरक्षित जगह।"', auth: "- मनीषभाई सोनी, राजकोट" },
+                { text: '"राशन कार्ड में नया नाम जोड़ने और वोटर आईडी का काम बहुत ही अच्छे ढंग से पूरा किया गया।"', auth: "- भावनाबेन राठौड़, नवसारी" }
             ]
         };
 
         const activeLangLabels = {
-            gu: { info: "માહિતી મેળવો", doc: "જરૂરી ડોક્યુમેન્ટ લિસ્ટ" },
-            en: { info: "Get Information", doc: "Document Checklist" },
-            hi: { info: "जानकारी प्राप्त करें", doc: "आवश्यक दस्तावेज सूची" }
+            gu: { info: "૧-ક્લિક માં માહિતી મેળવો", doc: "જરૂરી ડોક્યુમેન્ટ લિસ્ટ" },
+            en: { info: "Get Details In 1-Click", doc: "Document Checklist" },
+            hi: { info: "1-क्लिक में जानकारी लें", doc: "आवश्यक दस्तावेज सूची" }
         };
 
-        // 🌟 ભાષા બદલવાનું મજબૂત જાવાસ્ક્રિપ્ટ એન્જિન
         function changeLanguage(lang) {
             const data = translations[lang];
             if (!data) return;
 
-            // Simple text swapping safely without breaking string joints
             document.getElementById('tickerText').innerText = data.ticker;
             document.getElementById('navHome').innerText = data.navHome;
             document.getElementById('navAbout').innerText = data.navAbout;
@@ -742,7 +728,7 @@
             document.getElementById('workDesc').innerText = data.workDesc;
             document.getElementById('statusTitle').innerText = data.statusTitle;
             document.getElementById('statusInputBox').innerText = data.statusInputBox;
-            document.getElementById('statusBtn').innerText = data.statusBtn;
+            document.getElementById('statusBtnText').innerText = data.statusBtn;
             document.getElementById('smartTitle').innerText = data.smartTitle;
             document.getElementById('smartWpHead').innerHTML = `<i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> ${data.smartWpHead}`;
             document.getElementById('smartWpDesc').innerText = data.smartWpDesc;
@@ -770,9 +756,9 @@
             document.getElementById('botOnlineText').innerText = data.botOnline;
             document.getElementById('botWelcomeMsg').innerText = data.botWelcome;
             document.getElementById('fixCall').innerHTML = `<i class="fa-solid fa-phone"></i> ${data.btnCall}`;
-            document.getElementById('fixWp').innerHTML = `<i class="fa-brands fa-whatsapp"></i> ${data.navPayment}`;
+            document.getElementById('fixWp').innerHTML = `<i class="fa-brands fa-whatsapp"></i> ${data.btnWp}`;
 
-            // 🚀 સેવાઓનું ઓટોમેટેડ રેન્ડરિંગ (મિક્સિંગ રોકવા માટે)
+            // 🚀 બધી સેવાઓ લોડ કરવાનું અસલી એન્જિન
             const grid = document.getElementById('servicesGrid');
             grid.innerHTML = "";
             const lbl = activeLangLabels[lang];
@@ -785,14 +771,14 @@
                     <h3>${item.title}</h3>
                     <p>${item.desc}</p>
                     <div class="card-action-buttons">
-                        <a href="https://wa.me/919484418910?text=${encodeURIComponent(item.title)}" target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ${lbl.info}</a>
-                        <a href="https://wa.me/919484418910?text=${encodeURIComponent(item.title + ' Documents')}" target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> ${lbl.doc}</a>
+                        <a href="https://wa.me/919484418910?text=${encodeURIComponent(item.title + ' Detail Query')}" target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> ${lbl.info}</a>
+                        <a href="https://wa.me/919484418910?text= ${encodeURIComponent(item.title + ' Required Documents List')}" target="_blank" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> ${lbl.doc}</a>
                     </div>
                 `;
                 grid.appendChild(card);
             });
 
-            // 🚀 રિવ્યૂઝનું લાઈવ અપડેટ
+            // 🚀 બધા રિવ્યૂઝ લોડ કરવાનું અસલી એન્જિન
             const rGrid = document.getElementById('reviewsGrid');
             rGrid.innerHTML = "";
             reviewItems[lang].forEach(rev => {
@@ -865,7 +851,7 @@
                 fileNames.push(`📄 [File-${i+1}]: ${files[i].name}`);
             }
 
-            const wpMessage = `Ashok Digital Services\nName: ${name}\nPhone: ${phone}\nService: ${service}\nFiles Count: ${files.length}\nSelected List:\n${fileNames.join('\n')}`;
+            const wpMessage = `Ashok Digital Services\nName: ${name}\nPhone: ${phone}\nService: ${service}\nFiles Count: ${files.length}\nSelected Documents List:\n${fileNames.join('\n')}`;
 
             setTimeout(() => {
                 window.open("https://wa.me/919484418910?text=" + encodeURIComponent(wpMessage), '_blank');
@@ -874,11 +860,19 @@
             }, 1000);
         }
 
-        // Default Load Gujarati Content First Time Clean Execution
         window.onload = function() {
             changeLanguage('gu');
         };
     </script>
+
+    <!-- Google Translator Element Connect -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'gu', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 </body>
 </html>
-
