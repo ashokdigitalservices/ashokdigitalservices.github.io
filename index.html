@@ -69,7 +69,7 @@
             color: #ffc107;
         }
 
-        /* નવું સુંદર લેંગ્વેજ સિલેક્ટર બોક્સ */
+        /* કસ્ટમ લેંગ્વેજ સિલેક્ટર સ્ટાઈલ */
         .lang-selector-container {
             display: inline-block;
             position: relative;
@@ -92,7 +92,6 @@
         [data-theme="dark"] .lang-select-custom {
             color: #fff;
             border-color: #fff;
-            background: #1e1e1e;
         }
         .lang-selector-container::after {
             content: "\f0d7";
@@ -109,8 +108,8 @@
             color: #fff;
         }
 
-        /* ઓરિજિનલ ગૂગલ એલિમેન્ટ્સ છુપાવવા માટે */
-        #google_translate_element, .skiptranslate, .goog-te-banner-frame, .goog-te-balloon-frame {
+        /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને હાઇડ કરવા માટે */
+        #google_translate_element, .skiptranslate, .goog-te-banner-frame {
             display: none !important;
         }
         body {
@@ -371,6 +370,11 @@
         .stars { color: #ffc107; margin-bottom: 10px; }
         .reviewer-name { font-weight: bold; margin-top: 15px; color: #0b4c8c; font-size: 0.95rem;}
         [data-theme="dark"] .reviewer-name { color: #64b5f6; }
+        
+        .faq-container { max-width: 800px; margin: 0 auto; }
+        .faq-item { background: var(--bg-card); margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+        .faq-question { font-weight: bold; color: #0b4c8c; margin-bottom: 8px; font-size: 1.1rem; }
+        .faq-answer { color: var(--text-muted); }
 
         /* Payment QR Container */
         .qr-container { max-width: 400px; margin: 0 auto; background: var(--light-color); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px dashed #198754; text-align: center; transition: background-color 0.3s; }
@@ -386,10 +390,6 @@
         .info-icon { width: 50px; height: 50px; background: rgba(25, 135, 84, 0.1); color: #198754; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
 
         footer { background: #212529; color: #fff; text-align: center; padding: 30px 20px; }
-        .footer-links { margin-top: 15px; }
-        .footer-links a { color: #bbb; text-decoration: none; margin: 0 10px; font-size: 0.9rem; font-weight: bold; cursor: pointer; }
-        .footer-links a:hover { color: #fff; text-decoration: underline; }
-
         .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-card); border-top: 1px solid var(--border-color); z-index: 9999; display: none; grid-template-columns: 1fr 1fr; transition: background-color 0.3s; }
         .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
@@ -461,6 +461,7 @@
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
         
+        /* કિંમતોના ડિસ્પ્લે માટે નવું સેટઅપ */
         .modal-price-box {
             background: var(--light-color);
             padding: 12px 15px;
@@ -566,25 +567,23 @@
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
-                    
-                    <!-- ૧૦૦% કન્ફર્મ ચાલુ થતું નવું લેંગ્વેજ ઓપ્શન બોક્સ -->
+                    <!-- ફિક્સ લેંગ્વેજ ડ્રોપડાઉન સિસ્ટમ -->
                     <li>
                         <div class="lang-selector-container">
                             <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
-                                <option value="">Language</option>
                                 <option value="gu">ગુજરાતી</option>
                                 <option value="en">English</option>
-                                <option value="hi">હિન્દી</option>
+                                <option value="hi">Hindi</option>
                             </select>
                         </div>
                     </li>
-                    
                     <!-- ડાર્ક મોડ ચાલુ બંધ કરવાનું નવું બટન -->
                     <li>
                         <button class="theme-toggle-btn" onclick="toggleTheme()" title="ડાર્ક/લાઇટ મોડ બદલો">
                             <i id="themeIcon" class="fa-solid fa-moon"></i>
                         </button>
                     </li>
+                    <li><div id="google_translate_element"></div></li>
                 </ul>
             </nav>
         </div>
@@ -613,7 +612,7 @@
             <div class="cta-buttons">
                 <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
                 <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> મેસેજ કરો</a>
-                <a href="https://wa.me/?text=*Ashok%20Digital%20Services*%20-%20તમામ%20પ્રકારના%20સરકારી%20ઓનલાઈન%20ફોર્મ,%20PF%20%26%20ESIC,%20પાન%20કાર્ડ,%20ડ્રાઈવિંગ%20લાયસન્સ,%20પાસપોર્ટ%20અને%20ITR%20નું%20કામ%20ઘરે%20બેઠા%20કરાવવા%20માટેની%20બેસ્ટ%20વેબસાઈટ.%20આજે%20જ%20મુલાકાત%20લો:%20https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
+                <a href="https://wa.me/?text=*Ashok%20Digital%20Services*%20-%20તમામ%20પ્રકારના%20સરકારી%20ઓનલાઈન%20ફોર્મ,%20PF%20%26%20ESIC,%20પાન%20કાર્ડ,%20ડ્રાઈવિંગ%20લાયસન્સ,%20પાસપોર્ટ%20અને%20ITR%20નું%20કામ%20ઘરે%20બેઠા%20કરાવવા%20માટેની%20બેસ્ટ%20વેબસાઈટ.%20આજે%20જ%20મુલાકાત%20伴ો:%20https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
                     <i class="fa-solid fa-share-nodes"></i> સાઇટ શેર કરો
                 </a>
             </div>
@@ -682,7 +681,7 @@
             <!-- 1. 🌟 આયુષ્માન કાર્ડ -->
             <div class="service-card" style="border-top-color: #ff9800;">
                 <div class="icon-box" style="background: rgba(255, 152, 0, 0.1); color: #ff9800;"><i class="fa-solid fa-heart-pulse"></i></div>
-                <h3>આયુષ્માન ભારત કાર્ડ</h3>
+                <h3>આયુષ્માન ભારત kaart</h3>
                 <p>સરકાર માન્ય ₹૫ લાખ સુધીની મફત કેશલેસ તબીબી સારવાર આપતું નવું આયુષ્માન કાર્ડ ઘરે બેઠા એકદમ ઝડપી કઢાવો.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20નવું%20આયુષ્માન%20કાર્ડ%20કઢાવવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
@@ -696,7 +695,7 @@
                 <h3>MSME ઉદ્યોગ આધાર રજીસ્ટ્રેશન</h3>
                 <p>તમારા નવા કે જૂના બિઝનેસ, દુકાન અથવા નાના ઉદ્યોગ માટે Udyam (MSME) સર્ટિફિકેટ ઘરે બેઠા મેળવો.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આধার%20અહીં%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આધાર%20અહીં%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('msme')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -740,7 +739,7 @@
                 <h3>ડ્રાઈવિંગ લાયસન્સ</h3>
                 <p>લર્નિંગ લાયસન્સ, પાકું લાયસન્સ, રીન્યુઅલ અને RTO એપોઇન્ટમેન્ટ સેટઅપ.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('driving')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -871,7 +870,7 @@
             </div>
             <div class="review-card">
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજिटल સર્વિસ છે!"</p>
+                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજિટલ સર્વિસ છે!"</p>
                 <div class="reviewer-name">- સંજય શાહ, આણંદ</div>
             </div>
             <div class="review-card">
@@ -940,7 +939,7 @@
         </div>
     </section>
 
-    <!-- જરૂરી ડોક્યુમેન્ટ્સ માટેનું કસ્ટમ પોપ-અપ મોડલ બોક્સ -->
+    <!-- જરૂરી ડોક્યુમેન્ટ્સ દર્શાવવા માટેનું કસ્ટમ પોપ-અપ મોડલ બોક્સ -->
     <div id="docModal" class="custom-modal">
         <div class="custom-modal-content">
             <span class="custom-modal-close" onclick="closeDocs()">&times;</span>
@@ -948,6 +947,7 @@
             <ul id="modalDocList" class="custom-doc-list">
                 <!-- ડોક્યુમેન્ટ લિસ્ટ અહીં લોડ થશે -->
             </ul>
+            <!-- કિંમતો બતાવવા માટે નવું ડાયનેમિક આઉટપુટ બોક્સ -->
             <div id="modalPriceBox" class="modal-price-box" style="display:none;">
                 <div class="price-title"><i class="fa-solid fa-tags"></i> સર્વિસ ચાર્જ લિસ્ટ (Fees)</div>
                 <div id="modalPriceItems"></div>
@@ -956,27 +956,11 @@
         </div>
     </div>
 
-    <!-- લીગલ ટર્મ્સ એન્ડ કન્ડિશન માટેનું પોપ-અપ મોડલ -->
-    <div id="legalModal" class="custom-modal">
-        <div class="custom-modal-content" style="max-width: 600px;">
-            <span class="custom-modal-close" onclick="closeLegal()">&times;</span>
-            <div id="legalTitle" class="custom-modal-title"><i class="fa-solid fa-gavel"></i> લીગલ નિયમો અને શરતો</div>
-            <div id="legalBody" style="max-height: 350px; overflow-y: auto; font-size: 0.95rem; color: var(--text-main); padding-right: 5px;">
-                <!-- લીગલ કન્ટેન્ટ સ્ક્રિપ્ટ દ્વારા લોડ થશે -->
-            </div>
-            <button class="btn-modal-action" style="width: 100%; border:none; cursor:pointer;" onclick="closeLegal()">હું સંમત છું (I Agree)</button>
-        </div>
-    </div>
-
-    <!-- છુપાયેલું એલિમેન્ટ જ્યાં બેકગ્રાઉન્ડમાં ગૂગલ ડ્રોપડાઉન બનશે -->
+    <!-- છુપાયેલું એલિમેન્ટ જ્યાં ગૂગલ પોતાનું ટ્રાન્સલેટ ડ્રોપડાઉન બનાવશે -->
     <div id="google_translate_element"></div>
 
     <footer>
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
-        <div class="footer-links">
-            <a onclick="showLegal('terms')">નિયમો અને શરતો (Terms & Conditions)</a> | 
-            <a onclick="showLegal('privacy')">પ્રાઇવસી પોલિસી (Privacy Policy)</a>
-        </div>
     </footer>
 
     <!-- Mobile Navigation Fixed Bottom Bar -->
@@ -1020,22 +1004,12 @@
             }, 'google_translate_element');
         }
 
-        // નવી ફુલ પાવર ડાયરેક્ટ ટ્રાન્સલેશન ટેકનિક
+        // કસ્ટમ ડ્રોપડાઉન માટે લેંગ્વેજ સ્વિચર લોજિક
         function changeLanguage(lang) {
-            if (!lang) return;
-            
-            // જો ક્રોમ બ્રાઉઝર ઓટો-ટ્રાન્સલેટ બ્લોક કરે, તો આ ડાયરેક્ટ રીડાયરેક્ટ આખી સાઇટ ગૂગલ ટ્રાન્સલેટ ફ્રેમમાં ફેરવી નાખશે
-            const currentUrl = window.location.href.split('?')[0];
-            const translateUrl = `https://translate.google.com/translate?sl=gu&tl=${lang}&u=${encodeURIComponent(currentUrl)}`;
-            
-            // જો લોકલ ફાઈલ ટેસ્ટ કરતા હોવ તો ઇનપુટથી પણ ટ્રિગર થશે
             const selectEl = document.querySelector('#google_translate_element select');
             if (selectEl) {
                 selectEl.value = lang;
                 selectEl.dispatchEvent(new Event('change'));
-            } else {
-                // ગિથબ પેજ માટે ડાયરેક્ટ ઓટોમેટેડ ટ્રાન્સલેશન રીડાયરેક્ટ
-                window.location.href = translateUrl;
             }
         }
 
@@ -1064,40 +1038,6 @@
                 icon.className = 'fa-solid fa-sun';
             }
         });
-
-        // લીગલ પોપ-અપ માટેનો ડેટાબેઝ
-        const legalDatabase = {
-            "terms": {
-                title: "નિયમો અને શરતો (Terms & Conditions)",
-                content: `
-                    <p><strong>૧. સેવાઓનો ઉપયોગ:</strong> અશોક ડિજિટલ સર્વિસીસ માત્ર ગ્રાહકો વતી સરકારી અને બિન-સરકારી ફોર્મ ઓનલાઈન સચોટ રીતે ભરી આપવાની કન્સલ્ટિંગ સુવિધા પૂરી પાડે છે.</p><br>
-                    <p><strong>૨. દસ્તાવેજોની સચોટતા:</strong> ગ્રાહકે પૂરા પાડેલા દસ્તાવેજો (જેમ કે પાન કાર્ડ, પાસપોર્ટ વિગતો વગેરે) સો ટકા સાચા હોવા જોઈએ. જો ગ્રાહક તરફથી કોઈ ખોટી માહિતી આપવામાં આવશે, તો તેની સંપૂર્ણ જવાબદારી ગ્રાહકની રહેશે.</p><br>
-                    <p><strong>૩. સરકારી પ્રક્રિયા સમય:</strong> કોઈપણ સરકારી એપ્લિકેશન (RTO લાયસન્સ, પાસપોર્ટ કે રેશન કાર્ડ) મંજૂર કરવાનો સમય સંબંધિત સરકારી કચેરી પર આધાર રાખે છે. તેમાં થતા વિલંબ માટે અમે જવાબદાર નથી.</p><br>
-                    <p><strong>૪. ફી અને ચાર્જિસ:</strong> અમારી કન્સલ્ટિંગ ફી બિન-રિફંડપાત્ર (Non-refundable) રહેશે, જે કામ શરૂ કરતા પહેલા અથવા નિયમ મુજબ ચૂકવવાની રહેશે.</p>
-                `
-            },
-            "privacy": {
-                title: "પ્રાઇવસી પોલિસી (Privacy Policy)",
-                content: `
-                    <p><strong>૧. ડેટા સુરક્ષા:</strong> અશોક ડિજિટલ સર્વિસીસ તમારા પૂરા પાડેલા તમામ ડિજિટલ દસ્તાવેજો અને આઈડી પ્રૂફને સંપૂર્ણ સુરક્ષિત અને ગુપ્ત રાખે છે.</p><br>
-                    <p><strong>૨. માહિતીનો ઉપયોગ:</strong> તમારા દ્વારા મોકલવામાં આવેલા ફોટા અથવા પીડીએફ ફાઈલોનો ઉપયોગ માત્ર તમે જે ફોર્મ અથવા સેવાનું કામ સોંપ્યું છે તે પ્રક્રિયા પૂરી કરવા માટે જ કરવામાં આવે છે.</p><br>
-                    <p><strong>૩. ત્રીજી પક્ષ સાથે શેરિંગ નહીં:</strong> અમે ગ્રાહકોનો કોઈપણ વ્યક્તિગત ડેટા, મોબાઈલ નંબર કે કાગળો કોઈ અન્ય ત્રીજી વ્યક્તિ કે પ્રમોશનલ કંપની સાથે ક્યારેય શેર કરતા નથી.</p><br>
-                    <p><strong>૪. વૉટ્સએપ કોમ્યુનિકેશન:</strong> ડેટા ફાસ્ટ મોકલવા માટે સ્માર્ટ સિસ્ટમ દ્વારા સીધો સંપર્ક વૉટ્સએપ બિઝનેસ એકાઉન્ટ પર જ થાય છે જે એન્ડ-ટુ-એન્ડ સુરક્ષિત છે.</p>
-                `
-            }
-        };
-
-        function showLegal(type) {
-            const data = legalDatabase[type];
-            if (!data) return;
-            document.getElementById('legalTitle').innerHTML = `<i class="fa-solid fa-gavel"></i> ${data.title}`;
-            document.getElementById('legalBody').innerHTML = data.content;
-            document.getElementById('legalModal').style.display = "flex";
-        }
-
-        function closeLegal() {
-            document.getElementById('legalModal').style.display = "none";
-        }
 
         // જરૂરી ડોક્યુમેન્ટ્સનો પાકો ડેટાબેઝ
         const docDatabase = {
@@ -1221,13 +1161,9 @@
         }
 
         function closeDocs() { document.getElementById('docModal').style.display = "none"; }
-        
-        // મોડલ બંધ કરવાનું કોમન લોજિક
         window.onclick = function(event) {
-            const docModal = document.getElementById('docModal');
-            const legalModal = document.getElementById('legalModal');
-            if (event.target == docModal) { docModal.style.display = "none"; }
-            if (event.target == legalModal) { legalModal.style.display = "none"; }
+            const modal = document.getElementById('docModal');
+            if (event.target == modal) { modal.style.display = "none"; }
         }
 
         const database = {
@@ -1304,4 +1240,3 @@ ${fileNames.join('\n')}
     </script>
 </body>
 </html>
-
