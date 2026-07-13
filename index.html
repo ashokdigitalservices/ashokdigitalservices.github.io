@@ -109,7 +109,10 @@
         }
 
         /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને હાઇડ કરવા માટે */
-        #google_translate_element, .skiptranslate, .goog-te-banner-frame {
+        #google_translate_element, .goog-te-banner-frame, .goog-te-balloon-frame {
+            display: none !important;
+        }
+        .skiptranslate:not(.lang-selector-container) {
             display: none !important;
         }
         body {
@@ -583,7 +586,6 @@
                             <i id="themeIcon" class="fa-solid fa-moon"></i>
                         </button>
                     </li>
-                    <li><div id="google_translate_element"></div></li>
                 </ul>
             </nav>
         </div>
@@ -612,7 +614,7 @@
             <div class="cta-buttons">
                 <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
                 <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20વધુ%20માહિતી%20જોઈએ%20છે." target="_blank" class="btn-wp"><i class="fa-brands fa-whatsapp"></i> મેસેજ કરો</a>
-                <a href="https://wa.me/?text=*Ashok%20Digital%20Services*%20-%20તમામ%20પ્રકારના%20સરકારી%20ઓનલાઈન%20ફોર્મ,%20PF%20%26%20ESIC,%20પાન%20કાર્ડ,%20ડ્રાઈવિંગ%20લાયસન્સ,%20પાસપોર્ટ%20અને%20ITR%20નું%20કામ%20ઘરે%20બેઠા%20કરાવવા%20માટેની%20બેસ્ટ%20વેબસાઈટ.%20આજે%20જ%20મુલાકાત%20伴ો:%20https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
+                <a href="https://wa.me/?text=*Ashok%20Digital%20Services*%20-%20તમામ%20પ્રકારના%20સરકારી%20ઓનલાઈન%20ફોર્મ,%20PF%20%26%20ESIC,%20પાન%20કાર્ડ,%20ડ્રાઈવિંગ%20લાયસન્સ,%20પાસપોર્ટ%20અને%20ITR%20નું%20કામ%20ઘરે%20બેઠા%20કરાવવા%20માટેની%20બેસ્ટ%20વેબસાઈટ.%20આજે%20જ%20મુલાકાત%20લો:%20https://ashokdigitalservices.github.io" target="_blank" class="btn-share-main">
                     <i class="fa-solid fa-share-nodes"></i> સાઇટ શેર કરો
                 </a>
             </div>
@@ -650,7 +652,7 @@
 
     <!-- Smart Systems Features -->
     <section id="smart-features" class="section-padding bg-white">
-        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2>
+        <h2 class="section-title">અમારી સ્માાર્ટ સિસ્ટમ્સ (Smart Features)</h2>
         <div class="smart-features-container">
             <div class="smart-card">
                 <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
@@ -662,7 +664,7 @@
                 </ul>
             </div>
             <div class="smart-card">
-                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજिटल ઓર્ગેનાઇઝેશન</h3>
+                <h3><i class="fa-solid fa-database" style="color: #0b4c8c; font-size: 1.6rem;"></i> ડેટા સુરક્ષા અને ડિજિટલ ઓર્ગેનાઇઝેશન</h3>
                 <p>તમારી મહત્વની સંપત્તિઓ, દસ્તાવેજો અને ફાઈલિંગના ડેટાને અમે એકદમ આધુનિક પદ્ધતિથી સુરક્ષિત કરીએ છીએ:</p>
                 <ul>
                     <li><strong>સુરક્ષિત ડેટાબેઝ:</strong> ગ્રાહકોના મહત્વના આઈડી પ્રૂફ અને રેકોર્ડ્સ સંપૂર્ણ ગુપ્ત અને સેફ રહે છે.</li>
@@ -681,7 +683,7 @@
             <!-- 1. 🌟 આયુષ્માન કાર્ડ -->
             <div class="service-card" style="border-top-color: #ff9800;">
                 <div class="icon-box" style="background: rgba(255, 152, 0, 0.1); color: #ff9800;"><i class="fa-solid fa-heart-pulse"></i></div>
-                <h3>આયુષ્માન ભારત kaart</h3>
+                <h3>આયુષ્માન ભારત કાર્ડ</h3>
                 <p>સરકાર માન્ય ₹૫ લાખ સુધીની મફત કેશલેસ તબીબી સારવાર આપતું નવું આયુષ્માન કાર્ડ ઘરે બેઠા એકદમ ઝડપી કઢાવો.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20નવું%20આયુષ્માન%20કાર્ડ%20કઢાવવા%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
@@ -739,7 +741,7 @@
                 <h3>ડ્રાઈવિંગ લાયસન્સ</h3>
                 <p>લર્નિંગ લાયસન્સ, પાકું લાયસન્સ, રીન્યુઅલ અને RTO એપોઇન્ટમેન્ટ સેટઅપ.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ડ્રાઈવિંગ%20લાયસન્સ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('driving')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -750,7 +752,7 @@
                 <h3>પાન કાર્ડ (PAN Card)</h3>
                 <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાર્ડ મેળવવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('pan')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -866,7 +868,7 @@
             <div class="review-card">
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
                 <p>"મારું PF નું અટકેલું કામ અશોકભાઈએ માત્ર થોડા જ દિવસોમાં પૂરું કરી આપ્યું. એકદમ વિશ્વાસપાત્ર ડિજિટલ કામ છે."</p>
-                <div class="reviewer-name">- રમેશભાઈ પટેલ, અમદાવાદ</div>
+                <div class="reviewer-name">- રમેશભાઈ પટેલ, Ahmedabad</div>
             </div>
             <div class="review-card">
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
@@ -932,7 +934,7 @@
             <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: var(--bg-card);">
                 <div style="text-align: center;">
                     <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
-                    <h3>૧૦0% વિશ્વાસપાત્ર સેવા</h3>
+                    <h3>૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
                     <p style="color: #666;">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
                 </div>
             </div>
@@ -1004,12 +1006,21 @@
             }, 'google_translate_element');
         }
 
-        // કસ્ટમ ડ્રોપડાઉન માટે લેંગ્વેજ સ્વિચર લોજિક
+        // ફિક્સ કરેલું નવું ગૂગલ ટ્રાન્સલેશન ફંક્શન
         function changeLanguage(lang) {
-            const selectEl = document.querySelector('#google_translate_element select');
+            const selectEl = document.querySelector('.goog-te-combo');
             if (selectEl) {
                 selectEl.value = lang;
                 selectEl.dispatchEvent(new Event('change'));
+            } else {
+                // જો ગૂગલ સ્ક્રિપ્ટ લોડ થવામાં સહેજ વાર લાગે તો 500ms પછી ફરી ટ્રાય કરશે
+                setTimeout(function() {
+                    const retrySelect = document.querySelector('.goog-te-combo');
+                    if (retrySelect) {
+                        retrySelect.value = lang;
+                        retrySelect.dispatchEvent(new Event('change'));
+                    }
+                }, 500);
             }
         }
 
@@ -1240,3 +1251,4 @@ ${fileNames.join('\n')}
     </script>
 </body>
 </html>
+
