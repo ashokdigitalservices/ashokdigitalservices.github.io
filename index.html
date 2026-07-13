@@ -108,16 +108,12 @@
             color: #fff;
         }
 
-        /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને પ્લેન હાઇડ કરવા માટે */
+        /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને હાઇડ કરવા માટે */
         #google_translate_element, .skiptranslate, .goog-te-banner-frame {
             display: none !important;
         }
         body {
             top: 0px !important;
-        }
-        .goog-text-highlight {
-            background-color: transparent !important;
-            box-shadow: none !important;
         }
 
         header {
@@ -204,7 +200,7 @@
             border-bottom-color: #443503;
         }
 
-        /* લાઇવ નોટિસ બોર્ડ (Live Updates Section) સ્ટાઈલ */
+        /* લાઇવ નોટિસ બોર્ડ સ્ટાઈલ */
         .notice-board {
             max-width: 1200px;
             margin: 20px auto 0;
@@ -374,11 +370,6 @@
         .stars { color: #ffc107; margin-bottom: 10px; }
         .reviewer-name { font-weight: bold; margin-top: 15px; color: #0b4c8c; font-size: 0.95rem;}
         [data-theme="dark"] .reviewer-name { color: #64b5f6; }
-        
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: var(--bg-card); margin-bottom: 15px; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
-        .faq-question { font-weight: bold; color: #0b4c8c; margin-bottom: 8px; font-size: 1.1rem; }
-        .faq-answer { color: var(--text-muted); }
 
         /* Payment QR Container */
         .qr-container { max-width: 400px; margin: 0 auto; background: var(--light-color); padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 2px dashed #198754; text-align: center; transition: background-color 0.3s; }
@@ -393,24 +384,11 @@
         .info-item { display: flex; align-items: center; gap: 20px; margin-bottom: 25px; }
         .info-icon { width: 50px; height: 50px; background: rgba(25, 135, 84, 0.1); color: #198754; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
 
-        /* Legal Links Footer Area */
-        .legal-footer-links {
-            margin-top: 15px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            font-size: 0.9rem;
-        }
-        .legal-footer-links a {
-            color: #ffc107;
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .legal-footer-links a:hover {
-            color: #fff;
-        }
-
         footer { background: #212529; color: #fff; text-align: center; padding: 30px 20px; }
+        .footer-links { margin-top: 15px; }
+        .footer-links a { color: #bbb; text-decoration: none; margin: 0 10px; font-size: 0.9rem; font-weight: bold; cursor: pointer; }
+        .footer-links a:hover { color: #fff; text-decoration: underline; }
+
         .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-card); border-top: 1px solid var(--border-color); z-index: 9999; display: none; grid-template-columns: 1fr 1fr; transition: background-color 0.3s; }
         .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
@@ -482,7 +460,6 @@
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
         
-        /* કિંમતોના ડિસ્પ્લે માટે નવું સેટઅપ */
         .modal-price-box {
             background: var(--light-color);
             padding: 12px 15px;
@@ -671,7 +648,7 @@
 
     <!-- Smart Systems Features -->
     <section id="smart-features" class="section-padding bg-white">
-        <h2 class="section-title">અમારી સ્માાર્ટ સિસ્ટમ્સ (Smart Features)</h2>
+        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2>
         <div class="smart-features-container">
             <div class="smart-card">
                 <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
@@ -899,6 +876,21 @@
                 <p>"મેં અશોકભાઈ પાસે નવું પાસપોર્ટ અને પાન કાર્ડ કઢાવ્યું. બધી પ્રોસેસ બહુ ચોખ્ખી અને કાયદેસર રીતે ઘરે બેઠા કરી આપી."</p>
                 <div class="reviewer-name">- વિજયભાઈ જોશી, મહેસાણા</div>
             </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"દુકાન માટે શોપ એક્ટ અને MSME ઉદ્યોગ આધાર સર્ટિફિકેટ માત્ર ૨૪ કલાકમાં રેડી કરી આપ્યું. ખૂબ ખૂબ આભાર અશોકભાઈ."</p>
+                <div class="reviewer-name">- કલ્પેશ પ્રજાપતિ, વડોદરા</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"નિયમ અનુસાર ઓનલાઈન ITR રિટર્ન ફાઈલિંગ અને ફાસ્ટ TDS રિફંડ મેળવવા માટેની બેસ્ટ જગ્યા. ફૂલ ભરોસાપાત્ર સર્વિસ છે."</p>
+                <div class="reviewer-name">- મનીષભાઈ સોની, રાજકોટ</div>
+            </div>
+            <div class="review-card">
+                <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                <p>"રેશન કાર્ડમાં નવું નામ ઉમેરવાનું અને ચૂંટણી કાર્ડનું કામ ઘણું જ સચોટ કરી આપ્યું. સરકારી કામ હવે એકદમ સરળ થઈ ગયું."</p>
+                <div class="reviewer-name">- ભાવનાબેન રાઠોડ, નવસારી</div>
+            </div>
         </div>
     </section>
 
@@ -945,7 +937,7 @@
         </div>
     </section>
 
-    <!-- જરૂરી ડોક્યુમેન્ટ્સ દર્શાવવા માટેનું કસ્ટમ પોપ-અપ મોડલ બોક્સ -->
+    <!-- જરૂરી ડોક્યુમેન્ટ્સ માટેનું કસ્ટમ પોપ-અપ મોડલ બોક્સ -->
     <div id="docModal" class="custom-modal">
         <div class="custom-modal-content">
             <span class="custom-modal-close" onclick="closeDocs()">&times;</span>
@@ -965,25 +957,22 @@
     <div id="legalModal" class="custom-modal">
         <div class="custom-modal-content" style="max-width: 600px;">
             <span class="custom-modal-close" onclick="closeLegal()">&times;</span>
-            <div class="custom-modal-title"><i class="fa-solid fa-scale-balanced"></i> લીગલ અને શરતો (Terms & Conditions)</div>
-            <div style="max-height: 300px; overflow-y: auto; padding-right: 5px; font-size: 0.95rem; text-align: left; color: var(--text-main);">
-                <p><strong>૧. સેવાઓનો ઉપયોગ:</strong> અશોક ડિજિટલ સર્વિસીસ માત્ર એક ઓનલાઈન સહાયક કન્સલ્ટન્સી ફર્મ છે. અમે કોઈપણ ગ્રાહકનું ફોર્મ સચોટ વિગતો સાથે સબમિટ કરવા જવાબદાર છીએ.</p><br>
-                <p><strong>૨. દસ્તાવેજોની સુરક્ષા:</strong> ગ્રાહકો દ્વારા મોકલવામાં આવેલા તમામ કાગળો (જેવા કે પાન કાર્ડ, લાયસન્સ, બેંક પાસબુક વગેરે) સંપૂર્ણ સુરક્ષિત અને ગુપ્ત રાખવામાં આવશે.</p><br>
-                <p><strong>૩. ફી અને ચાર્જ:</strong> દરેક સરકારી ફોર્મ અને પ્રાઇવેટ કન્સલ્ટિંગનો ચાર્જ તેના કામ પર અને સરકારી નિયમો પર આધાર રાખે છે, જે ગ્રાહકને અગાઉથી જણાવવામાં આવશે.</p><br>
-                <p><strong>૪. અસ્વીકરણ (Disclaimer):</strong> અમે સરકારી વિભાગો દ્વારા થતા પ્રોસેસિંગના વિલંબ કે કોઈ કાયદાકીય ફેરફારો માટે જવાબદાર નથી. અંતિમ મંજૂરી આપવી જે-તે સરકારી વિભાગના હાથમાં છે.</p>
+            <div id="legalTitle" class="custom-modal-title"><i class="fa-solid fa-gavel"></i> લીગલ નિયમો અને શરતો</div>
+            <div id="legalBody" style="max-height: 350px; overflow-y: auto; font-size: 0.95rem; color: var(--text-main); padding-right: 5px;">
+                <!-- લીગલ કન્ટેન્ટ સ્ક્રિપ્ટ દ્વારા લોડ થશે -->
             </div>
-            <button class="btn-modal-action" style="background:#0b4c8c;" onclick="closeLegal()">હું સહમત છું (I Agree)</button>
+            <button class="btn-modal-action" style="width: 100%; border:none; cursor:pointer;" onclick="closeLegal()">હું સંમત છું (I Agree)</button>
         </div>
     </div>
 
-    <!-- છુપી જગ્યા જ્યાં ગુગલ ટ્રાન્સલેટ લોડ થશે -->
+    <!-- છુપાયેલું એલિમેન્ટ જ્યાં ગૂગલ પોતાનું ટ્રાન્સલેટ ડ્રોપડાઉન બનાવશે -->
     <div id="google_translate_element"></div>
 
     <footer>
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
-        <div class="legal-footer-links">
-            <a onclick="openLegal()">Terms & Conditions (નિયમો અને શરતો)</a>
-            <a onclick="openLegal()">Privacy Policy (પ્રાઈવસી પોલીસી)</a>
+        <div class="footer-links">
+            <a onclick="showLegal('terms')">નિયમો અને શરતો (Terms & Conditions)</a> | 
+            <a onclick="showLegal('privacy')">પ્રાઇવસી પોલિસી (Privacy Policy)</a>
         </div>
     </footer>
 
@@ -1014,11 +1003,11 @@
         </div>
     </div>
 
-    <!-- Google Translate Script (આ હોવું ખૂબ જ જરૂરી છે) -->
+    <!-- Google Translate Script Link -->
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // ગૂગલ ટ્રાન્સલેશન ઇનિશિયલાઇઝેશન
+        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'gu',
@@ -1028,7 +1017,7 @@
             }, 'google_translate_element');
         }
 
-        // લાઇવ લેંગ્વેજ ચેન્જર લોજિક (ટેન્શન વગર ઓટો ચેન્જ)
+        // કસ્ટમ ડ્રોપડાઉન માટે લેંગ્વેજ સ્વિચર લોજિક
         function changeLanguage(lang) {
             const selectEl = document.querySelector('#google_translate_element select');
             if (selectEl) {
@@ -1036,10 +1025,6 @@
                 selectEl.dispatchEvent(new Event('change'));
             }
         }
-
-        // લીગલ મોડલ કંટ્રોલ
-        function openLegal() { document.getElementById('legalModal').style.display = 'flex'; }
-        function closeLegal() { document.getElementById('legalModal').style.display = 'none'; }
 
         // ડાર્ક અને લાઇટ મોડ બદલવાનું કસ્ટમ લોજિક
         function toggleTheme() {
@@ -1066,6 +1051,40 @@
                 icon.className = 'fa-solid fa-sun';
             }
         });
+
+        // લીગલ પોપ-અપ માટેનો ડેટાબેઝ
+        const legalDatabase = {
+            "terms": {
+                title: "નિયમો અને શરતો (Terms & Conditions)",
+                content: `
+                    <p><strong>૧. સેવાઓનો ઉપયોગ:</strong> અશોક ડિજિટલ સર્વિસીસ માત્ર ગ્રાહકો વતી સરકારી અને બિન-સરકારી ફોર્મ ઓનલાઈન સચોટ રીતે ભરી આપવાની કન્સલ્ટિંગ સુવિધા પૂરી પાડે છે.</p><br>
+                    <p><strong>૨. દસ્તાવેજોની સચોટતા:</strong> ગ્રાહકે પૂરા પાડેલા દસ્તાવેજો (જેમ કે પાન કાર્ડ, પાસપોર્ટ વિગતો વગેરે) સો ટકા સાચા હોવા જોઈએ. જો ગ્રાહક તરફથી કોઈ ખોટી માહિતી આપવામાં આવશે, તો તેની સંપૂર્ણ જવાબદારી ગ્રાહકની રહેશે.</p><br>
+                    <p><strong>૩. સરકારી પ્રક્રિયા સમય:</strong> કોઈપણ સરકારી એપ્લિકેશન (RTO લાયસન્સ, પાસપોર્ટ કે રેશન કાર્ડ) મંજૂર કરવાનો સમય સંબંધિત સરકારી કચેરી પર આધાર રાખે છે. તેમાં થતા વિલંબ માટે અમે જવાબદાર નથી.</p><br>
+                    <p><strong>૪. ફી અને ચાર્જિસ:</strong> અમારી કન્સલ્ટિંગ ફી બિન-રિફંડપાત્ર (Non-refundable) રહેશે, જે કામ શરૂ કરતા પહેલા અથવા નિયમ મુજબ ચૂકવવાની રહેશે.</p>
+                `
+            },
+            "privacy": {
+                title: "પ્રાઇવસી પોલિસી (Privacy Policy)",
+                content: `
+                    <p><strong>૧. ડેટા સુરક્ષા:</strong> અશોક ડિજિટલ સર્વિસીસ તમારા પૂરા પાડેલા તમામ ડિજિટલ દસ્તાવેજો અને આઈડી પ્રૂફને સંપૂર્ણ સુરક્ષિત અને ગુપ્ત રાખે છે.</p><br>
+                    <p><strong>૨. માહિતીનો ઉપયોગ:</strong> તમારા દ્વારા મોકલવામાં આવેલા ફોટા અથવા પીડીએફ ફાઈલોનો ઉપયોગ માત્ર તમે જે ફોર્મ અથવા સેવાનું કામ સોંપ્યું છે તે પ્રક્રિયા પૂરી કરવા માટે જ કરવામાં આવે છે.</p><br>
+                    <p><strong>૩. ત્રીજી પક્ષ સાથે શેરિંગ નહીં:</strong> અમે ગ્રાહકોનો કોઈપણ વ્યક્તિગત ડેટા, મોબાઈલ નંબર કે કાગળો કોઈ અન્ય ત્રીજી વ્યક્તિ કે પ્રમોશનલ કંપની સાથે ક્યારેય શેર કરતા નથી.</p><br>
+                    <p><strong>૪. વૉટ્સએપ કોમ્યુનિકેશન:</strong> ડેટા ફાસ્ટ મોકલવા માટે સ્માર્ટ સિસ્ટમ દ્વારા સીધો સંપર્ક વૉટ્સએપ બિઝનેસ એકાઉન્ટ પર જ થાય છે જે એન્ડ-ટુ-એન્ડ સુરક્ષિત છે.</p>
+                `
+            }
+        };
+
+        function showLegal(type) {
+            const data = legalDatabase[type];
+            if (!data) return;
+            document.getElementById('legalTitle').innerHTML = `<i class="fa-solid fa-gavel"></i> ${data.title}`;
+            document.getElementById('legalBody').innerHTML = data.content;
+            document.getElementById('legalModal').style.display = "flex";
+        }
+
+        function closeLegal() {
+            document.getElementById('legalModal').style.display = "none";
+        }
 
         // જરૂરી ડોક્યુમેન્ટ્સનો પાકો ડેટાબેઝ
         const docDatabase = {
@@ -1128,7 +1147,7 @@
                 prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
             },
             "eshram": {
-                title: "ઈ-શ્રમ કાર્ડ બનાવવા માટે જરૂરી કાગળો",
+                title: "ઈ-શ્રમ kaart બનાવવા માટે જરૂરી કાગળો",
                 docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો ચાલુ મોબાઈલ નંબર"],
                 prices: [{ name: "નવું રજીસ્ટ્રેશન (New Registration)", value: "₹100" }]
             },
@@ -1190,7 +1209,7 @@
 
         function closeDocs() { document.getElementById('docModal').style.display = "none"; }
         
-        // મોડલ બંધ કરવા માટે વિન્ડો ક્લિક લોજિક
+        // મોડલ બંધ કરવાનું કોમન લોજિક
         window.onclick = function(event) {
             const docModal = document.getElementById('docModal');
             const legalModal = document.getElementById('legalModal');
