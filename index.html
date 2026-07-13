@@ -466,6 +466,44 @@
             padding-bottom: 10px;
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
+        
+        /* કિંમતોના ડિસ્પ્લે માટે નવું સેટઅપ */
+        .modal-price-box {
+            background: var(--light-color);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border: 1px solid var(--border-color);
+        }
+        .price-title {
+            font-weight: bold;
+            color: #198754;
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .price-item-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+        .price-total-line {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.05rem;
+            font-weight: bold;
+            border-top: 1px dashed var(--border-color);
+            margin-top: 8px;
+            padding-top: 6px;
+            color: #0b4c8c;
+        }
+        [data-theme="dark"] .price-total-line { color: #64b5f6; }
+
         .custom-doc-list {
             list-style: none;
             margin-top: 10px;
@@ -575,7 +613,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
-            <h1>સરકારી અને ડિજિટલ કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
+            <h1>સરકારી અને ડિજिटल કામકાજ હવે થયું સરળ અને સુરક્ષિત!</h1>
             <p>તમામ પ્રકારના ઓનલાઈન ફોર્મ, આયુષ્માન કાર્ડ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, ડ્રાઈવિંગ લાયસન્સ, પાન કાર્ડ, પાસપોર્ટ અને ઇનકમ ટેક્સ રિટર્ન (ITR) નું કામ ઘરે બેઠા એકદમ સચોટ અને ભરોસાપાત્ર રીતે કરી આપવામાં આવશે.</p>
             <div class="cta-buttons">
                 <a href="tel:+919484418910" class="btn-call"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
@@ -601,7 +639,7 @@
         <img src="https://static.vecteezy.com/system/resources/previews/076/419/626/large_2x/focused-young-male-entrepreneur-working-on-a-laptop-at-a-home-office-desk-professional-freelance-man-using-computer-for-remote-work-business-strategy-and-online-digital-marketing-photo.jpg" alt="Workspace" class="workspace-img">
         <div class="workspace-text">
             <h2>અમે તમારી સેવામાં હરહંમેશ તૈયાર</h2>
-            <p>અમે અત્યાધુનિક ટેકનોલોજી અને પ્રોફેશનલ લેપટોપ સેટઅપનો ઉપયોગ કરીને તમારું દરેક સરકારી કામ એકદમ ઝડપથી અને સચોટ રીતે કરીએ છીએ. તમારા મહત્વના દસ્તાવેજોની સુરક્ષા અને સમયસર સો ટકા સાચું કામ પૂરું કરવું એ અમારી પહેલી જવાબદારી છે.</p>
+            <p>અમે અત્યાધુનિક ટેકનોલોજી અને પ્રોફેશનલ લેપટોપ સચોટ સેટઅપનો ઉપયોગ કરીને તમારું દરેક સરકારી કામ એકદમ ઝડપથી અને સચોટ રીતે કરીએ છીએ. તમારા મહત્વના દસ્તાવેજોની સુરક્ષા અને સમયસર સો ટકા સાચું કામ પૂરું કરવું એ અમારી પહેલી જવાબદારી છે.</p>
         </div>
     </section>
 
@@ -695,9 +733,10 @@
                 <div class="icon-box"><i class="fa-solid fa-piggy-bank"></i></div>
                 <h3>PF & ESIC Consultancy</h3>
                 <p>PF અને ESIC ના રિટર્ન ભરવા, PF ઉપાડવું, એડવાન્સ મની, ESIC ક્લેમ, KYC અપડેટ અને રજીસ્ટ્રેશન.</p>
+                <p style="font-size:0.85rem; font-weight:bold; color:#198754; margin-top:5px;"><i class="fa-solid fa-tags"></i> KYC: ₹150 | Withdraw: ₹250 | Transfer: ₹100</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20PF%20and%20ESIC%20Consultancy%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
-                    <button onclick="showDocs('pf_esic')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
+                    <button onclick="showDocs('pf_esic')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ & ફી</button>
                 </div>
             </div>
 
@@ -911,6 +950,11 @@
             <ul id="modalDocList" class="custom-doc-list">
                 <!-- ડોક્યુમેન્ટ લિસ્ટ અહીં લોડ થશે -->
             </ul>
+            <!-- કિંમતો બતાવવા માટે નવું ડાયનેમિક આઉટપુટ બોક્સ -->
+            <div id="modalPriceBox" class="modal-price-box" style="display:none;">
+                <div class="price-title"><i class="fa-solid fa-tags"></i> સર્વિસ ચાર્જ લિસ્ટ (Fees)</div>
+                <div id="modalPriceItems"></div>
+            </div>
             <a href="#upload" class="btn-modal-action" onclick="closeDocs()"><i class="fa-solid fa-cloud-arrow-up"></i> અત્યારે જ કાગળો અપલોડ કરો</a>
         </div>
     </div>
@@ -993,7 +1037,13 @@
             },
             "pf_esic": {
                 title: "PF & ESIC ના કામ માટે જરૂરી કાગળો",
-                docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date - જો ઉપાડવું હોય તો)"]
+                docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date - જો ઉપાડવું હોય તો)"],
+                prices: [
+                    { name: "KYC અપડેટ", value: "₹150" },
+                    { name: "PF ઉપાડવું (Withdraw)", value: "₹250" },
+                    { name: "જૂની કંપનીના પૈસા નવી કંપનીમાં લાવવા", value: "₹100" }
+                ],
+                total: "₹500"
             },
             "driving": {
                 title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
@@ -1040,6 +1090,27 @@
                 li.innerText = doc;
                 listContainer.appendChild(li);
             });
+
+            // જો પ્રાઇસ લિસ્ટ અવેલેબલ હોય (જેમ કે PF માં) તો તેને બતાવો
+            const priceBox = document.getElementById('modalPriceBox');
+            const priceItemsContainer = document.getElementById('modalPriceItems');
+            if (data.prices) {
+                priceItemsContainer.innerHTML = "";
+                data.prices.forEach(item => {
+                    const itemLine = document.createElement('div');
+                    itemLine.className = "price-item-line";
+                    itemLine.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
+                    priceItemsContainer.appendChild(itemLine);
+                });
+                const totalLine = document.createElement('div');
+                totalLine.className = "price-total-line";
+                totalLine.innerHTML = `<span>Sub Total</span><span>${data.total}</span>`;
+                priceItemsContainer.appendChild(totalLine);
+                priceBox.style.display = "block";
+            } else {
+                priceBox.style.display = "none";
+            }
+
             document.getElementById('docModal').style.display = "flex";
         }
 
@@ -1156,16 +1227,4 @@ ${fileNames.join('\n')}
     <!-- Google Translator Engine -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'gu', 
-                includedLanguages: 'en,gu,hi', 
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-                autoDisplay: false
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-</body>
-</html>
-
+            new google.transl
