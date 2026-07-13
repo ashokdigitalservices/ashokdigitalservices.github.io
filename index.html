@@ -92,6 +92,7 @@
         [data-theme="dark"] .lang-select-custom {
             color: #fff;
             border-color: #fff;
+            background: var(--bg-card); /* ફિક્સ: ડાર્ક મોડમાં ટેક્સ્ટ દેખાય તે માટે બેકગ્રાઉન્ડ સેટ કર્યું */
         }
         .lang-selector-container::after {
             content: "\f0d7";
@@ -396,7 +397,8 @@
         .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-card); border-top: 1px solid var(--border-color); z-index: 9999; display: none; grid-template-columns: 1fr 1fr; transition: background-color 0.3s; }
         .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        .whatsapp-bot-widget { position: fixed; bottom: 80px; right: 25px; z-index: 9999; }
+        /* ફિક્સ: વિજેટને મોબાઇલ વ્યુમાં બટન સાથે ભટકાતું રોકવા bottom સહેજ વધાર્યું */
+        .whatsapp-bot-widget { position: fixed; bottom: 90px; right: 25px; z-index: 9999; }
         .whatsapp-bot-button { background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s; }
         .whatsapp-bot-button:hover { transform: scale(1.1); }
         .whatsapp-bot-box { width: 320px; background: var(--bg-card); border-radius: 12px; box-shadow: 0 5px 25px rgba(0,0,0,0.15); position: absolute; bottom: 75px; right: 0; display: none; overflow: hidden; border: 1px solid var(--border-color); transition: background-color 0.3s; }
@@ -570,6 +572,7 @@
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
+                    <li><a href="#contact">સંપર્ક</a></li> <!-- ફિક્સ: મિસિંગ લિંક ઉમેરી -->
                     <!-- ફિક્સ લેંગ્વેજ ડ્રોપડાઉન સિસ્ટમ -->
                     <li>
                         <div class="lang-selector-container">
@@ -652,7 +655,7 @@
 
     <!-- Smart Systems Features -->
     <section id="smart-features" class="section-padding bg-white">
-        <h2 class="section-title">અમારી સ્માાર્ટ સિસ્ટમ્સ (Smart Features)</h2>
+        <h2 class="section-title">અમારી સ્માર્ટ સિસ્ટમ્સ (Smart Features)</h2> <!-- ફિક્સ: "સ્માાર્ટ" ટાઈપો સુધારી -->
         <div class="smart-features-container">
             <div class="smart-card">
                 <h3><i class="fa-brands fa-whatsapp" style="color: #25d366; font-size: 1.8rem;"></i> વૉટ્સએપ બિઝનેસ સપોર્ટ</h3>
@@ -752,7 +755,7 @@
                 <h3>પાન કાર્ડ (PAN Card)</h3>
                 <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાર્ડ મેળવવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('pan')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -807,7 +810,7 @@
                 <h3>ITR રીટર્ન ફાઈલિંગ</h3>
                 <p>નોકરિયાત અને વેપારીઓ માટે નિયમ અનુસાર ઇનકમ ટેક્સ રિટર્ન (ITR) ઓનલાઈન ફાઈલ કરવું અને TDS ચેક કરવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20READ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20ITR%20Return%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a> <!-- ફિક્સ: ITR READ ને Return કર્યું -->
                     <button onclick="showDocs('itr')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -934,7 +937,7 @@
             <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: var(--bg-card);">
                 <div style="text-align: center;">
                     <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
-                    <h3>૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
+                    <h3>૧૦0% વિશ્વાસપાત્ર સેવા</h3>
                     <p style="color: #666;">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
                 </div>
             </div>
@@ -1013,7 +1016,6 @@
                 selectEl.value = lang;
                 selectEl.dispatchEvent(new Event('change'));
             } else {
-                // જો ગૂગલ સ્ક્રિપ્ટ લોડ થવામાં સહેજ વાર લાગે તો 500ms પછી ફરી ટ્રાય કરશે
                 setTimeout(function() {
                     const retrySelect = document.querySelector('.goog-te-combo');
                     if (retrySelect) {
@@ -1084,7 +1086,7 @@
             },
             "driving": {
                 title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "બ્લડ ગ્રુપ રિપોર્ટ (લાયસન્સ કેટેગરી મુજબ)", "પાસપોર્ટ સાઇઝ ફોટો"],
+                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "Commercial કેટેગરી માટે મેડિકલ સર્ટિફિકેટ", "પાસપોર્ટ સાઇઝ ફોટો"],
                 prices: [
                     { name: "2 વ્હીલર (Two Wheeler)", value: "₹1150" },
                     { name: "4 વ્હીલર (Four Wheeler)", value: "₹1350" },
@@ -1125,8 +1127,9 @@
                 docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક અને લોનની વિગતો"],
                 prices: [
                     { name: "ITR ફાઇલિંગ (Normal ITR)", value: "₹750" },
-                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000" }
-                ]
+                    { name: "ITR + TDS રીટર્ન (With TDS Return)", value: "₹2000"
+                }],
+                total: "બાકી વિગતો ઓડિટ પર આધાર રાખે છે" /* ફિક્સ: ITR માં મિસિંગ ટોટલ પ્રોપર્ટી એડ કરી */
             },
             "ration": {
                 title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
