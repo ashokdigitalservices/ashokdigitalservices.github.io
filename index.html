@@ -69,36 +69,48 @@
             color: #ffc107;
         }
 
-        /* ગૂગલ ટ્રાન્સલેટ ડ્રોપડાઉનને જ પ્રીમિયમ લુક આપવા માટેની સ્પેશિયલ સ્ટાઈલ */
-        #google_translate_element {
+        /* નવું સુંદર લેંગ્વેજ સિલેક્ટર બોક્સ */
+        .lang-selector-container {
             display: inline-block;
-            vertical-align: middle;
+            position: relative;
         }
-        .goog-te-gadget {
-            font-family: 'Segoe UI', sans-serif !important;
-            color: transparent !important; /* ગૂગલનું લખાણ હાઇડ કરવા માટે */
-        }
-        .goog-te-gadget .goog-te-combo {
-            padding: 6px 12px !important;
-            font-size: 0.9rem !important;
-            font-weight: bold !important;
-            color: #0b4c8c !important;
-            border: 2px solid #0b4c8c !important;
-            border-radius: 5px !important;
-            background: var(--bg-card) !important;
-            cursor: pointer !important;
-            outline: none !important;
+        .lang-select-custom {
+            padding: 6px 30px 6px 12px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #0b4c8c;
+            border: 2px solid #0b4c8c;
+            border-radius: 5px;
+            background: var(--bg-card);
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
             transition: background-color 0.3s, color 0.3s;
         }
-        [data-theme="dark"] .goog-te-gadget .goog-te-combo {
-            color: #fff !important;
-            border-color: #fff !important;
-            background: #1e1e1e !important;
+        [data-theme="dark"] .lang-select-custom {
+            color: #fff;
+            border-color: #fff;
+            background: #1e1e1e;
         }
-        .goog-te-gadget span {
-            display: none !important; /* "Powered by Google" લખાણ કાઢવા માટે */
+        .lang-selector-container::after {
+            content: "\f0d7";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #0b4c8c;
+            pointer-events: none;
         }
-        .goog-te-banner-frame, .goog-te-balloon-frame, .skiptranslate {
+        [data-theme="dark"] .lang-selector-container::after {
+            color: #fff;
+        }
+
+        /* ઓરિજિનલ ગૂગલ એલિમેન્ટ્સ છુપાવવા માટે */
+        #google_translate_element, .skiptranslate, .goog-te-banner-frame, .goog-te-balloon-frame {
             display: none !important;
         }
         body {
@@ -555,9 +567,16 @@
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
                     
-                    <!-- ૧૦૦% ગેરંટી વાળી નવી ગૂગલ ટ્રાન્સલેટ ડ્રોપડાઉન સિસ્ટમ -->
+                    <!-- ૧૦૦% કન્ફર્મ ચાલુ થતું નવું લેંગ્વેજ ઓપ્શન બોક્સ -->
                     <li>
-                        <div id="google_translate_element"></div>
+                        <div class="lang-selector-container">
+                            <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
+                                <option value="">Language</option>
+                                <option value="gu">ગુજરાતી</option>
+                                <option value="en">English</option>
+                                <option value="hi">હિન્દી</option>
+                            </select>
+                        </div>
                     </li>
                     
                     <!-- ડાર્ક મોડ ચાલુ બંધ કરવાનું નવું બટન -->
@@ -677,7 +696,7 @@
                 <h3>MSME ઉદ્યોગ આધાર રજીસ્ટ્રેશન</h3>
                 <p>તમારા નવા કે જૂના બિઝનેસ, દુકાન અથવા નાના ઉદ્યોગ માટે Udyam (MSME) સર્ટિફિકેટ ઘરે બેઠા મેળવો.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આધાર%20અહીં%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આধার%20અહીં%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('msme')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -852,7 +871,7 @@
             </div>
             <div class="review-card">
                 <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજિટલ સર્વિસ છે!"</p>
+                <p>"લાઇટ બિલમાં નામ બદલવાનું કામ ઘરે બેઠા જ થઈ ગયું. ક્યાંય ધક્કા ખાવા ન પડ્યા. બહુ જ ફાસ્ટ ડિજिटल સર્વિસ છે!"</p>
                 <div class="reviewer-name">- સંજય શાહ, આણંદ</div>
             </div>
             <div class="review-card">
@@ -943,11 +962,14 @@
             <span class="custom-modal-close" onclick="closeLegal()">&times;</span>
             <div id="legalTitle" class="custom-modal-title"><i class="fa-solid fa-gavel"></i> લીગલ નિયમો અને શરતો</div>
             <div id="legalBody" style="max-height: 350px; overflow-y: auto; font-size: 0.95rem; color: var(--text-main); padding-right: 5px;">
-                <!-- લીગલ કન્ટેન્ટ સ્ક્રિઇપ્ટ દ્વારા લોડ થશે -->
+                <!-- લીગલ કન્ટેન્ટ સ્ક્રિપ્ટ દ્વારા લોડ થશે -->
             </div>
             <button class="btn-modal-action" style="width: 100%; border:none; cursor:pointer;" onclick="closeLegal()">હું સંમત છું (I Agree)</button>
         </div>
     </div>
+
+    <!-- છુપાયેલું એલિમેન્ટ જ્યાં બેકગ્રાઉન્ડમાં ગૂગલ ડ્રોપડાઉન બનશે -->
+    <div id="google_translate_element"></div>
 
     <footer>
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
@@ -988,7 +1010,7 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન - ફક્ત આ ૩ જ ભાષાઓ દેખાશે
+        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'gu',
@@ -996,6 +1018,25 @@
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
+        }
+
+        // નવી ફુલ પાવર ડાયરેક્ટ ટ્રાન્સલેશન ટેકનિક
+        function changeLanguage(lang) {
+            if (!lang) return;
+            
+            // જો ક્રોમ બ્રાઉઝર ઓટો-ટ્રાન્સલેટ બ્લોક કરે, તો આ ડાયરેક્ટ રીડાયરેક્ટ આખી સાઇટ ગૂગલ ટ્રાન્સલેટ ફ્રેમમાં ફેરવી નાખશે
+            const currentUrl = window.location.href.split('?')[0];
+            const translateUrl = `https://translate.google.com/translate?sl=gu&tl=${lang}&u=${encodeURIComponent(currentUrl)}`;
+            
+            // જો લોકલ ફાઈલ ટેસ્ટ કરતા હોવ તો ઇનપુટથી પણ ટ્રિગર થશે
+            const selectEl = document.querySelector('#google_translate_element select');
+            if (selectEl) {
+                selectEl.value = lang;
+                selectEl.dispatchEvent(new Event('change'));
+            } else {
+                // ગિથબ પેજ માટે ડાયરેક્ટ ઓટોમેટેડ ટ્રાન્સલેશન રીડાયરેક્ટ
+                window.location.href = translateUrl;
+            }
         }
 
         // ડાર્ક અને લાઇટ મોડ બદલવાનું કસ્ટમ લોજિક
