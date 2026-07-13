@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
-    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, પાન kaart, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
+    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, પાન કાર્ડ, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
     
     <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -226,16 +226,12 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 1px;
-            animation: pulse 1.5s infinite;
         }
         .notice-list {
             list-style: none;
             flex: 1;
             font-weight: 600;
             color: var(--text-main);
-        }
-        @marquee-style {
-            transition: 0.3s;
         }
 
         /* Hero Section with Full Photo Background */
@@ -754,7 +750,7 @@
                 <h3>પાન કાર્ડ (PAN Card)</h3>
                 <p>નવું પાન કાર્ડ બનાવવું, ભૂલ સુધારવી, આધાર-પાન લિંક કરવું અને ખોવાઈ ગયેલું કાર્ડ મેળવવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20પાન%20કાર્ડ%20ના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('pan')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -1180,6 +1176,11 @@
             toggleBotBox();
         }
 
+        // લેંગ્વેજ ચેન્જ કરવાનું નવું લોજિક
+        function changeLanguage(lang) {
+            alert("ભાષા બદલવાની સિસ્ટમ પ્રોસેસમાં છે. સિલેક્ટ કરેલી ભાષા: " + lang);
+        }
+
         function handleUpload(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
@@ -1188,7 +1189,7 @@
             const files = document.getElementById('clientFiles').files;
             const statusDiv = document.getElementById('uploadStatus');
 
-            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં j પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
+            statusDiv.innerHTML = "⏳ વૉટ્સએપ ઓપન થઈ રહ્યું છે... ચેટ ઓપન થતાં જ પેસ્ટ કરીને કાગળો સેન્ડ કરી દો.";
             statusDiv.style.color = "#ff9800";
 
             let fileNames = [];
@@ -1214,3 +1215,10 @@ ${fileNames.join('\n')}
                 window.open(finalWpUrl, '_blank');
                 document.getElementById('docUploadForm').reset();
                 statusDiv.innerHTML = "✅ વિગતો મોકલાઈ ગઈ છે! હવે તમારા કાગળો આ ચેટમાં એટેચ કરી દો.";
+                statusDiv.style.color = "#198754";
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
+
