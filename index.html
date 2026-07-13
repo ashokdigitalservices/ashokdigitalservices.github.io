@@ -41,7 +41,6 @@
         .lang-selector-container::after { content: "\f0d7"; font-family: "Font Awesome 6 Free"; font-weight: 900; position: absolute; right: 10px; top: 50%; transform: translateY(-50%); color: #0b4c8c; pointer-events: none; }
         [data-theme="dark"] .lang-selector-container::after { color: #fff; }
 
-        /* ગૂગલના વધારાના એલિમેન્ટ્સ છુપાવવા */
         #google_translate_element, .skiptranslate, .goog-te-banner-frame, .goog-te-gadget, .goog-te-balloon-frame { display: none !important; }
         body { top: 0px !important; }
 
@@ -226,6 +225,8 @@
     <section id="services" class="section-padding bg-light">
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container">
+            
+            <!-- ૧. આયુષ્માન ભારત કાર્ડ -->
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
                 <h3>આયુષ્માન ભારત કાર્ડ</h3>
@@ -234,6 +235,8 @@
                     <button onclick="showDocs('ayushman')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
                 </div>
             </div>
+
+            <!-- ૨. પાસપોર્ટ એપ્લિકેશન -->
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-passport"></i></div>
                 <h3>પાસપોર્ટ એપ્લિકેશન</h3>
@@ -242,6 +245,77 @@
                     <button onclick="showDocs('passport')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
                 </div>
             </div>
+
+            <!-- ૩. પાન કાર્ડ સર્વિસ -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-address-card"></i></div>
+                <h3>નવું પાન કાર્ડ / સુધારો</h3>
+                <p>નવું પાન કાર્ડ માત્ર ૧ કલાકમાં મેળવો અથવા જૂના પાન કાર્ડમાં સુધારો કરાવો.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('pancard')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
+            <!-- ૪. ડ્રાઈવિંગ લાયસન્સ -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-id-card"></i></div>
+                <h3>ડ્રાઈવિંગ લાયસન્સ (RTO)</h3>
+                <p>લર્નિંગ લાયસન્સ, પાકું લાયસન્સ, રીન્યુઅલ અને એપોઇન્ટમેન્ટ બુકિંગ.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('driving')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
+            <!-- ૫. રેશન કાર્ડ સર્વિસ -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-users"></i></div>
+                <h3>રેશન કાર્ડ ઓનલાઈન</h3>
+                <p>નવું રેશન કાર્ડ, નામ ઉમેરવું, નામ કમી કરવું અથવા અલગ કરવું.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('ration')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
+            <!-- ૬. ઓનલાઈન સરકારી ફોર્મ -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>તમામ સરકારી ભરતીના ફોર્મ</h3>
+                <p>ઓજસ (OJAS), રેલવે, એસએસસી, બેંકિંગ અને અન્ય તમામ સરકારી નોકરીના ઓનલાઈન ફોર્મ.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('govt_forms')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
+            <!-- ૭. ITR અને ટેક્સ રીટર્ન -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-calculator"></i></div>
+                <h3>ઇનકમ ટેક્સ રીટર્ન (ITR)</h3>
+                <p>પગારદાર, વેપારી અને પેન્શનધારકો માટે સચોટ ITR ફાઇલિંગ અને ટેક્સ પ્લાનિંગ.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('itr')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
+            <!-- ૮. પીએફ અને ઈએસઆઈસી -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-building-columns"></i></div>
+                <h3>PF & ESIC સેવાઓ</h3>
+                <p>પીએફ ઉપાડવું (PF Withdrawal), કેવાયસી, ઉમંગ એપ્લિકેશન સેટઅપ અને પેન્શન કામગીરી.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('pf')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
+            <!-- ૯. બિઝનેસ રજીસ્ટ્રેશન -->
+            <div class="service-card">
+                <div class="icon-box"><i class="fa-solid fa-shop"></i></div>
+                <h3>ઉદ્યોગ આધાર / ગુમાસ્તા ધારો</h3>
+                <p>MSME ઉદ્યોગ રજીસ્ટ્રેશન અને દુકાન માટે ડિજિટલ ગુમાસ્તા લાયસન્સ.</p>
+                <div class="card-action-buttons">
+                    <button onclick="showDocs('business')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ</button>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -277,11 +351,10 @@
         <a href="https://wa.me/919484418910?text=નમસ્તે" target="_blank" style="background-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
     </div>
 
-    <!-- ગૂગલ ટ્રાન્સલેટની ઓરિજિનલ સ્ક્રિપ્ટ (સૌથી નવું વર્ઝન) -->
+    <!-- ગૂગલ ટ્રાન્સલેટની ઓરિજિનલ સ્ક્રિપ્ટ -->
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // ગૂગલ ટ્રાન્સલેટ ઇનિશિયલાઇઝેશન
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'gu',
@@ -291,31 +364,26 @@
             }, 'google_translate_element');
         }
 
-        // નવું ફોર્સ્ડ ટ્રાન્સલેશન લોજિક (પેજ રીલોડ વગર ચાલશે)
+        // ભાષા બદલવાની હાર્ડ કુકી સિસ્ટમ
         function changeLanguage(lang) {
-            // બ્રાઉઝરની કુકીઝ સેટ કરવી (ગૂગલ આને સૌથી પહેલા ઓળખે છે)
             document.cookie = "googtrans=/gu/" + lang + "; path=/;";
             document.cookie = "googtrans=/gu/" + lang + "; domain=" + window.location.hostname + "; path=/;";
             document.cookie = "googtrans=/gu/" + lang + "; domain=.github.io; path=/;"; 
 
-            // ગૂગલના સિલેક્ટ બોક્સમાં વેલ્યુ પુશ કરવી
             const googleSelect = document.querySelector('#google_translate_element select');
             if (googleSelect) {
                 googleSelect.value = lang;
-                
-                // ઓટોમેટોકલી ચેન્જ ઇવેન્ટ ટ્રિગર કરવી
                 const event = document.createEvent('HTMLEvents');
                 event.initEvent('change', true, true);
                 googleSelect.dispatchEvent(event);
             }
             
-            // જો ક્યાંય પણ અટકે, તો પેજને ૧ વાર રીલોડ કરવું જેથી ભાષા બદલાઈ જ જાય
+            // જો રીલોડ કરવું પડે તો ડાયરેક્ટ ભાષા બદલાઈ જશે
             if (!googleSelect) {
                 window.location.reload();
             }
         }
 
-        // પેજ લોડ થતી વખતે કુકીઝ ચેક કરીને ડ્રોપડાઉન સેટ રાખવું
         window.addEventListener('DOMContentLoaded', () => {
             const cookies = document.cookie.split(';');
             let currentLang = 'gu';
@@ -337,9 +405,17 @@
             document.getElementById('themeIcon').className = targetTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
         }
 
+        // બધી જ ૧૦૦% વિગતો ડેટાબેઝમાં પાછી લાવી દીધી છે
         const docDatabase = {
-            "ayushman": { title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ", "રેશન કાર્ડ", "મોબાઈલ નંબર"], prices: [{ name: "નવું / અપડેટ", value: "₹150" }] },
-            "passport": { title: "પાસપોર્ટ એપ્લિકેશન માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ", "માર્કશીટ"], prices: [{ name: "ટોટલ ચાર્જ", value: "₹3000" }] }
+            "ayushman": { title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો", docs: ["આધાર કક્ષાર્ડ", "રેશન કાર્ડ", "મોબાઈલ નંબર"], prices: [{ name: "નવું / અપડેટ", value: "₹150" }] },
+            "passport": { title: "પાસપોર્ટ એપ્લિકેશન માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ", "માર્કશીટ"], prices: [{ name: "ટોટલ ચાર્જ", value: "₹3000" }] },
+            "pancard": { title: "પાન કાર્ડ સર્વિસ માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ", "ફોટોગ્રાફ", "સિગ્નેચર"], prices: [{ name: "નવું પાન કાર્ડ", value: "₹200" }] },
+            "driving": { title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ", "બ્લડ ગ્રુપ રિપોર્ટ"], prices: [{ name: "સરકારી ફી અલગ", value: "ચાર્જ અલગ" }] },
+            "ration": { title: "રેશન કાર્ડ ઓનલાઈન માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ બધા સભ્યોના", "જૂનું રેશન કાર્ડ", "ચૂંટણી કાર્ડ"], prices: [{ name: "પ્રોસેસ ફી", value: "₹150" }] },
+            "govt_forms": { title: "સરકારી ભરતીના ફોર્મ માટે જરૂરી કાગળો", docs: ["છેલ્લી માર્કશીટ", "આધાર કાર્ડ", "ફોટો / સહી"], prices: [{ name: "ફોર્મ ચાર્જ", value: "₹100 થી શરૂ" }] },
+            "itr": { title: "ઇનકમ ટેક્સ રીટર્ન (ITR) માટે જરૂરી કાગળો", docs: ["ફોર્મ ૧૬ (Form 16)", "બેંક સ્ટેટમેન્ટ", "પાન કાર્ડ"], prices: [{ name: "ન્યૂનતમ ફી", value: "₹500 થી શરૂ" }] },
+            "pf": { title: "PF & ESIC સેવાઓ માટે જરૂરી કાગળો", docs: ["UAN નંબર", "આધાર કાર્ડ લિંક", "બેંક પાસબુક પાનું"], prices: [{ name: "ઉપાડ ચાર્જ", value: "₹300" }] },
+            "business": { title: "બિઝનેસ રજીસ્ટ્રેશન માટે જરૂરી કાગળો", docs: ["આધાર કાર્ડ", "દુકાનનો ફોટો", "લાઈટ બિલ"], prices: [{ name: "લાઈસન્સ ચાર્જ", value: "₹500" }] }
         };
 
         function showDocs(key) {
@@ -349,6 +425,15 @@
             const list = document.getElementById('modalDocList');
             list.innerHTML = "";
             data.docs.forEach(d => { const li = document.createElement('li'); li.innerText = d; list.appendChild(li); });
+            
+            const priceBox = document.getElementById('modalPriceItems');
+            priceBox.innerHTML = "";
+            data.prices.forEach(p => {
+                const div = document.createElement('div');
+                div.className = "price-item-line";
+                div.innerHTML = `<span class="price-title">${p.name}:</span> <span>${p.value}</span>`;
+                priceBox.appendChild(div);
+            });
             document.getElementById('docModal').style.display = "flex";
         }
         function closeDocs() { document.getElementById('docModal').style.display = "none"; }
