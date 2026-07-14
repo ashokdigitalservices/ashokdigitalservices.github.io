@@ -6,7 +6,7 @@
     
     <!-- SEO Meta Tags -->
     <title>Ashok Digital Services | બેસ્ટ ઓનલાઈન સરકારી અને ડિજિટલ સેવાઓ</title>
-    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, પાન kaart, ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
+    <meta name="description" content="Ashok Digital Services - તમામ પ્રકારના સરકારી ઓનલાઈન ફોર્મ, MSME ઉદ્યોગ આધાર, ગુમાસ્તા ધારો, PF & ESIC, પાન કાર્ડ (PAN Card), ડ્રાઈવિંગ લાયસન્સ, પાસપોર્ટ, રેશન કાર્ડ અને ITR રીટર્ન માટેનું એકમાત્ર વિશ્વસનીય સ્થળ.">
     
     <!-- Font Awesome for beautiful icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -108,8 +108,8 @@
             color: #fff;
         }
 
-        /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને પ્લેન હાઇડ કરવા માટે */
-        #google_translate_element, .skiptranslate, .goog-te-banner-frame {
+        /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને હાઇડ કરવા માટે */
+        #google_translate_element, iframe.goog-te-banner-frame {
             display: none !important;
         }
         body {
@@ -127,7 +127,6 @@
 
         .navbar {
             display: flex;
-            justify-space: space-between;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
@@ -201,7 +200,7 @@
             border-bottom-color: #443503;
         }
 
-        /* લાઇવ નોટિસ બોર્ડ (Live Updates Section) સ્ટાઈલ */
+        /* લાઇવ નોટિસ બોર્ડ સ્ટાઈલ */
         .notice-board {
             max-width: 1200px;
             margin: 20px auto 0;
@@ -241,7 +240,7 @@
             100% { opacity: 1; }
         }
 
-        /* Hero Section with Full Photo Background */
+        /* Hero Section */
         .hero {
             background: url('166036.png') no-repeat center center/cover;
             padding: 120px 20px;
@@ -353,7 +352,7 @@
         .btn-action-doc:hover { background-color: #bbdefb; }
         [data-theme="dark"] .btn-action-doc { background-color: #1a2f4c; color: #64b5f6; border-color: #64b5f6; }
 
-        /* ડાયરેક્ટ ડોક્યુમેન્ટ અપલોડ સિસ્ટમ સ્ટાઈલ */
+        /* ડોક્યુમેન્ટ અપલોડ સિસ્ટમ સ્ટાઈલ */
         .upload-section { padding: 60px 20px; background: var(--light-color); text-align: center; transition: background-color 0.3s; }
         .upload-box { max-width: 600px; margin: 0 auto; padding: 35px; background: var(--bg-card); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-top: 5px solid #198754; transition: background-color 0.3s; }
         .upload-box input, .upload-box select { width: 100%; padding: 12px; margin: 12px 0; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; background: var(--bg-main); color: var(--text-main); }
@@ -413,7 +412,7 @@
         .whatsapp-bot-input { flex: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 20px; outline: none; font-size: 0.9rem; background: var(--bg-main); color: var(--text-main); }
         .whatsapp-bot-send { background: #075e54; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
-        /* જરૂરી કાગળોના કસ્ટમ પોપ-અપ બોક્સ માટેની સુંદર સ્ટાઈલ */
+        /* મોડલ પોપ-અપ બોક્સ સ્ટાઈલ */
         .custom-modal {
             display: none;
             position: fixed;
@@ -468,7 +467,6 @@
         }
         [data-theme="dark"] .custom-modal-title { color: #64b5f6; }
         
-        /* કિંમતોના ડિસ્પ્લે માટે નવું સેટઅપ */
         .modal-price-box {
             background: var(--light-color);
             padding: 12px 15px;
@@ -574,7 +572,7 @@
                     <li><a href="#status">સ્ટેટસ જુઓ</a></li>
                     <li><a href="#services">સેવાઓ</a></li>
                     <li><a href="#payment">પેમેન્ટ</a></li>
-                    <!-- ફિક્સ લેંગ્વેજ ડ્રોપડાઉન સિસ્ટમ -->
+                    <!-- લેંગ્વેજ ડ્રોપડાઉન સિસ્ટમ -->
                     <li>
                         <div class="lang-selector-container">
                             <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
@@ -584,7 +582,7 @@
                             </select>
                         </div>
                     </li>
-                    <!-- ડાર્ક મોડ ચાલુ બંધ કરવાનું નવું બટન -->
+                    <!-- થીમ ટોગલ બટન -->
                     <li>
                         <button class="theme-toggle-btn" onclick="toggleTheme()" title="ડાર્ક/લાઇટ મોડ બદલો">
                             <i id="themeIcon" class="fa-solid fa-moon"></i>
@@ -685,7 +683,7 @@
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container">
             
-            <!-- 1. 🌟 આયુષ્માન કાર્ડ -->
+            <!-- 1. આયુષ્માન કાર્ડ -->
             <div class="service-card" style="border-top-color: #ff9800;">
                 <div class="icon-box" style="background: rgba(255, 152, 0, 0.1); color: #ff9800;"><i class="fa-solid fa-heart-pulse"></i></div>
                 <h3>આયુષ્માન ભારત કાર્ડ</h3>
@@ -699,7 +697,7 @@
             <!-- 2. MSME -->
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-building-shield"></i></div>
-                <h3>MSME ઉદ્યોગ આધાર رજીસ્ટ્રેશન</h3>
+                <h3>MSME ઉદ્યોગ આધાર રજીસ્ટ્રેશન</h3>
                 <p>તમારા નવા કે જૂના બિઝનેસ, દુકાન અથવા નાના ઉદ્યોગ માટે Udyam (MSME) સર્ટિફિકેટ ઘરે બેઠા મેળવો.</p>
                 <div class="card-action-buttons">
                     <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20MSME%20ઉદ્યોગ%20આધાર%20અહીં%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
@@ -821,9 +819,9 @@
             <div class="service-card">
                 <div class="icon-box"><i class="fa-solid fa-wheat-awn"></i></div>
                 <h3>રેશન કાર્ડનું કામકાજ</h3>
-                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું رેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
+                <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું રેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('ration')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -935,7 +933,7 @@
             <div class="contact-info" style="display: flex; align-items: center; justify-content: center; background: var(--bg-card);">
                 <div style="text-align: center;">
                     <i class="fa-solid fa-circle-check" style="font-size: 3.5rem; color: #198754; margin-bottom: 15px;"></i>
-                    <h3>૧૦0% વિશ્વાસપાત્ર સેવા</h3>
+                    <h3>૧૦૦% વિશ્વાસપાત્ર સેવા</h3>
                     <p style="color: #666;">તમામ દસ્તાવેજોની સુરક્ષા અને સચોટ ઓનલાઈન કામકાજ એ જ અમારો ધ્યેય છે.</p>
                 </div>
             </div>
@@ -1072,7 +1070,7 @@
             },
             "voter": {
                 title: "ચૂંટણી કાર્ડ (Voter ID) માટે જરૂરી કાગળો",
-                docs: ["આધાર કાર્ડ", "રહેઠાણનો પુરાવો (લાઇટ બિલ અથવા رેશન કાર્ડ)", "જન્મનો પુરાવો (LC અથવા માર્કશીટ)", "૧ પાસપોર્ટ સાઇઝ કલર ફોટો"]
+                docs: ["આધાર કાર્ડ", "રહેઠાણનો પુરાવો (લાઇટ બિલ અથવા રેશન કાર્ડ)", "જન્મનો પુરાવો (LC અથવા માર્કશીટ)", "૧ પાસપોર્ટ સાઇઝ કલર ફોટો"]
             },
             "eshram": {
                 title: "ઈ-શ્રમ કાર્ડ બનાવવા માટે જરૂરી કાગળો",
@@ -1080,7 +1078,7 @@
             },
             "govt_forms": {
                 title: "સરકારી ફોર્મ ભરવા માટે સામાન્ય કાગળો",
-                docs: ["આધાર કાર્ડ અને رેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ (ભરતી ફોર્મ માટે)", "જાતિનો દાખલો અને આવકનો દાખલો"]
+                docs: ["આધાર કાર્ડ અને રેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ (ભરતી ફોર્મ માટે)", "જાતિનો દાખલો અને આવકનો દાખલો"]
             },
             "itr": {
                 title: "ITR રિટર્ન ફાઈલિંગ માટે જરૂરી કાગળો",
@@ -1088,7 +1086,7 @@
             },
             "ration": {
                 title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
-                docs: ["ઓરિજિનલ رેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો કમી કર્યાનું પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા માટે જન્મનો દાખલો અથવા મેરેજ સર્ટિફિકેટ"]
+                docs: ["ઓરિજિનલ રેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો કમી કર્યાનું પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા માટે જન્મનો દાખલો અથવા મેરેજ સર્ટિફિકેટ"]
             }
         };
 
@@ -1104,7 +1102,7 @@
                 listContainer.appendChild(li);
             });
 
-            // જો પ્રાઇસ લિસ્ટ અવેલેબલ હોય (જેમ કે PF માં) તો તેને બતાવો
+            // જો પ્રાઇસ લિસ્ટ અવેલેબલ હોય તો તેને બતાવો
             const priceBox = document.getElementById('modalPriceBox');
             const priceItemsContainer = document.getElementById('modalPriceItems');
             if (data.prices) {
@@ -1167,6 +1165,17 @@
             toggleBotBox();
         }
 
+        // ફાઈલ સિલેક્શન બદલાય ત્યારે સ્ક્રીન પર યુઝરને વિગતો બતાવવા માટે
+        document.getElementById('clientFiles').addEventListener('change', function(e) {
+            const fileCount = this.files.length;
+            const fileWrapper = document.querySelector('.file-input-wrapper p');
+            if (fileCount > 0) {
+                fileWrapper.innerHTML = `✅ ${fileCount} ફાઈલ સિલેક્ટ થઈ છે!<br><small style="color:var(--secondary-color); font-weight:bold;">(${Array.from(this.files).map(f => f.name).join(', ')})</small>`;
+            } else {
+                fileWrapper.innerHTML = `અહીં ક્લિક કરીને ફાઈલો સિલેક્ટ કરો`;
+            }
+        });
+
         function handleUpload(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
@@ -1200,26 +1209,29 @@ ${fileNames.join('\n')}
             setTimeout(() => {
                 window.open(finalWpUrl, '_blank');
                 document.getElementById('docUploadForm').reset();
+                // રીસેટ પછી ફાઈલ અપલોડરનું લખાણ ફરીથી મૂળ સરખું કરવું
+                document.querySelector('.file-input-wrapper p').innerHTML = `અહીં ક્લિક કરીને ફાઈલો સિલેક્ટ કરો`;
                 statusDiv.innerHTML = "✅ વિગતો મોકલાઈ ગઈ છે! હવે તમારા કાગળો આ ચેટમાં એટેચ કરી દો.";
                 statusDiv.style.color = "#198754";
             }, 1000);
         }
 
-        // નવી ૧૦૦% સુધારેલી સુપર ફાસ્ટ લેંગ્વેજ સિસ્ટમ
+        // ભાષા બદલવાની કસ્ટમ સુધારેલી ફાસ્ટ લેંગ્વેજ સિસ્ટમ
         function changeLanguage(langCode) {
             if (langCode === 'gu') {
-                // જ્યારે યુઝર કસ્ટમ ડ્રોપડાઉનમાંથી ગુજરાતી પસંદ કરે ત્યારે બધી જ ગૂગલ કુકીઝ સંપૂર્ણ સાફ કરો
+                // ગુજરાતી માટે ગૂગલ કુકીઝ સંપૂર્ણ સાફ કરવી
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=" + location.hostname;
                 document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.github.io";
+                document.documentElement.setAttribute('lang', 'gu');
             } else {
-                // અન્ય ભાષાઓ (en/hi) માટે ગૂગલ ટ્રાન્સલેટને કમ્પલ્સરી ફોર્સ કરો
+                // અન્ય ભાષાઓ (en/hi) માટે ગૂગલ ટ્રાન્સલેટ ફોર્સ કરવું
                 document.cookie = "googtrans=/gu/" + langCode + "; path=/;";
                 document.cookie = "googtrans=/gu/" + langCode + "; path=/; domain=" + location.hostname;
                 document.cookie = "googtrans=/gu/" + langCode + "; path=/; domain=.github.io";
+                document.documentElement.setAttribute('lang', langCode);
             }
             
-            // બેકગ્રાઉન્ડના ઓરિજિનલ ગુગલ ડ્રોપડાઉનને પણ ચેન્જ કરો
             var translateSelect = document.querySelector('select.goog-te-combo');
             if (translateSelect) {
                 translateSelect.value = langCode;
@@ -1230,13 +1242,11 @@ ${fileNames.join('\n')}
                 }
             }
             
-            // પેજ રીલોડ કરીને કન્ફર્મ અપ્લાય કરો
             location.reload();
         }
 
-        // પેજ લોડ થતી વખતે કુકીઝના આધારે સાચો ઓપ્શન સિલેક્ટેડ બતાવવો
+        // પેજ લોડ થતી વખતે યોગ્ય ભાષા ડ્રોપડાઉનમાં સિલેક્ટ કરવી
         window.addEventListener('load', () => {
-            // કુકીઝ ચેક કરીને ડ્રોપડાઉનમાં સાચી લેંગ્વેજ સેટ કરવી
             const getCookie = (name) => {
                 const value = `; ${document.cookie}`;
                 const parts = value.split(`; ${name}=`);
@@ -1248,6 +1258,7 @@ ${fileNames.join('\n')}
                 const lang = googtrans.split('/').pop();
                 if (['gu', 'en', 'hi'].includes(lang)) {
                     langSelect.value = lang;
+                    document.documentElement.setAttribute('lang', lang);
                 }
             }
         });
