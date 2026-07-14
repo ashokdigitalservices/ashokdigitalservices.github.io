@@ -109,7 +109,7 @@
         }
 
         /* ઓરિજિનલ ગૂગલ ટ્રાન્સલેટ એલિમેન્ટ્સને પ્લેન હાઇડ કરવા માટે */
-        #google_translate_element, .skiptranslate {
+        #google_translate_element, .skiptranslate, .goog-te-banner-frame {
             display: none !important;
         }
         body {
@@ -127,6 +127,7 @@
 
         .navbar {
             display: flex;
+            justify-space: space-between;
             justify-content: space-between;
             align-items: center;
             max-width: 1200px;
@@ -822,7 +823,7 @@
                 <h3>રેશન કાર્ડનું કામકાજ</h3>
                 <p>રેશન કાર્ડમાં નવું નામ ઉમેરવું, નામ કમી કરવું, નવું رેશન કાર્ડ બનાવવું અથવા અલગ કરવું.</p>
                 <div class="card-action-buttons">
-                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજિટલ%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
+                    <a href="https://wa.me/919484418910?text=નમસ્તે%20અશોક%20ડિજिटल%20સર્વિસીસ,%20મને%20રેશન%20કાર્ડના%20કામ%20માટે%20માહિતી%20જોઈએ%20છે." target="_blank" class="action-link btn-action-info"><i class="fa-brands fa-whatsapp"></i> માહિતી મેળવો</a>
                     <button onclick="showDocs('ration')" class="action-link btn-action-doc"><i class="fa-solid fa-file-invoice"></i> જરૂરી ડોક્યુમેન્ટ લિસ્ટ</button>
                 </div>
             </div>
@@ -988,6 +989,19 @@
             </div>
         </div>
     </div>
+
+    <!-- Google Translate સત્તાવાર સ્ક્રિપ્ટ લોડ કરવા માટેનો જરૂરી કોડ -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'gu',
+                includedLanguages: 'gu,en,hi',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
         // ડાર્ક અને લાઇટ મોડ બદલવાનું કસ્ટમ લોજિક
@@ -1221,4 +1235,23 @@ ${fileNames.join('\n')}
         }
 
         // પેજ લોડ થતી વખતે કુકીઝના આધારે સાચો ઓપ્શન સિલેક્ટેડ બતાવવો
-        window.addEventListener('load'
+        window.addEventListener('load', () => {
+            // કુકીઝ ચેક કરીને ડ્રોપડાઉનમાં સાચી લેંગ્વેજ સેટ કરવી
+            const getCookie = (name) => {
+                const value = `; ${document.cookie}`;
+                const parts = value.split(`; ${name}=`);
+                if (parts.length === 2) return parts.pop().split(';').shift();
+            };
+            const googtrans = getCookie('googtrans');
+            const langSelect = document.getElementById('langSelectDropdown');
+            if (googtrans && langSelect) {
+                const lang = googtrans.split('/').pop();
+                if (['gu', 'en', 'hi'].includes(lang)) {
+                    langSelect.value = lang;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
