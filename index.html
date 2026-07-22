@@ -15,7 +15,7 @@
     <meta property="og:image" content="https://ashokdigitalservices.github.io/166032.png" />
     <meta property="og:type" content="website" />
 
-    <!-- Google Fonts - Noto Sans Gujarati (વધુ આકર્ષક ગુજરાતી લખાણ માટે) -->
+    <!-- Google Fonts - Noto Sans Gujarati -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Gujarati:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -242,7 +242,6 @@
             color: var(--text-main);
         }
 
-        /* Hero Section with Enhanced Gradient & Glassmorphism */
         .hero {
             background: url('166036.png') no-repeat center center/cover;
             padding: 120px 20px;
@@ -449,7 +448,6 @@
         .fixed-call-bar { position: fixed; bottom: 0; left: 0; width: 100%; background: var(--bg-card); border-top: 1px solid var(--border-color); z-index: 9999; display: none; grid-template-columns: 1fr 1fr; transition: background-color 0.3s; }
         .fixed-call-bar a { text-align: center; padding: 15px; text-decoration: none; color: #fff; font-weight: bold; display: flex; align-items: center; justify-content: center; gap: 8px; }
 
-        /* વૉટ્સએપ બોટ સ્ટાઈલિંગ */
         .whatsapp-bot-widget { position: fixed; bottom: 90px; right: 25px; z-index: 9999; }
         .whatsapp-bot-button { background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; transition: transform 0.3s; }
         .whatsapp-bot-button:hover { transform: scale(1.1); }
@@ -466,6 +464,7 @@
         .whatsapp-bot-input { flex: 1; padding: 8px 12px; border: 1px solid var(--border-color); border-radius: 20px; outline: none; font-size: 0.9rem; background: var(--bg-main); color: var(--text-main); }
         .whatsapp-bot-send { background: #075e54; color: white; border: none; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; }
 
+        /* Custom Modal Box CSS */
         .custom-modal {
             display: none;
             position: fixed;
@@ -794,7 +793,6 @@
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
         <div class="services-container">
             
-            <!-- Services Grid Items -->
             <div class="service-card" style="border-top-color: #0b4c8c;">
                 <div class="icon-box" style="background: rgba(11, 76, 140, 0.1); color: #0b4c8c;"><i class="fa-solid fa-file-contract"></i></div>
                 <h3>7/12 / 8-A ના ઉતારા</h3>
@@ -1039,7 +1037,7 @@
         </div>
     </section>
 
-    <!-- Modals -->
+    <!-- 🌟 કસ્ટમ પોપ-અપ મોડલ બોક્સ (જરૂરી કાગળો & પ્રાઇસ લિસ્ટ દર્શાવવા) -->
     <div id="docModal" class="custom-modal">
         <div class="custom-modal-content">
             <span class="custom-modal-close" onclick="closeDocs()">&times;</span>
@@ -1053,6 +1051,7 @@
         </div>
     </div>
 
+    <!-- 🌟 કસ્ટમ સિક્યોર વ્યુઅર મોડલ -->
     <div id="secureDocModal" class="custom-modal">
         <div class="custom-modal-content" style="max-width: 650px;">
             <span class="custom-modal-close" onclick="closeSecureViewer()">&times;</span>
@@ -1073,13 +1072,13 @@
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
     </footer>
 
-    <!-- Mobile Bottom Bar -->
+    <!-- Mobile Bottom Fixed Bar -->
     <div class="fixed-call-bar">
         <a href="tel:+919484418910" style="background-color: #198754;"><i class="fa-solid fa-phone"></i> કોલ કરો</a>
         <a href="https://wa.me/919484418910?text=નમસ્તે" target="_blank" style="background-color: #25d366;"><i class="fa-brands fa-whatsapp"></i> વૉટ્સએપ</a>
     </div>
 
-    <!-- 🌟 અપડેટ કરેલું વૉટ્સએપ સ્માર્ટ ચેટ બોટ વિજેટ -->
+    <!-- વૉટ્સએપ ચેટ બોટ વિજેટ -->
     <div class="whatsapp-bot-widget">
         <div class="whatsapp-bot-button" onclick="toggleBotBox()"><i class="fa-brands fa-whatsapp"></i></div>
         <div class="whatsapp-bot-box" id="botBox">
@@ -1103,7 +1102,133 @@
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // સ્ક્રીનશોટ કંટ્રોલ
+        // 🌟 દસ્તાવેજો અને જૂની પ્રાઇસ લિસ્ટનો સંપૂર્ણ ડેટાબેઝ
+        const docDatabase = {
+            "utara_712": {
+                title: "7/12 & 8-A ના ઉતારા માટે જરૂરી માહિતી",
+                docs: ["7/12 / 8-A ના ખાતા નંબર અથવા સરવે નંબર", "જીલ્લો, તાલુકો અને ગામનું નામ"],
+                prices: [{ name: "1 ઉતારાનો ચાર્જ (Per Utara Charge)", value: "₹20" }]
+            },
+            "ayushman": {
+                title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ", "રેશન કાર્ડ (નવું અપડેટ કરેલું)", "મોબાઈલ નંબર (આધાર સાથે લિંક હોય તે)"],
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
+            },
+            "msme": {
+                title: "MSME રજીસ્ટ્રેશન માટે જરૂરી કાગળો",
+                docs: ["માલિકનું આધાર કાર્ડ", "માલિકનું પાન કાર્ડ", "બિઝનેસ/દુકાનનું નામ અને સરનામું", "બેંક એકાઉન્ટ પાસબુક અથવા કેન્સલ ચેક"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર રાખે છે" }]
+            },
+            "shopact": {
+                title: "ગુમાસ્તા ધારો / શોપ એક્ટ માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ અને પાન કાર્ડ", "દુકાન/ઓફિસનો લાઇટ બિલ", "દુકાન માલિકીની ન હોય તો ભાડાકરાર (Rent Agreement)", "દુકાનના બોર્ડ સાથેનો માલિકનો ફોટો"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર રાખે છે" }]
+            },
+            "passport": {
+                title: "પાસપોર્ટ એપ્લિકેશન માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "છેલ્લી શૈક્ષણિક લાયકાતની માર્કશીટ (Non-ECR માટે)", "બેંક પાસબુક અથવા લાઇટ બિલ"],
+                prices: [{ name: "ટોટલ ચાર્જ (Total Fees)", value: "₹3000" }]
+            },
+            "pf_esic": {
+                title: "PF & ESIC ના કામ માટે જરૂરી કાગળો",
+                docs: ["UAN નંબર અને પાસવર્ડ", "આધાર કાર્ડ અને પાન કાર્ડ", "બેંક એકાઉન્ટ વિગતો (ચેક અથવા પાસબુક)", "કંપનીમાંથી છૂટા થયા તારીખ (Exit Date)"],
+                prices: [
+                    { name: "KYC અપડેટ", value: "₹150" },
+                    { name: "PF ઉપાડવું (Withdraw)", value: "₹250" },
+                    { name: "કંપની ટ્રાન્સફર મની", value: "₹100" }
+                ]
+            },
+            "driving": {
+                title: "ડ્રાઈવિંગ લાયસન્સ માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ", "સ્કૂલ લીવિંગ સર્ટિફિકેટ (LC) અથવા જન્મનો દાખલો", "Commercial કેટેગરી માટે મેડિકલ સર્ટિફિકેટ", "પાસપોર્ટ સાઇઝ ફોટો"],
+                prices: [
+                    { name: "2 વ્હીલર (Two Wheeler)", value: "₹1150" },
+                    { name: "4 વ્હીલર (Four Wheeler)", value: "₹1350" },
+                    { name: "2 & 4 વ્હીલર બન્ને (Both)", value: "₹1800" }
+                ]
+            },
+            "pan": {
+                title: "પાન કાર્ડ બનાવવા માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ (નામ-જન્મતારીખ સાચી હોવી જરૂરી)", "મોબાઈલ નંબર", "૨ પાસપોર્ટ સાઇઝ ફોટો"],
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹307" }]
+            },
+            "light_bill": {
+                title: "લાઇટ બિલમાં નામ ચેન્જ કરવાના કાગળો",
+                docs: ["છેલ્લું લાઇટ બિલ", "નવા માલિકનું આધાર કાર્ડ અને પાન કાર્ડ", "મકાન વેચાણ દસ્તાવેજ અથવા હક્ક પત્રક", "પેઢી/સોસાયટીનું NOC સર્ટિફિકેટ"],
+                prices: [
+                    { name: "ફાઈલ ચાર્જ (File Charge)", value: "₹1000" },
+                    { name: "સરકારી ચાર્જ (Govt Charge)", value: "કામ પર આધાર" }
+                ]
+            },
+            "voter": {
+                title: "ચૂંટણી કાર્ડ (Voter ID) માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ", "રહેઠાણનો પુરાવો (લાઇટ બિલ અથવા રેશન કાર્ડ)", "જન્મનો પુરાવો (LC અથવા માર્કશીટ)", "૧ પાસપોર્ટ સાઇઝ કલર ફોટો"],
+                prices: [{ name: "નવું / અપડેટ (New / Update)", value: "₹150" }]
+            },
+            "eshram": {
+                title: "ઈ-શ્રમ કાર્ડ બનાવવા માટે જરૂરી કાગળો",
+                docs: ["આધાર કાર્ડ", "બેંક એકાઉન્ટ પાસબુક", "આધાર સાથે લિંક હોય તેવો મોબાઈલ નંબર"],
+                prices: [{ name: "નવું રજીસ્ટ્રેશન (New Registration)", value: "₹100" }]
+            },
+            "govt_forms": {
+                title: "સરકારી ફોર્મ ભરવા માટે સામાન્ય કાગળો",
+                docs: ["આધાર કાર્ડ અને રેશન કાર્ડ", "શૈક્ષણિક માર્કશીટ અને સર્ટિફિકેટ્સ", "જાતિનો દાખલો અને આવકનો દાખલો"],
+                prices: [{ name: "એપ્લિકેશન ફી (Application Fee)", value: "કામ પર આધાર" }]
+            },
+            "itr": {
+                title: "ITR રિટર્ન ફાઈલિંગ માટે જરૂરી કાગળો",
+                docs: ["પાન કાર્ડ અને આધાર કાર્ડ", "Form 16 (જો નોકરી કરતા હોય)", "બેંક એકાઉન્ટ સ્ટેટમેન્ટ (આખા વર્ષનું)", "બિઝનેસની આવક-જાવક વિગતો"],
+                prices: [
+                    { name: "ITR ફાઇલિંગ (Normal ITR)", value: "₹750" },
+                    { name: "ITR + TDS રીટર્ન", value: "₹2000" }
+                ]
+            },
+            "ration": {
+                title: "રેશન કાર્ડના કામકાજ માટે જરૂરી કાગળો",
+                docs: ["ઓરિજિનલ રેશન કાર્ડ", "પરિવારના તમામ સભ્યોના આધાર કાર્ડ", "નામ કમી કરવાનું હોય તો પ્રમાણપત્ર (LPC)", "નવું નામ ઉમેરવા જન્મનો દાખલો / મેરેજ સર્ટિફિકેટ"],
+                prices: [{ name: "સર્વિસ ચાર્જ (Service Charge)", value: "કામ પર આધાર" }]
+            }
+        };
+
+        // 🌟 પોપ-અપ મોડલ ઓપન કરવાનું ફંક્શન
+        function showDocs(serviceKey) {
+            const data = docDatabase[serviceKey];
+            if (!data) return;
+            
+            document.getElementById('modalTitle').innerHTML = `<i class="fa-solid fa-file-lines"></i> ${data.title}`;
+            
+            const listContainer = document.getElementById('modalDocList');
+            listContainer.innerHTML = "";
+            data.docs.forEach(doc => {
+                const li = document.createElement('li');
+                li.innerText = doc;
+                listContainer.appendChild(li);
+            });
+
+            const priceBox = document.getElementById('modalPriceBox');
+            const priceItemsContainer = document.getElementById('modalPriceItems');
+            if (data.prices && data.prices.length > 0) {
+                priceBox.style.display = "block";
+                priceItemsContainer.innerHTML = "";
+                data.prices.forEach(item => {
+                    const div = document.createElement('div');
+                    div.className = "price-item-line";
+                    div.innerHTML = `<span>${item.name}</span><span>${item.value}</span>`;
+                    priceItemsContainer.appendChild(div);
+                });
+            } else {
+                priceBox.style.display = "none";
+            }
+
+            document.getElementById('docModal').style.display = "flex";
+        }
+
+        // 🌟 મોડલ ક્લોઝ કરવા માટેનું ફંક્શન
+        function closeDocs() {
+            document.getElementById('docModal').style.display = "none";
+        }
+
+        // સ્ક્રીનશોટ બ્લોકિંગ
         document.addEventListener('keydown', function(e) {
             if (e.ctrlKey && (e.key === 's' || e.key === 'p' || e.key === 'u') || e.key === 'PrintScreen') {
                 e.preventDefault();
@@ -1132,18 +1257,17 @@
             document.getElementById('themeIcon').className = targetTheme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
         }
 
-        // સિક્યોર વ્યુઅર
         function openSecureViewer(title, docUrl) {
             document.getElementById('secureDocTitle').innerHTML = `<i class="fa-solid fa-shield-halved"></i> ${title}`;
             document.getElementById('secureDocIframe').src = docUrl;
             document.getElementById('secureDocModal').style.display = "flex";
         }
+        
         function closeSecureViewer() {
             document.getElementById('secureDocModal').style.display = "none";
             document.getElementById('secureDocIframe').src = "";
         }
 
-        // 🌟 સ્માર્ટ વૉટ્સએપ બોટ લોજિક (Smart Auto-Reply Logic)
         function toggleBotBox() {
             const box = document.getElementById('botBox');
             box.style.display = box.style.display === "block" ? "none" : "block";
@@ -1159,8 +1283,6 @@
             if (!text) return;
 
             const body = document.getElementById('botBody');
-
-            // ગ્રાહકનો મેસેજ
             const userMsg = document.createElement('div');
             userMsg.className = 'whatsapp-bot-msg user';
             userMsg.innerText = text;
@@ -1169,11 +1291,9 @@
             input.value = '';
             body.scrollTop = body.scrollHeight;
 
-            // ઓટો રિપ્લાય લોજિક
             setTimeout(() => {
                 const botMsg = document.createElement('div');
                 botMsg.className = 'whatsapp-bot-msg';
-                
                 const lowerText = text.toLowerCase();
                 let reply = "તમારા પ્રશ્ન માટે આભાર! તમે સીધા વૉટ્સએપ પર અશોકભાઈનો સંપર્ક કરીને ઝડપી ઉત્તર મેળવી શકો છો. 📲";
 
@@ -1233,6 +1353,18 @@
                 statusDiv.innerText = "";
                 document.getElementById('docUploadForm').reset();
             }, 1000);
+        }
+
+        // મોડલની બહાર ક્લિક કરવાથી બંધ થાય તે માટે
+        window.onclick = function(event) {
+            const docModal = document.getElementById('docModal');
+            const secureDocModal = document.getElementById('secureDocModal');
+            if (event.target == docModal) {
+                docModal.style.display = "none";
+            }
+            if (event.target == secureDocModal) {
+                closeSecureViewer();
+            }
         }
     </script>
 </body>
