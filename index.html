@@ -1326,22 +1326,44 @@
             }, 700);
         }
 
+        /* સુધારેલું સ્ટેટસ ચેકિંગ ફંક્શન */
         function checkStatus() {
             const userInput = document.getElementById('userInput').value.trim();
             const resultDiv = document.getElementById('statusResult');
+            
             if (!userInput) {
                 resultDiv.style.color = "#d9534f";
                 resultDiv.innerText = "મહેરબાની કરીને આઈડી અથવા મોબાઈલ નંબર લખો.";
                 return;
             }
+
             resultDiv.style.color = "#0b4c8c";
             resultDiv.innerText = "તમારી રિકવેસ્ટ વેરિફાય થઈ રહી છે...";
+
             setTimeout(() => {
-                resultDiv.style.color = "#198754";
-                resultDiv.innerText = `🔄 સ્ટેટસ: તમારી એપ્લિકેશન (${userInput}) સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે.`;
-            }, 1000);
+                // LocalStorage માંથી સેવ થયેલી અરજીઓ મેળવો
+                let savedApplications = JSON.parse(localStorage.getItem('userApplications') || '[]');
+                
+                // ડેમો માટેનો અધિકૃત નંબર (જેમ કે તમારો પોતાનો નંબર)
+                const defaultAllowed = ["9484418910"];
+
+                // ચેક કરો કે દાખલ કરેલો નંબર સેવ છે કે નહીં
+                const foundApp = savedApplications.find(app => app.phone === userInput || app.id === userInput);
+                const isDefault = defaultAllowed.includes(userInput);
+
+                if (foundApp || isDefault) {
+                    const clientName = foundApp ? foundApp.name : "ગ્રાહક";
+                    const serviceName = foundApp ? foundApp.service : "ઓનલાઈન સેવા";
+                    resultDiv.style.color = "#198754";
+                    resultDiv.innerText = `🔄 સ્ટેટસ: (${userInput}) - ${clientName} ની એપ્લિકેશન [${serviceName}] સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે.`;
+                } else {
+                    resultDiv.style.color = "#d9534f";
+                    resultDiv.innerText = `❌ કોઈ રેકોર્ડ મળ્યો નથી: (${userInput}) નંબર પર કોઈ ચાલુ અરજી મળી નથી. કૃપા કરીને પહેલા ફોર્મ ભરીને કાગળો મોકલો.`;
+                }
+            }, 800);
         }
 
+        /* સુધારેલું ઓનલાઈન અપલોડ ફંક્શન (જે નંબર સેવ કરે છે) */
         function handleUpload(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
@@ -1349,6 +1371,11 @@
             const service = document.getElementById('serviceType').value;
             const filesInput = document.getElementById('clientFiles');
             const statusDiv = document.getElementById('uploadStatus');
+
+            // ગ્રાહકની વિગતો સિસ્ટમમાં સેવ કરવી (જેથી સ્ટેટસ બતાવે)
+            let savedApplications = JSON.parse(localStorage.getItem('userApplications') || '[]');
+            savedApplications.push({ phone: phone, name: name, service: service, id: phone });
+            localStorage.setItem('userApplications', JSON.stringify(savedApplications));
 
             let fileNames = [];
             for (let i = 0; i < filesInput.files.length; i++) {
@@ -1358,7 +1385,7 @@
             const message = `*નવો ડોક્યુમેન્ટ અપલોડ કન્ફર્મેશન*\n\n👤 *ગ્રાહકનું નામ:* ${name}\n📞 *મોબાઈલ નંબર:* ${phone}\n💼 *સર્વિસ:* ${service}\n\n📁 *ફાઈલો:* \n${fileNames.join('\n')}`;
 
             statusDiv.style.color = "#198754";
-            statusDiv.innerText = "WhatsApp ઓપન થઈ રહ્યું છે...";
+            statusDiv.innerText = "WhatsApp ઓપન થઈ રહ્યું છે અને એપ્લિકેશન રજીસ્ટર થઈ ગઈ છે...";
             setTimeout(() => {
                 window.open(`https://wa.me/919484418910?text=${encodeURIComponent(message)}`, '_blank');
                 statusDiv.innerText = "";
