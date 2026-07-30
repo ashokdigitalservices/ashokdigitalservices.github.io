@@ -1117,11 +1117,14 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
+        // જે ગ્રાહકોએ એપ્લાય કર્યું હોય તેમના મોબાઈલ નંબર અથવા એપ્લિકેશન આઈડી નું લિસ્ટ અહીં સેટ કરો:
+        const appliedNumbers = ["9484418910", "9427508948", "ADS1001", "ADS1002"];
+
         const docDatabase = {
             "utara_712": {
                 title: "7/12 & 8-A ના ઉતારા માટે જરૂરી માહિતી",
                 docs: ["7/12 / 8-A ના ખાતા નંબર અથવા સરવે નંબર", "જીલ્લો, તાલુકો અને ગામનું નામ"],
-                prices: [{ name: "1 ઉતારાનો ચાર્જ (Per Utara Charge)", value: "₹20" }]
+                prices: [{ name: "1 ઉતારાનો ચાર્જ (Per Utara Charge)", value: "₹15" }]
             },
             "ayushman": {
                 title: "આયુષ્માન ભારત કાર્ડ માટે જરૂરી કાગળો",
@@ -1309,7 +1312,7 @@
                 let reply = "તમારા પ્રશ્ન માટે આભાર! તમે સીધા વૉટ્સએપ પર અશોકભાઈનો સંપર્ક કરીને ઝડપી ઉત્તર મેળવી શકો છો. 📲";
 
                 if (lowerText.includes("7/12") || lowerText.includes("ઉતારા")) {
-                    reply = "📄 7/12 અને 8-A ના ઉતારા માટે ખાતા નંબર અથવા સરવે નંબર જરૂરી છે. સર્વિસ ચાર્જ ફક્ત ₹20 છે.";
+                    reply = "📄 7/12 અને 8-A ના ઉતારા માટે ખાતા નંબર અથવા સરવે નંબર જરૂરી છે. સર્વિસ ચાર્જ ફક્ત ₹15 છે.";
                 } else if (lowerText.includes("pan") || lowerText.includes("પાન")) {
                     reply = "💳 નવું પાન કાર્ડ અથવા સુધારા માટે આધાર કાર્ડ અને ૨ ફોટો જોઈશે.";
                 } else if (lowerText.includes("pf") || lowerText.includes("પીએફ")) {
@@ -1326,7 +1329,7 @@
             }, 700);
         }
 
-        /* સુધારેલું સ્ટેટસ ચેકિંગ ફંક્શન */
+        // સુધારેલું Check Status ફંક્શન
         function checkStatus() {
             const userInput = document.getElementById('userInput').value.trim();
             const resultDiv = document.getElementById('statusResult');
@@ -1341,29 +1344,17 @@
             resultDiv.innerText = "તમારી રિકવેસ્ટ વેરિફાય થઈ રહી છે...";
 
             setTimeout(() => {
-                // LocalStorage માંથી સેવ થયેલી અરજીઓ મેળવો
-                let savedApplications = JSON.parse(localStorage.getItem('userApplications') || '[]');
-                
-                // ડેમો માટેનો અધિકૃત નંબર (જેમ કે તમારો પોતાનો નંબર)
-                const defaultAllowed = ["9484418910"];
-
-                // ચેક કરો કે દાખલ કરેલો નંબર સેવ છે કે નહીં
-                const foundApp = savedApplications.find(app => app.phone === userInput || app.id === userInput);
-                const isDefault = defaultAllowed.includes(userInput);
-
-                if (foundApp || isDefault) {
-                    const clientName = foundApp ? foundApp.name : "ગ્રાહક";
-                    const serviceName = foundApp ? foundApp.service : "ઓનલાઈન સેવા";
+                // ચેક કરે છે કે યુઝરે નાખેલો નંબર રેકોર્ડ્સ લિસ્ટમાં છે કે નહીં
+                if (appliedNumbers.includes(userInput)) {
                     resultDiv.style.color = "#198754";
-                    resultDiv.innerText = `🔄 સ્ટેટસ: (${userInput}) - ${clientName} ની એપ્લિકેશન [${serviceName}] સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે.`;
+                    resultDiv.innerText = `🔄 સ્ટેટસ: તમારી એપ્લિકેશન (${userInput}) સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે.`;
                 } else {
                     resultDiv.style.color = "#d9534f";
-                    resultDiv.innerText = `❌ કોઈ રેકોર્ડ મળ્યો નથી: (${userInput}) નંબર પર કોઈ ચાલુ અરજી મળી નથી. કૃપા કરીને પહેલા ફોર્મ ભરીને કાગળો મોકલો.`;
+                    resultDiv.innerText = `❌ આ નંબર અથવા એપ્લિકેશન આઈડી (${userInput}) રેકોર્ડમાં મળેલ નથી. કૃપા કરીને સાચો નંબર લખો અથવા વૉટ્સએપ પર સંપર્ક કરો.`;
                 }
-            }, 800);
+            }, 1000);
         }
 
-        /* સુધારેલું ઓનલાઈન અપલોડ ફંક્શન (જે નંબર સેવ કરે છે) */
         function handleUpload(event) {
             event.preventDefault();
             const name = document.getElementById('clientName').value.trim();
@@ -1371,11 +1362,6 @@
             const service = document.getElementById('serviceType').value;
             const filesInput = document.getElementById('clientFiles');
             const statusDiv = document.getElementById('uploadStatus');
-
-            // ગ્રાહકની વિગતો સિસ્ટમમાં સેવ કરવી (જેથી સ્ટેટસ બતાવે)
-            let savedApplications = JSON.parse(localStorage.getItem('userApplications') || '[]');
-            savedApplications.push({ phone: phone, name: name, service: service, id: phone });
-            localStorage.setItem('userApplications', JSON.stringify(savedApplications));
 
             let fileNames = [];
             for (let i = 0; i < filesInput.files.length; i++) {
@@ -1385,7 +1371,7 @@
             const message = `*નવો ડોક્યુમેન્ટ અપલોડ કન્ફર્મેશન*\n\n👤 *ગ્રાહકનું નામ:* ${name}\n📞 *મોબાઈલ નંબર:* ${phone}\n💼 *સર્વિસ:* ${service}\n\n📁 *ફાઈલો:* \n${fileNames.join('\n')}`;
 
             statusDiv.style.color = "#198754";
-            statusDiv.innerText = "WhatsApp ઓપન થઈ રહ્યું છે અને એપ્લિકેશન રજીસ્ટર થઈ ગઈ છે...";
+            statusDiv.innerText = "WhatsApp ઓપન થઈ રહ્યું છે...";
             setTimeout(() => {
                 window.open(`https://wa.me/919484418910?text=${encodeURIComponent(message)}`, '_blank');
                 statusDiv.innerText = "";
