@@ -177,21 +177,11 @@
         }
         [data-theme="dark"] .logo-text span { color: #2ae089; }
 
-        nav ul {
+        .header-controls {
             display: flex;
-            list-style: none;
-            gap: 20px;
             align-items: center;
+            gap: 15px;
         }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--text-main);
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        nav ul li a:hover { color: #0b4c8c; }
 
         .ticker-wrap {
             background: #fff3cd;
@@ -603,11 +593,10 @@
         .btn-modal-action:hover { background: #145f38; }
 
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 15px; }
+            .navbar { flex-direction: row; justify-content: space-between; }
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
             .hero .cta-buttons { display: flex; } 
-            nav ul { flex-direction: column; gap: 10px; }
             .whatsapp-bot-widget { bottom: 85px; right: 15px; }
         }
     </style>
@@ -630,31 +619,18 @@
                     <span>તમારી ઓનલાઈન ડિજિટલ સહાયક</span>
                 </div>
             </a>
-            <nav>
-                <ul>
-                    <li><a href="#home">હોમ</a></li>
-                    <li><a href="#about">અમારી વિશે</a></li>
-                    <li><a href="#legal-docs">અમારા દસ્તાવેજો</a></li>
-                    <li><a href="#status">સ્ટેટસ જુઓ</a></li>
-                    <li><a href="#services">સેવાઓ</a></li>
-                    <li><a href="#payment">પેમેન્ટ</a></li>
-                    <li><a href="#contact">સંપર્ક</a></li>
-                    <li>
-                        <div class="lang-selector-container notranslate">
-                            <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
-                                <option value="gu">ગુજરાતી</option>
-                                <option value="en">English</option>
-                                <option value="hi">Hindi</option>
-                            </select>
-                        </div>
-                    </li>
-                    <li>
-                        <button class="theme-toggle-btn" onclick="toggleTheme()" title="ડાર્ક/લાઇટ મોડ બદલો">
-                            <i id="themeIcon" class="fa-solid fa-moon"></i>
-                        </button>
-                    </li>
-                </ul>
-            </nav>
+            <div class="header-controls">
+                <div class="lang-selector-container notranslate">
+                    <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
+                        <option value="gu">ગુજરાતી</option>
+                        <option value="en">English</option>
+                        <option value="hi">Hindi</option>
+                    </select>
+                </div>
+                <button class="theme-toggle-btn" onclick="toggleTheme()" title="ડાર્ક/લાઇટ મોડ બદલો">
+                    <i id="themeIcon" class="fa-solid fa-moon"></i>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -1117,7 +1093,6 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
     <script>
-        // જે ગ્રાહકોએ એપ્લાય કર્યું હોય તેમના મોબાઈલ નંબર અથવા એપ્લિકેશન આઈડી નું લિસ્ટ અહીં સેટ કરો:
         const appliedNumbers = ["9484418910", "9427508948", "ADS1001", "ADS1002"];
 
         const docDatabase = {
@@ -1329,7 +1304,6 @@
             }, 700);
         }
 
-        // સુધારેલું Check Status ફંક્શન
         function checkStatus() {
             const userInput = document.getElementById('userInput').value.trim();
             const resultDiv = document.getElementById('statusResult');
@@ -1344,7 +1318,6 @@
             resultDiv.innerText = "તમારી રિકવેસ્ટ વેરિફાય થઈ રહી છે...";
 
             setTimeout(() => {
-                // ચેક કરે છે કે યુઝરે નાખેલો નંબર રેકોર્ડ્સ લિસ્ટમાં છે કે નહીં
                 if (appliedNumbers.includes(userInput)) {
                     resultDiv.style.color = "#198754";
                     resultDiv.innerText = `🔄 સ્ટેટસ: તમારી એપ્લિકેશન (${userInput}) સફળતાપૂર્વક સબમિટ થઈ ગઈ છે અને પ્રોસેસમાં છે.`;
