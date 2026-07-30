@@ -403,11 +403,8 @@
 
         .upload-section { padding: 60px 20px; background: var(--light-color); text-align: center; transition: background-color 0.3s; }
         .upload-box { max-width: 600px; margin: 0 auto; padding: 35px; background: var(--bg-card); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-top: 5px solid #198754; transition: background-color 0.3s; }
-        .upload-box input, .upload-box select { width: 100%; padding: 12px; margin: 12px 0; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; background: var(--bg-main); color: var(--text-main); }
-        .file-input-wrapper { position: relative; margin: 15px 0; background: var(--bg-main); border: 2px dashed #0b4c8c; padding: 20px; border-radius: 8px; cursor: pointer; }
-        .btn-upload-submit { background: #198754; color: white; border: none; padding: 14px 40px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.1rem; width: 100%; transition: background 0.2s; }
+        .btn-upload-submit { background: #198754; color: white; border: none; padding: 16px 40px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.15rem; width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: background 0.2s; }
         .btn-upload-submit:hover { background: #145f38; }
-        #uploadStatus { margin-top: 20px; font-weight: bold; font-size: 1.1rem; }
 
         .smart-features-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         .smart-card { background: var(--bg-card); padding: 35px 25px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); border-bottom: 4px solid #198754; transition: background-color 0.3s; }
@@ -900,39 +897,17 @@
         </div>
     </section>
 
-    <!-- ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર -->
+    <!-- ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર (તમારી Google Form ની લિંક સાથે જોડેલ છે) -->
     <section id="upload" class="upload-section">
         <h2 class="section-title"><i class="fa-solid fa-cloud-arrow-up"></i> ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર</h2>
-        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં વિગતો ભરીને સબમિટ કરો, ફાઈલોનું લિસ્ટ સીધું વૉટ્સએપ ચેટમાં સેટ થઈ જશે:</p>
+        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં ક્લિક કરીને તમારા દસ્તાવેજો (PDF/Photo) સીધા જ અશોક ડિજિટલ સપોર્ટ પર અપલોડ કરો:</p>
         <div class="upload-box">
-            <form id="docUploadForm" onsubmit="handleUpload(event)">
-                <input type="text" id="clientName" placeholder="ગ્રાહકનું આખું નામ" required>
-                <input type="tel" id="clientPhone" placeholder="મોબાઈલ નંબર (દા.ત. 9484418910)" required>
-                <select id="serviceType" required>
-                    <option value="">-- કઈ સેવા માટે કાગળો મોકલવા છે? --</option>
-                    <option value="Utara_712">7/12 & 8-A ના ઉતારા</option>
-                    <option value="Ayushman">આયુષ્માન ભારત કાર્ડ</option>
-                    <option value="MSME">MSME ઉદ્યોગ આધાર રજીસ્ટ્રેશન</option>
-                    <option value="ShopAct">ગુમાસ્તા ધારો / શોપ એક્ટ</option>
-                    <option value="Passport">પાસપોર્ટ એપ્લિકેશન</option>
-                    <option value="PF_ESIC">PF & ESIC Consultancy</option>
-                    <option value="Driving_License">ડ્રાઈવિંગ લાયસન્સ</option>
-                    <option value="PAN">પાન કાર્ડ</option>
-                    <option value="Light_Bill">લાઇટ બિલમાં નામ ચેન્જ</option>
-                    <option value="Voter">વોટર આઈડી (Voter Card)</option>
-                    <option value="E-Shram">ઈ-શ્રમ કાર્ડ (E-Shram)</option>
-                    <option value="Govt_Forms">ઓનલાઈન સરકારી ફોર્મ</option>
-                    <option value="ITR">ITR રીટર્ન ફાઈલિંગ</option>
-                    <option value="Ration_Card">રેશન કાર્ડનું કામકાજ</option>
-                </select>
-                <div class="file-input-wrapper">
-                    <i class="fa-regular fa-file-pdf" style="font-size: 2.5rem; color: #0b4c8c;"></i>
-                    <p style="margin-top: 10px; font-weight: bold; color: #444;">અહીં ક્લિક કરીને ફાઈલો સિલેક્ટ કરો</p>
-                    <input type="file" id="clientFiles" multiple required style="position: absolute; top:0; left:0; width:100%; height:100%; opacity:0; cursor:pointer;">
-                </div>
-                <button type="submit" class="btn-upload-submit"><i class="fa-brands fa-whatsapp"></i> WhatsApp પર કાગળો મોકલો</button>
-            </form>
-            <div id="uploadStatus"></div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdog6KIDnhTahimmilhjDBt1sLxgI2AiUL0AVV8P6aP7MPOqw/viewform?usp=dialog" target="_blank" class="btn-upload-submit">
+                <i class="fa-solid fa-file-arrow-up"></i> કાગળો / દસ્તાવેજો અપલોડ કરો (Google Drive)
+            </a>
+            <p style="font-size: 0.85rem; color: #777; margin-top: 15px;">
+                🔒 તમારા કાગળો સંપૂર્ણ સુરક્ષિત રહેશે અને સીધા જ ગૂગલ ડ્રાઈવમાં સ્ટોર થશે.
+            </p>
         </div>
     </section>
 
@@ -1313,30 +1288,6 @@
                     resultDiv.style.color = "#d9534f";
                     resultDiv.innerText = `❌ આ નંબર અથવા એપ્લિકેશન આઈડી (${userInput}) રેકોર્ડમાં મળેલ નથી. કૃપા કરીને સાચો નંબર લખો અથવા વૉટ્સએપ પર સંપર્ક કરો.`;
                 }
-            }, 1000);
-        }
-
-        function handleUpload(event) {
-            event.preventDefault();
-            const name = document.getElementById('clientName').value.trim();
-            const phone = document.getElementById('clientPhone').value.trim();
-            const service = document.getElementById('serviceType').value;
-            const filesInput = document.getElementById('clientFiles');
-            const statusDiv = document.getElementById('uploadStatus');
-
-            let fileNames = [];
-            for (let i = 0; i < filesInput.files.length; i++) {
-                fileNames.push(`${i + 1}. ${filesInput.files[i].name}`);
-            }
-
-            const message = `*નવો ડોક્યુમેન્ટ અપલોડ કન્ફર્મેશન*\n\n👤 *ગ્રાહકનું નામ:* ${name}\n📞 *મોબાઈલ નંબર:* ${phone}\n💼 *સર્વિસ:* ${service}\n\n📁 *ફાઈલો:* \n${fileNames.join('\n')}`;
-
-            statusDiv.style.color = "#198754";
-            statusDiv.innerText = "WhatsApp ઓપન થઈ રહ્યું છે...";
-            setTimeout(() => {
-                window.open(`https://wa.me/919484418910?text=${encodeURIComponent(message)}`, '_blank');
-                statusDiv.innerText = "";
-                document.getElementById('docUploadForm').reset();
             }, 1000);
         }
 
