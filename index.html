@@ -591,6 +591,23 @@
         }
         .btn-modal-action:hover { background: #145f38; }
 
+        /* Policy Modal Specific Style */
+        .policy-text-box {
+            max-height: 350px;
+            overflow-y: auto;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            padding-right: 10px;
+            color: var(--text-main);
+        }
+        .policy-text-box h4 {
+            color: #0b4c8c;
+            margin: 15px 0 5px 0;
+            font-size: 1.05rem;
+        }
+        [data-theme="dark"] .policy-text-box h4 { color: #64b5f6; }
+
         @media (max-width: 768px) {
             .navbar { flex-direction: row; justify-content: space-between; }
             .hero h1 { font-size: 2rem; }
@@ -1022,10 +1039,24 @@
         </div>
     </div>
 
+    <!-- કસ્ટમ પોલિસી મોડલ (Terms, Privacy, Refund) -->
+    <div id="policyModal" class="custom-modal">
+        <div class="custom-modal-content" style="max-width: 650px;">
+            <span class="custom-modal-close" onclick="closePolicy()">&times;</span>
+            <div id="policyModalTitle" class="custom-modal-title">નિયમો અને શરતો</div>
+            <div id="policyModalBody" class="policy-text-box"></div>
+        </div>
+    </div>
+
     <div id="google_translate_element"></div>
 
     <footer>
         <p>&copy; 2026 ASHOK DIGITAL SERVICES. બધા હકો સ્વાધીન છે.</p>
+        <div style="margin-top: 12px; font-size: 0.85rem;">
+            <a href="javascript:void(0)" onclick="openPolicy('terms')" style="color: #bbb; margin: 0 10px; text-decoration: none;">Terms & Conditions</a> | 
+            <a href="javascript:void(0)" onclick="openPolicy('privacy')" style="color: #bbb; margin: 0 10px; text-decoration: none;">Privacy Policy</a> | 
+            <a href="javascript:void(0)" onclick="openPolicy('refund')" style="color: #bbb; margin: 0 10px; text-decoration: none;">Refund Policy</a>
+        </div>
     </footer>
 
     <!-- Mobile Bottom Fixed Bar -->
@@ -1154,6 +1185,42 @@
             }
         };
 
+        const policyData = {
+            "terms": {
+                title: "Terms & Conditions (નિયમો અને શરતો)",
+                content: `
+                    <h4>૧. સેવાઓનો ઉપયોગ</h4>
+                    <p>અશોક ડિજિટલ સર્વિસીસ માત્ર ઓનલાઈન ફોર્મ ભરવા અને ડિજિટલ સહાયક તરીકે સેવા આપે છે. ગ્રાહકે પૂરી પાડેલી તમામ માહિતી સાચી હોવી જરૂરી છે.</p>
+                    <h4>૨. દસ્તાવેજોની ચકાસણી</h4>
+                    <p>ઓનલાઈન અરજી માટે જરૂરી કાગળો ગ્રાહકે પોતે આપવાના રહેશે. જો ખોટા કે અસ્પષ્ટ કાગળોને કારણે અરજી રદ થાય તો તેની જવાબદારી ગ્રાહકની રહેશે.</p>
+                    <h4>૩. સરકારી પ્રક્રિયા</h4>
+                    <p>સરકારી પોર્ટલ કે વિભાગો દ્વારા થતા સમય અથવા વિલંબ માટે અમારી સંસ્થા સીધી રીતે જવાબદાર રહેશે નહીં.</p>
+                `
+            },
+            "privacy": {
+                title: "Privacy Policy (ગોપનીયતા નીતિ)",
+                content: `
+                    <h4>૧. ડેટા સુરક્ષા</h4>
+                    <p>તમારા આધાર, પાન કે અન્ય દસ્તાવેજો સંપૂર્ણપણે સુરક્ષિત અને ગુપ્ત રાખવામાં આવે છે.</p>
+                    <h4>૨. માહિતીનો ઉપયોગ</h4>
+                    <p>તમારી અંગત વિગતોનો ઉપયોગ ફક્ત તમે માંગેલી ડિજિટલ સેવા કે ઓનલાઈન ફોર્મ ભરવા પૂરતો જ કરવામાં આવે છે.</p>
+                    <h4>૩. થર્ડ-પાર્ટી શેરિંગ</h4>
+                    <p>અમે ગ્રાહકની કોઈ પણ માહિતી અન્ય કોઈ ત્રીજી વ્યક્તિ કે ખાનગી કંપનીને વેચતા કે શેર કરતા નથી.</p>
+                `
+            },
+            "refund": {
+                title: "Refund & Cancellation Policy (રિફંડ નીતિ)",
+                content: `
+                    <h4>૧. કેન્સલેશન નિયમ</h4>
+                    <p>કામ શરૂ થયા પહેલા (ફોર્મ સબમિટ કે પ્રોસેસ થયા પહેલા) જો ગ્રાહક કામ રદ કરાવે તો સર્વિસ ચાર્જ બાદ કરીને બાકીની રકમ રિફંડ મળશે.</p>
+                    <h4>૨. નોન-રિફંડેબલ સેવાઓ</h4>
+                    <p>એકવાર સરકારી ફી ભરાઈ જાય અથવા ઓનલાઈન ફોર્મ સબમિટ થઈ જાય પછી સરકારી ફી કે સર્વિસ ચાર્જ રિફંડ મળશે નહીં.</p>
+                    <h4>૩. ડબલ પેમેન્ટ રિફંડ</h4>
+                    <p>જો ઓનલાઈન પેમેન્ટ કરતી વખતે ટેકનિકલ ખામીને લીધે બમણી રકમ કપાઈ જાય તો ૨૪ થી ૪૮ કલાકમાં વેરિફિકેશન પછી વધારાની રકમ રિફંડ કરી દેવામાં આવશે.</p>
+                `
+            }
+        };
+
         function showDocs(serviceKey) {
             const data = docDatabase[serviceKey];
             if (!data) return;
@@ -1188,6 +1255,19 @@
 
         function closeDocs() {
             document.getElementById('docModal').style.display = "none";
+        }
+
+        function openPolicy(type) {
+            const data = policyData[type];
+            if (data) {
+                document.getElementById('policyModalTitle').innerText = data.title;
+                document.getElementById('policyModalBody').innerHTML = data.content;
+                document.getElementById('policyModal').style.display = 'flex';
+            }
+        }
+
+        function closePolicy() {
+            document.getElementById('policyModal').style.display = 'none';
         }
 
         document.addEventListener('keydown', function(e) {
@@ -1299,14 +1379,19 @@
         window.onclick = function(event) {
             const docModal = document.getElementById('docModal');
             const secureDocModal = document.getElementById('secureDocModal');
+            const policyModal = document.getElementById('policyModal');
             if (event.target == docModal) {
                 docModal.style.display = "none";
             }
             if (event.target == secureDocModal) {
                 closeSecureViewer();
             }
+            if (event.target == policyModal) {
+                closePolicy();
+            }
         }
     </script>
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
