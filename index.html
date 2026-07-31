@@ -1087,6 +1087,19 @@
     </div>
 
     <script type="text/javascript">
+        // વેબસાઈટ ખોલતી વખતે હંમેશા સૌથી ઉપર (હોમ પેજ પર) રહે તે માટેનું ઓટો રોક મિકેનિઝમ
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+        }
+        window.addEventListener('beforeunload', function() {
+            window.scrollTo(0, 0);
+        });
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                window.scrollTo(0, 0);
+            }, 10);
+        });
+
         // Google Translate Callback Function
         window.googleTranslateElementInit = function() {
             new google.translate.TranslateElement({ 
