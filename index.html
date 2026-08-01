@@ -88,6 +88,50 @@
         .theme-toggle-btn:hover { transform: scale(1.15); }
         [data-theme="dark"] .theme-toggle-btn { color: #ffc107; }
 
+        /* Voice Search Mic Button Styles */
+        .voice-btn {
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            outline: none;
+        }
+        .voice-btn:hover {
+            transform: scale(1.1);
+        }
+        .voice-btn.listening {
+            background: #dc3545 !important;
+            animation: pulse-mic 1.2s infinite;
+        }
+        @keyframes pulse-mic {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        /* Voice Search Result Bar */
+        .voice-search-status-bar {
+            background: var(--bg-card);
+            border: 2px dashed var(--primary-color);
+            border-radius: 8px;
+            padding: 10px 15px;
+            margin: 15px auto 0;
+            max-width: 1200px;
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+        }
+
         .lang-selector-container {
             display: inline-block;
             position: relative;
@@ -180,7 +224,7 @@
         .header-controls {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
         }
 
         .ticker-wrap {
@@ -389,7 +433,7 @@
         #statusResult { margin-top: 25px; font-size: 1.15rem; font-weight: bold; }
 
         .services-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .service-card { background: var(--bg-card); padding: 30px 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #0b4c8c; transition: transform 0.3s, background-color 0.3s; }
+        .service-card { background: var(--bg-card); padding: 30px 20px; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; border-top: 4px solid #0b4c8c; transition: transform 0.3s, background-color 0.3s, display 0.3s; }
         .service-card:hover { transform: translateY(-4px); border-top-color: #198754; }
         .icon-box { width: 70px; height: 70px; background: rgba(11, 76, 140, 0.1); color: #0b4c8c; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-size: 1.8rem; }
         [data-theme="dark"] .icon-box { background: rgba(100, 181, 246, 0.1); color: #64b5f6; }
@@ -636,6 +680,11 @@
                 </div>
             </a>
             <div class="header-controls">
+                <!-- Voice Search Button -->
+                <button id="voiceMicBtn" class="voice-btn" onclick="startVoiceSearch()" title="બોલીને સર્ચ કરો (Voice Search)">
+                    <i class="fa-solid fa-microphone"></i>
+                </button>
+
                 <div class="lang-selector-container notranslate">
                     <select id="langSelectDropdown" class="lang-select-custom" onchange="changeLanguage(this.value)">
                         <option value="gu">ગુજરાતી</option>
@@ -649,6 +698,12 @@
             </div>
         </div>
     </header>
+
+    <!-- Voice Search Result Status Bar -->
+    <div id="voiceStatusBar" class="voice-search-status-bar">
+        <span><i class="fa-solid fa-microphone" style="color: #0b4c8c;"></i> <span id="voiceStatusText">સાંભળી રહ્યા છીએ... બોલો!</span></span>
+        <button onclick="resetVoiceSearch()" style="background: #d9534f; color:#fff; border:none; padding:4px 10px; border-radius:4px; cursor:pointer;">બધું બતાવો (Reset)</button>
+    </div>
 
     <!-- લાઇવ નોટિસ બોર્ડ સેક્શન -->
     <div class="notice-board">
@@ -771,7 +826,7 @@
     <!-- Services Section -->
     <section id="services" class="section-padding bg-light">
         <h2 class="section-title">અમારી મુખ્ય સેવાઓ (Our Services)</h2>
-        <div class="services-container">
+        <div class="services-container" id="servicesGrid">
             
             <div class="service-card" style="border-top-color: #0b4c8c;">
                 <div class="icon-box" style="background: rgba(11, 76, 140, 0.1); color: #0b4c8c;"><i class="fa-solid fa-file-contract"></i></div>
@@ -1233,6 +1288,121 @@
                 `
             }
         };
+
+        /* ====================================================
+           VOICE COMMAND SEARCH SYSTEM (Gujarati, English, Hindi)
+           ==================================================== */
+        let recognition = null;
+        let isListening = false;
+
+        if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+            const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+            recognition = new SpeechRecognition();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+
+            recognition.onstart = function() {
+                isListening = true;
+                const micBtn = document.getElementById('voiceMicBtn');
+                const statusBar = document.getElementById('voiceStatusBar');
+                const statusText = document.getElementById('voiceStatusText');
+
+                if (micBtn) micBtn.classList.add('listening');
+                if (statusBar) statusBar.style.display = 'flex';
+                if (statusText) statusText.innerText = "સાંભળી રહ્યા છીએ... બોલો (Listening in Guj/Eng/Hin)";
+            };
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript.trim();
+                filterWebsiteServices(transcript);
+            };
+
+            recognition.onerror = function(event) {
+                const statusText = document.getElementById('voiceStatusText');
+                if (statusText) statusText.innerText = "અવાજ ઓળખવામાં ભૂલ થઈ. ફરી પ્રયાસ કરો.";
+                stopMicAnimation();
+            };
+
+            recognition.onend = function() {
+                stopMicAnimation();
+            };
+        }
+
+        function startVoiceSearch() {
+            if (!recognition) {
+                alert("તમારા બ્રાઉઝરમાં વોઈસ સર્ચ સપોર્ટ કરતું નથી. કૃપા કરીને Chrome બ્રાઉઝર વાપરો.");
+                return;
+            }
+
+            if (isListening) {
+                recognition.stop();
+                stopMicAnimation();
+                return;
+            }
+
+            // ઓટો લેંગ્વેજ સેટઅપ (બ્રાઉઝર લેંગ્વેજ અથવા ગુજરાતી પસંદ કરશે)
+            const currentLang = document.getElementById('langSelectDropdown') ? document.getElementById('langSelectDropdown').value : 'gu';
+            if (currentLang === 'hi') {
+                recognition.lang = 'hi-IN';
+            } else if (currentLang === 'en') {
+                recognition.lang = 'en-US';
+            } else {
+                recognition.lang = 'gu-IN';
+            }
+
+            try {
+                recognition.start();
+            } catch (e) {
+                recognition.stop();
+                stopMicAnimation();
+            }
+        }
+
+        function stopMicAnimation() {
+            isListening = false;
+            const micBtn = document.getElementById('voiceMicBtn');
+            if (micBtn) micBtn.classList.remove('listening');
+        }
+
+        function filterWebsiteServices(queryText) {
+            const statusBar = document.getElementById('voiceStatusBar');
+            const statusText = document.getElementById('voiceStatusText');
+            if (statusBar) statusBar.style.display = 'flex';
+            if (statusText) statusText.innerHTML = `તમે બોલ્યા: <strong>"${queryText}"</strong>`;
+
+            const cleanQuery = queryText.toLowerCase().trim();
+            const cards = document.querySelectorAll('.service-card');
+            let foundCount = 0;
+
+            cards.forEach(card => {
+                const textContent = card.innerText.toLowerCase();
+                if (textContent.includes(cleanQuery)) {
+                    card.style.display = 'block';
+                    foundCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // સેવાઓ સેક્શન પર ઓટો સ્ક્રોલ
+            const servicesSec = document.getElementById('services');
+            if (servicesSec) {
+                servicesSec.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            if (foundCount === 0) {
+                statusText.innerHTML = `તમે બોલ્યા: <strong>"${queryText}"</strong> - આ વિગત આપણી વેબસાઈટમાં મળેલ નથી.`;
+            }
+        }
+
+        function resetVoiceSearch() {
+            const statusBar = document.getElementById('voiceStatusBar');
+            if (statusBar) statusBar.style.display = 'none';
+            const cards = document.querySelectorAll('.service-card');
+            cards.forEach(card => {
+                card.style.display = 'block';
+            });
+        }
 
         function showDocs(serviceKey) {
             const data = docDatabase[serviceKey];
