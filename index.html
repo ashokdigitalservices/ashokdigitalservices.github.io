@@ -635,12 +635,39 @@
         }
         [data-theme="dark"] .policy-text-box h4 { color: #64b5f6; }
 
+        /* In-site Upload Modal Box Style */
+        .upload-modal-content {
+            background-color: var(--bg-card);
+            margin: auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 95%;
+            max-width: 750px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
+            position: relative;
+            border-top: 6px solid #198754;
+            animation: fadeInModal 0.3s ease-in-out;
+        }
+        .upload-iframe-container {
+            width: 100%;
+            height: 70vh;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+        .upload-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         @media (max-width: 768px) {
             .navbar { flex-direction: row; justify-content: space-between; }
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
             .hero .cta-buttons { display: flex; } 
             .whatsapp-bot-widget { bottom: 85px; right: 15px; }
+            .upload-iframe-container { height: 60vh; }
         }
     </style>
 </head>
@@ -959,19 +986,30 @@
         </div>
     </section>
 
-    <!-- ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર -->
+    <!-- ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર (In-Site Popup Modal Setup) -->
     <section id="upload" class="upload-section">
         <h2 class="section-title"><i class="fa-solid fa-cloud-arrow-up"></i> ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર</h2>
-        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં ક્લિક કરીને તમારા દસ્તાવેજો (PDF/Photo) સીધા જ અશોક ડિજિટલ સપોર્ટ પર અપલોડ કરો:</p>
+        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં ક્લિક કરીને તમારા દસ્તાવેજો (PDF/Photo) સીધા આપણી જ વેબસાઈટ પર સુરક્ષિત રીતે અપલોડ કરો:</p>
         <div class="upload-box">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdog6KIDnhTahimmilhjDBt1sLxgI2AiUL0AVV8P6aP7MPOqw/viewform?usp=dialog" target="_blank" class="btn-upload-submit">
-                <i class="fa-solid fa-file-arrow-up"></i> કાગળો / દસ્તાવેજો અપલોડ કરો (Google Drive)
-            </a>
+            <button class="btn-upload-submit" onclick="openUploadModal()">
+                <i class="fa-solid fa-file-arrow-up"></i> કાગળો / દસ્તાવેજો અપલોડ કરો
+            </button>
             <p style="font-size: 0.85rem; color: #777; margin-top: 15px;">
-                🔒 તમારા કાગળો સંપૂર્ણ સુરક્ષિત રહેશે અને સીધા જ ગૂગલ ડ્રાઈવમાં સ્ટોર થશે.
+                🔒 તમારા કાગળો ૧૦૦% સુરક્ષિત રહે છે અને સીધા જ અશોક ડિજિટલ સપોર્ટની ગૂગલ ડ્રાઈવમાં સ્ટોર થશે.
             </p>
         </div>
     </section>
+
+    <!-- In-Site Upload Popup Modal -->
+    <div id="uploadModal" class="custom-modal">
+        <div class="upload-modal-content">
+            <span class="custom-modal-close" onclick="closeUploadModal()">&times;</span>
+            <div class="custom-modal-title"><i class="fa-solid fa-cloud-arrow-up" style="color:#198754;"></i> ઓનલાઈન દસ્તાવેજ અપલોડ ફોર્મ</div>
+            <div class="upload-iframe-container">
+                <iframe id="uploadIframe" src="" class="upload-iframe"></iframe>
+            </div>
+        </div>
+    </div>
 
     <!-- Customer Reviews Section -->
     <section id="reviews" class="section-padding bg-white">
@@ -1063,7 +1101,9 @@
                 <div class="price-title"><i class="fa-solid fa-tags"></i> સર્વિસ ચાર્જ લિસ્ટ (Fees)</div>
                 <div id="modalPriceItems"></div>
             </div>
-            <a href="#upload" class="btn-modal-action" onclick="closeDocs()"><i class="fa-solid fa-cloud-arrow-up"></i> અત્યારે જ કાગળો અપલોડ કરો</a>
+            <button class="btn-modal-action" onclick="closeDocs(); openUploadModal();" style="width:100%; border:none; cursor:pointer;">
+                <i class="fa-solid fa-cloud-arrow-up"></i> અત્યારે જ કાગળો અપલોડ કરો
+            </button>
         </div>
     </div>
 
@@ -1130,6 +1170,19 @@
     </div>
 
     <script type="text/javascript">
+        // Google Form In-site Embed Link
+        const googleFormEmbedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdog6KIDnhTahimmilhjDBt1sLxgI2AiUL0AVV8P6aP7MPOqw/viewform?embedded=true";
+
+        function openUploadModal() {
+            document.getElementById('uploadIframe').src = googleFormEmbedUrl;
+            document.getElementById('uploadModal').style.display = 'flex';
+        }
+
+        function closeUploadModal() {
+            document.getElementById('uploadModal').style.display = 'none';
+            document.getElementById('uploadIframe').src = '';
+        }
+
         // વેબસાઈટ ખોલતી વખતે હંમેશા સૌથી ઉપર (હોમ પેજ પર) રહે તે માટેનું ઓટો રોક મિકેનિઝમ
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
@@ -1546,6 +1599,7 @@
             const docModal = document.getElementById('docModal');
             const secureDocModal = document.getElementById('secureDocModal');
             const policyModal = document.getElementById('policyModal');
+            const uploadModal = document.getElementById('uploadModal');
             if (event.target == docModal) {
                 docModal.style.display = "none";
             }
@@ -1554,6 +1608,9 @@
             }
             if (event.target == policyModal) {
                 closePolicy();
+            }
+            if (event.target == uploadModal) {
+                closeUploadModal();
             }
         }
     </script>
