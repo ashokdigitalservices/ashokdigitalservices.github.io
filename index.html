@@ -431,9 +431,15 @@
         [data-theme="dark"] .btn-action-doc { background-color: #1a2f4c; color: #64b5f6; border-color: #64b5f6; }
 
         .upload-section { padding: 60px 20px; background: var(--light-color); text-align: center; transition: background-color 0.3s; }
-        .upload-box { max-width: 600px; margin: 0 auto; padding: 35px; background: var(--bg-card); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-top: 5px solid #198754; transition: background-color 0.3s; }
-        .btn-upload-submit { background: #198754; color: white; border: none; padding: 16px 40px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.15rem; width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; transition: background 0.2s; }
-        .btn-upload-submit:hover { background: #145f38; }
+        .upload-box { max-width: 600px; margin: 0 auto; padding: 35px; background: var(--bg-card); border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.06); border-top: 5px solid #198754; transition: background-color 0.3s; text-align: left; }
+
+        /* Custom Direct WhatsApp Form Styling */
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: bold; margin-bottom: 8px; color: var(--text-main); font-size: 0.95rem; }
+        .form-control-custom { width: 100%; padding: 12px 15px; border: 1px solid var(--border-color); border-radius: 8px; font-size: 1rem; background: var(--bg-main); color: var(--text-main); outline: none; transition: border-color 0.3s; }
+        .form-control-custom:focus { border-color: #198754; }
+        .btn-whatsapp-submit { background: #25d366; color: white; border: none; padding: 15px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 1.1rem; width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 10px; transition: background 0.2s, transform 0.2s; }
+        .btn-whatsapp-submit:hover { background: #1eb956; transform: translateY(-2px); }
 
         .smart-features-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px; }
         .smart-card { background: var(--bg-card); padding: 35px 25px; border-radius: 16px; box-shadow: 0 6px 18px rgba(0,0,0,0.04); border-bottom: 4px solid #198754; transition: background-color 0.3s; }
@@ -635,39 +641,12 @@
         }
         [data-theme="dark"] .policy-text-box h4 { color: #64b5f6; }
 
-        /* In-site Upload Modal Box Style */
-        .upload-modal-content {
-            background-color: var(--bg-card);
-            margin: auto;
-            padding: 20px;
-            border-radius: 12px;
-            width: 95%;
-            max-width: 750px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.3);
-            position: relative;
-            border-top: 6px solid #198754;
-            animation: fadeInModal 0.3s ease-in-out;
-        }
-        .upload-iframe-container {
-            width: 100%;
-            height: 70vh;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .upload-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         @media (max-width: 768px) {
             .navbar { flex-direction: row; justify-content: space-between; }
             .hero h1 { font-size: 2rem; }
             .fixed-call-bar { display: grid; }
             .hero .cta-buttons { display: flex; } 
             .whatsapp-bot-widget { bottom: 85px; right: 15px; }
-            .upload-iframe-container { height: 60vh; }
         }
     </style>
 </head>
@@ -986,30 +965,55 @@
         </div>
     </section>
 
-    <!-- ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર (In-Site Popup Modal Setup) -->
+    <!-- ઓનલાઈન ડાયરેક્ટ સર્વિસ ફોર્મ (Direct In-Site Form) -->
     <section id="upload" class="upload-section">
-        <h2 class="section-title"><i class="fa-solid fa-cloud-arrow-up"></i> ઓનલાઈન ડોક્યુમેન્ટ અપલોડ કેન્દ્ર</h2>
-        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં ક્લિક કરીને તમારા દસ્તાવેજો (PDF/Photo) સીધા આપણી જ વેબસાઈટ પર સુરક્ષિત રીતે અપલોડ કરો:</p>
+        <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> ઓનલાઈન કામ માટે ફોર્મ ભરો</h2>
+        <p style="text-align:center; color:#666; margin-bottom:30px;">અહીં તમારી વિગતો ભરો અને સીધા વૉટ્સએપ પર કાગળો મોકલો:</p>
         <div class="upload-box">
-            <button class="btn-upload-submit" onclick="openUploadModal()">
-                <i class="fa-solid fa-file-arrow-up"></i> કાગળો / દસ્તાવેજો અપલોડ કરો
-            </button>
-            <p style="font-size: 0.85rem; color: #777; margin-top: 15px;">
-                🔒 તમારા કાગળો ૧૦૦% સુરક્ષિત રહે છે અને સીધા જ અશોક ડિજિટલ સપોર્ટની ગૂગલ ડ્રાઈવમાં સ્ટોર થશે.
+            <form onsubmit="sendFormToWhatsApp(event)">
+                <div class="form-group">
+                    <label for="custName"><i class="fa-solid fa-user"></i> તમારું પૂરું નામ *</label>
+                    <input type="text" id="custName" class="form-control-custom" placeholder="દા.ત. રમેશભાઈ પટેલ" required>
+                </div>
+                <div class="form-group">
+                    <label for="custPhone"><i class="fa-solid fa-phone"></i> મોબાઈલ નંબર *</label>
+                    <input type="tel" id="custPhone" class="form-control-custom" placeholder="દા.ત. 9876543210" pattern="[0-9]{10}" required>
+                </div>
+                <div class="form-group">
+                    <label for="custService"><i class="fa-solid fa-list-check"></i> કઈ સર્વિસનું કામ કરાવવું છે? *</label>
+                    <select id="custService" class="form-control-custom" required>
+                        <option value="">-- સર્વિસ સિલેક્ટ કરો --</option>
+                        <option value="Digital Gujarat Scholarship / શિષ્યવૃત્તિ">Digital Gujarat Scholarship / શિષ્યવૃત્તિ</option>
+                        <option value="7/12 & 8-A ના ઉતારા">7/12 & 8-A ના ઉતારા</option>
+                        <option value="આયુષ્માન ભારત કાર્ડ">આયુષ્માન ભારત કાર્ડ</option>
+                        <option value="MSME ઉદ્યોગ આધાર">MSME ઉદ્યોગ આધાર</option>
+                        <option value="ગુમાસ્તા ધારો / શોપ એક્ટ">ગુમાસ્તા ધારો / શોપ એક્ટ</option>
+                        <option value="પાસપોર્ટ એપ્લિકેશન">પાસપોર્ટ એપ્લિકેશન</option>
+                        <option value="PF & ESIC સેવાઓ">PF & ESIC સેવાઓ</option>
+                        <option value="ડ્રાઈવિંગ લાયસન્સ">ડ્રાઈવિંગ લાયસન્સ</option>
+                        <option value="પાન કાર્ડ (PAN Card)">પાન કાર્ડ (PAN Card)</option>
+                        <option value="લાઇટ બિલમાં નામ ચેન્જ">લાઇટ બિલમાં નામ ચેન્જ</option>
+                        <option value="ચૂંટણી કાર્ડ (Voter ID)">ચૂંટણી કાર્ડ (Voter ID)</option>
+                        <option value="ઈ-શ્રમ કાર્ડ">ઈ-શ્રમ કાર્ડ</option>
+                        <option value="ઓનલાઈન સરકારી ફોર્મ">ઓનલાઈન સરકારી ફોર્મ</option>
+                        <option value="ITR રિટર્ન ફાઈલિંગ">ITR રિટર્ન ફાઈલિંગ</option>
+                        <option value="રેશન કાર્ડનું કામકાજ">રેશન કાર્ડનું કામકાજ</option>
+                        <option value="અન્ય સેવા">અન્ય સેવા</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="custMsg"><i class="fa-solid fa-pen"></i> વધારાની વિગત / સંદેશો</label>
+                    <textarea id="custMsg" class="form-control-custom" rows="3" placeholder="તમારી જરૂરિયાત વિશે ટૂંકમાં લખો..."></textarea>
+                </div>
+                <button type="submit" class="btn-whatsapp-submit">
+                    <i class="fa-brands fa-whatsapp" style="font-size:1.4rem;"></i> વૉટ્સએપ પર વિગતો સબમિટ કરો
+                </button>
+            </form>
+            <p style="font-size: 0.85rem; color: #777; margin-top: 15px; text-align: center;">
+                🔒 બટન પર ક્લિક કરતા જ તમારી વિગતો સીધી જ અશોક ડિજિટલ સપોર્ટના વૉટ્સએપ નંબર પર મોકલાઈ જશે.
             </p>
         </div>
     </section>
-
-    <!-- In-Site Upload Popup Modal -->
-    <div id="uploadModal" class="custom-modal">
-        <div class="upload-modal-content">
-            <span class="custom-modal-close" onclick="closeUploadModal()">&times;</span>
-            <div class="custom-modal-title"><i class="fa-solid fa-cloud-arrow-up" style="color:#198754;"></i> ઓનલાઈન દસ્તાવેજ અપલોડ ફોર્મ</div>
-            <div class="upload-iframe-container">
-                <iframe id="uploadIframe" src="" class="upload-iframe"></iframe>
-            </div>
-        </div>
-    </div>
 
     <!-- Customer Reviews Section -->
     <section id="reviews" class="section-padding bg-white">
@@ -1101,9 +1105,7 @@
                 <div class="price-title"><i class="fa-solid fa-tags"></i> સર્વિસ ચાર્જ લિસ્ટ (Fees)</div>
                 <div id="modalPriceItems"></div>
             </div>
-            <button class="btn-modal-action" onclick="closeDocs(); openUploadModal();" style="width:100%; border:none; cursor:pointer;">
-                <i class="fa-solid fa-cloud-arrow-up"></i> અત્યારે જ કાગળો અપલોડ કરો
-            </button>
+            <a href="#upload" class="btn-modal-action" onclick="closeDocs()"><i class="fa-solid fa-cloud-arrow-up"></i> અત્યારે જ ફોર્મ ભરો</a>
         </div>
     </div>
 
@@ -1170,17 +1172,26 @@
     </div>
 
     <script type="text/javascript">
-        // Google Form In-site Embed Link
-        const googleFormEmbedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdog6KIDnhTahimmilhjDBt1sLxgI2AiUL0AVV8P6aP7MPOqw/viewform?embedded=true";
+        // Direct In-Site WhatsApp Form Logic
+        function sendFormToWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const service = document.getElementById('custService').value;
+            const msg = document.getElementById('custMsg').value.trim();
 
-        function openUploadModal() {
-            document.getElementById('uploadIframe').src = googleFormEmbedUrl;
-            document.getElementById('uploadModal').style.display = 'flex';
-        }
+            let fullMessage = `*નવી ઓનલાઈન રિક્વેસ્ટ (Ashok Digital Services)*\n\n`;
+            fullMessage += `👤 *નામ:* ${name}\n`;
+            fullMessage += `📞 *મોબાઈલ નંબર:* ${phone}\n`;
+            fullMessage += `📋 *સર્વિસનું નામ:* ${service}\n`;
+            if (msg) {
+                fullMessage += `💬 *વિગત:* ${msg}\n`;
+            }
+            fullMessage += `\n*હું જરૂરી કાગળો / દસ્તાવેજો અહીં મોકલી રહ્યો છું.*`;
 
-        function closeUploadModal() {
-            document.getElementById('uploadModal').style.display = 'none';
-            document.getElementById('uploadIframe').src = '';
+            const encodedMessage = encodeURIComponent(fullMessage);
+            const whatsappUrl = `https://wa.me/919484418910?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
         }
 
         // વેબસાઈટ ખોલતી વખતે હંમેશા સૌથી ઉપર (હોમ પેજ પર) રહે તે માટેનું ઓટો રોક મિકેનિઝમ
@@ -1599,7 +1610,6 @@
             const docModal = document.getElementById('docModal');
             const secureDocModal = document.getElementById('secureDocModal');
             const policyModal = document.getElementById('policyModal');
-            const uploadModal = document.getElementById('uploadModal');
             if (event.target == docModal) {
                 docModal.style.display = "none";
             }
@@ -1608,9 +1618,6 @@
             }
             if (event.target == policyModal) {
                 closePolicy();
-            }
-            if (event.target == uploadModal) {
-                closeUploadModal();
             }
         }
     </script>
